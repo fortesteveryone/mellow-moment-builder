@@ -31,6 +31,9 @@ const LOGO_IMG =
   "https://lh3.googleusercontent.com/aida/AP1WRLsPfsm2MxJ_FFvxjX0rS4bcQiFwrb7688cTBsj6ex8w1YYkpM4GXzDCip_SORJzE3KzLH3UjJXp46DfrCVe9WBTgg6Xu6JINZLkZG3GiOuDhv84BCtY8O8J48lxwLjcUTK4UVR_-Evbll79BqU8mzHMfUJAg10gaeEPgiWuGjeQCyZuvTEMHDDcxqIKy61Wi7AVscWeNxTynKwXUWS5Dazl9oqHp859c1zXInnbaOukv9AqpCUNZOe4TVM";
 
 const WHATSAPP_URL = "https://wa.me/440000000000";
+const WHATSAPP_PHONE = "440000000000";
+const buildWhatsAppUrl = (message: string) =>
+  `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -337,9 +340,14 @@ function Services() {
         </div>
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
-            <div
+            <a
               key={s.title}
-              className="group bg-[#071B36] p-6 transition-all duration-500 hover:bg-[#C6A45D] sm:p-8 lg:p-10"
+              href={buildWhatsAppUrl(
+                `Hello Mellow Moment Builder, I'm interested in your "${s.title}" service. Could you please share more details, pricing, and the next steps?`
+              )}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative block bg-[#071B36] p-6 transition-all duration-500 hover:bg-[#C6A45D] sm:p-8 lg:p-10"
             >
               <MS
                 name={s.icon}
@@ -351,7 +359,11 @@ function Services() {
               <p className="text-sm leading-6 text-white/60 transition-colors group-hover:text-[#071B36]/80">
                 {s.body}
               </p>
-            </div>
+              <span className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#C6A45D] transition-colors group-hover:text-[#071B36]">
+                <FaWhatsapp className="text-base" />
+                Enquire on WhatsApp
+              </span>
+            </a>
           ))}
         </div>
       </div>
