@@ -43,7 +43,7 @@ function MS({ name, className = "" }: { name: string; className?: string }) {
 function Index() {
   return (
     <div
-      className="min-h-screen bg-[#fbf9f4] font-sans text-[#1b1c19] selection:bg-[#C6A45D]/30"
+      className="min-h-screen overflow-x-hidden bg-[#fbf9f4] font-sans text-[#1b1c19] selection:bg-[#C6A45D]/30"
       style={{ scrollBehavior: "smooth" }}
     >
       <Header />
@@ -73,13 +73,13 @@ function Header() {
     { l: "Contact", h: "#contact" },
   ];
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b-4 border-[#071B36] bg-white">
-      <nav className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 sm:py-4 md:gap-8 md:px-12 lg:px-20 lg:py-5">
+    <header className="fixed left-0 top-0 z-50 w-full border-b-2 border-[#071B36] bg-white">
+      <nav className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,auto)_1fr_auto] items-center gap-3 px-5 py-3 sm:px-8 sm:py-4 md:gap-8 md:px-12 lg:px-20">
         <a href="#home" className="flex min-w-0 items-center">
           <img
             src={LOGO_IMG}
             alt="Whitmore Saudi Connect"
-            className="h-10 w-auto shrink-0 object-contain sm:h-12 md:h-14"
+            className="h-9 w-auto max-w-[190px] shrink-0 object-contain sm:h-11 sm:max-w-[240px] md:h-12"
           />
         </a>
         <div className="hidden items-center justify-center gap-6 xl:gap-10 lg:flex">
@@ -103,14 +103,14 @@ function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 bg-[#071B36] px-4 py-3 text-[12px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-6 md:py-3.5 md:text-[13px] lg:px-8 lg:py-4"
+            className="hidden shrink-0 items-center gap-2 bg-[#071B36] px-4 py-3 text-[12px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-6 md:text-[13px]"
           >
             <MS name="chat" />
             <span>Consult</span>
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="p-2 text-[#071B36] lg:hidden"
+            className="shrink-0 p-2 text-[#071B36] lg:hidden"
             aria-label="Toggle menu"
           >
             <MS name={open ? "close" : "menu"} className="text-3xl" />
@@ -119,7 +119,7 @@ function Header() {
       </nav>
       {open && (
         <div className="border-t-2 border-[#071B36]/10 bg-white lg:hidden">
-          <div className="mx-auto flex max-w-[1400px] flex-col px-6 py-4">
+          <div className="mx-auto flex max-w-[1400px] flex-col px-5 py-3 sm:px-8">
             {nav.map((n) => (
               <a
                 key={n.h}
@@ -142,7 +142,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[90vh] items-center overflow-hidden pt-24 sm:pt-28"
+      className="relative flex min-h-[calc(100svh-68px)] items-center overflow-hidden py-14 pt-28 sm:min-h-[90vh] sm:py-20 sm:pt-32 lg:py-24"
     >
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay absolute inset-0 z-10" />
@@ -152,46 +152,46 @@ function Hero() {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-6 text-white md:px-20">
-        <div className="max-w-4xl">
-          <div className="mb-6 inline-block bg-[#C6A45D] px-4 py-1 text-xs font-black uppercase tracking-[0.3em] text-[#071B36]">
-            Vision 2030 Partner
+      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
+        <div className="max-w-4xl min-w-0">
+          <div className="mb-5 inline-block max-w-full bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
+            Vision 2030 Aligned
           </div>
-          <h1 className="mb-8 font-display text-5xl font-extrabold uppercase leading-[1.05] sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.1]">
+          <h1 className="mb-6 max-w-[12ch] break-words font-display text-[42px] font-extrabold uppercase leading-[1.02] text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.06]">
             Establish Your{" "}
             <span className="text-[#C6A45D]">Empire</span> In Saudi Arabia
           </h1>
-          <p className="mb-12 max-w-2xl border-l-4 border-[#C6A45D] pl-8 text-lg leading-relaxed text-white/80 sm:text-xl">
+          <p className="mb-8 max-w-2xl border-l-4 border-[#C6A45D] pl-5 text-base leading-8 text-white/80 sm:mb-10 sm:pl-8 sm:text-xl">
             The premier gateway for 100% foreign-owned corporate entities. We
             handle the complexity of MISA licensing, registration, and
             institutional setup with uncompromising precision.
           </p>
-          <div className="mb-20 flex flex-col gap-6 sm:flex-row">
+          <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:gap-5 lg:mb-16">
             <a
               href="#contact"
-              className="flex items-center justify-center gap-3 bg-[#C6A45D] px-10 py-5 text-[13px] font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-white"
+              className="flex min-h-14 items-center justify-center bg-[#C6A45D] px-5 py-4 text-center text-[12px] font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:px-8"
             >
               Request Strategic Briefing
             </a>
             <a
               href="#packages"
-              className="border-2 border-white/30 px-10 py-5 text-center text-[13px] font-black uppercase tracking-widest text-white transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]"
+              className="flex min-h-14 items-center justify-center border-2 border-white/30 px-5 py-4 text-center text-[12px] font-black uppercase leading-5 tracking-[0.14em] text-white transition-all hover:border-[#C6A45D] hover:text-[#C6A45D] sm:px-8"
             >
               Our Packages
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-12 border-t-2 border-white/10 pt-12 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-7 border-t-2 border-white/10 pt-8 sm:gap-8 sm:pt-10 md:grid-cols-4">
             {[
               ["100%", "Foreign Ownership"],
               ["03 Days", "Fast-Track Setup"],
               ["Elite", "Consultancy Model"],
               ["Global", "Investor Network"],
             ].map(([n, l]) => (
-              <div key={l}>
-                <div className="mb-2 font-display text-3xl font-black text-[#C6A45D] sm:text-4xl">
+              <div key={l} className="min-w-0">
+                <div className="mb-2 font-display text-2xl font-black text-[#C6A45D] sm:text-4xl">
                   {n}
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-white/60">
+                <div className="break-words text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/60">
                   {l}
                 </div>
               </div>
