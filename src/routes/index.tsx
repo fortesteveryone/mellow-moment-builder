@@ -643,14 +643,14 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+      <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
         {label}
       </label>
       <input
         type={type}
         placeholder={placeholder}
         required={required}
-        className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+        className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
       />
     </div>
   );
@@ -666,9 +666,9 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-[#f5f3ee] py-24 md:py-32">
-      <div className="mx-auto max-w-[900px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <h2 className="mb-20 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+    <section id="faq" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-[980px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <h2 className="mb-12 break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
           Essential Intelligence
         </h2>
         <div className="border-t-4 border-[#071B36]">
@@ -678,14 +678,14 @@ function FAQ() {
               <div key={i} className="border-b-2 border-[#071B36]/10">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="group flex w-full items-center justify-between py-8 text-left transition-colors hover:text-[#C6A45D]"
+                  className="group flex w-full items-start justify-between gap-4 py-6 text-left transition-colors hover:text-[#C6A45D] sm:items-center sm:py-8"
                 >
-                  <span className="font-display text-base font-black uppercase text-[#071B36] sm:text-xl">
+                  <span className="min-w-0 break-words font-display text-base font-black uppercase leading-tight text-[#071B36] sm:text-xl">
                     {f.q}
                   </span>
                   <MS
                     name={isOpen ? "remove" : "add"}
-                    className="text-[#071B36] group-hover:text-[#C6A45D]"
+                    className="shrink-0 text-[#071B36] group-hover:text-[#C6A45D]"
                   />
                 </button>
                 <div
@@ -694,7 +694,7 @@ function FAQ() {
                     (isOpen ? "max-h-96" : "max-h-0")
                   }
                 >
-                  <p className="pb-10 font-medium leading-relaxed text-[#44474d]">
+                  <p className="pb-8 font-medium leading-7 text-[#44474d] sm:pb-10">
                     {f.a}
                   </p>
                 </div>
@@ -710,21 +710,21 @@ function FAQ() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer className="bg-[#071B36] pt-24 text-white">
-      <div className="mx-auto mb-20 grid max-w-[1400px] grid-cols-1 gap-12 px-6 md:grid-cols-4 md:gap-20 md:px-20">
+    <footer className="bg-[#071B36] pt-16 text-white sm:pt-20 lg:pt-24">
+      <div className="mx-auto mb-12 grid max-w-[1400px] grid-cols-1 gap-10 px-5 sm:px-8 md:grid-cols-4 md:gap-12 md:px-12 lg:mb-16 lg:px-20">
         <div className="md:col-span-2">
-          <div className="mb-10">
+          <div className="mb-8">
             <img
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
-              className="h-14 w-auto brightness-0 invert sm:h-16"
+              className="h-12 w-auto max-w-[250px] brightness-0 invert sm:h-14"
             />
           </div>
-          <p className="mb-12 max-w-sm text-xs font-medium uppercase leading-relaxed tracking-widest text-white/60">
+          <p className="mb-8 max-w-sm text-xs font-medium uppercase leading-7 tracking-[0.14em] text-white/60">
             Bridging global capital with Saudi opportunity through architectural
             precision and uncompromising service standards.
           </p>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             <MS name="language" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
             <MS name="share" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
             <MS name="verified" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
@@ -749,11 +749,11 @@ function Footer() {
           ]}
         />
       </div>
-      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 border-t border-white/10 px-6 py-12 md:flex-row md:px-20">
-        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
-          © {new Date().getFullYear()} Whitmore Saudi Connect. Authorized by Ministry of Investment.
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 border-t border-white/10 px-5 py-8 text-center sm:px-8 md:flex-row md:px-12 lg:px-20">
+        <p className="max-w-2xl text-[10px] font-black uppercase leading-5 tracking-[0.14em] text-white/40 md:text-left">
+          © {new Date().getFullYear()} Whitmore Saudi Connect. Independent consultancy. Government fees separate.
         </p>
-        <div className="flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-[#C6A45D]">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#C6A45D]">
           <span>Riyadh</span>
           <span>London</span>
           <span>Dubai</span>
