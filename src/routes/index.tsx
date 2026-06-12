@@ -223,35 +223,35 @@ function Intro() {
     },
   ];
   return (
-    <section className="corporate-grid bg-white py-24 md:py-32">
+    <section className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-20 flex flex-col items-end justify-between gap-8 lg:flex-row">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:mb-16 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <h2 className="mb-6 font-display text-4xl font-bold uppercase leading-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+            <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
               Architecting Your Saudi Expansion
             </h2>
-            <p className="text-lg italic text-[#44474d] sm:text-xl">
+            <p className="text-base italic leading-8 text-[#44474d] sm:text-xl">
               We provide the structural foundation for international
               corporations to thrive in the Kingdom's evolving economic
               landscape.
             </p>
           </div>
-          <div className="h-2 w-48 bg-[#C6A45D]" />
+          <div className="h-1.5 w-28 bg-[#C6A45D] sm:w-48" />
         </div>
         <div className="grid border-2 border-[#071B36] md:grid-cols-3">
           {items.map((it, i) => (
             <div
               key={it.title}
               className={
-                "group border-l-4 border-[#C6A45D] bg-white p-10 transition-all duration-300 hover:border-l-[12px] hover:bg-[#071B36]/[0.02] md:p-12 " +
+                "group border-l-4 border-[#C6A45D] bg-white p-6 transition-all duration-300 hover:bg-[#071B36]/[0.02] sm:p-8 lg:p-10 " +
                 (i < items.length - 1 ? "md:border-r-2 md:border-r-[#071B36]" : "")
               }
             >
-              <MS name={it.icon} className="mb-8 text-5xl text-[#071B36]" />
-              <h3 className="mb-6 font-display text-2xl font-bold uppercase text-[#071B36] md:text-[28px]">
+              <MS name={it.icon} className="mb-6 text-4xl text-[#071B36] sm:text-5xl" />
+              <h3 className="mb-4 break-words font-display text-xl font-bold uppercase leading-tight text-[#071B36] sm:text-2xl">
                 {it.title}
               </h3>
-              <p className="font-medium leading-relaxed text-[#44474d]">
+              <p className="font-medium leading-7 text-[#44474d]">
                 {it.body}
               </p>
             </div>
@@ -277,15 +277,15 @@ function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#071B36] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#071B36] py-16 text-white sm:py-20 lg:py-28"
     >
-      <div className="absolute right-0 top-0 h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5" />
+      <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-24 text-center">
-          <h2 className="mb-4 font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-[56px]">
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
             Operational Capabilities
           </h2>
-          <p className="text-sm font-bold uppercase tracking-[0.4em] text-[#C6A45D]">
+          <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
             Comprehensive Enterprise Support
           </p>
         </div>
@@ -293,16 +293,16 @@ function Services() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="group bg-[#071B36] p-10 transition-all duration-500 hover:bg-[#C6A45D]"
+              className="group bg-[#071B36] p-6 transition-all duration-500 hover:bg-[#C6A45D] sm:p-8 lg:p-10"
             >
               <MS
                 name={s.icon}
                 className="mb-6 text-4xl text-[#C6A45D] transition-colors group-hover:text-[#071B36]"
               />
-              <h4 className="mb-4 font-display text-xl font-bold uppercase transition-colors group-hover:text-[#071B36]">
+              <h4 className="mb-3 break-words font-display text-lg font-bold uppercase leading-tight transition-colors group-hover:text-[#071B36] sm:text-xl">
                 {s.title}
               </h4>
-              <p className="text-sm text-white/60 transition-colors group-hover:text-[#071B36]/80">
+              <p className="text-sm leading-6 text-white/60 transition-colors group-hover:text-[#071B36]/80">
                 {s.body}
               </p>
             </div>
