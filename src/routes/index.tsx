@@ -21,6 +21,7 @@ import {
 } from "react-icons/fi";
 import { LuLandmark, LuBuilding2 } from "react-icons/lu";
 import { FiChevronDown } from "react-icons/fi";
+import { QRCodeSVG } from "qrcode.react";
 import { FaGavel, FaLinkedinIn, FaInstagram, FaWhatsapp, FaXTwitter, FaQuoteLeft } from "react-icons/fa6";
 
 const HERO_IMG =
@@ -576,18 +577,31 @@ function Contact() {
             intake form.
           </p>
           <div className="mb-10 grid grid-cols-3 gap-3 sm:gap-6 lg:mb-12 lg:gap-8">
-            {["WhatsApp Direct", "Instagram", "TikTok"].map((l) => (
-              <div key={l} className="group min-w-0 text-center">
-                <div className="mb-3 flex aspect-square w-full items-center justify-center border-2 border-[#071B36] p-2 transition-all group-hover:border-[#C6A45D] sm:border-4 sm:p-4">
-                  <MS
-                    name="qr_code_scanner"
-                    className="text-4xl text-[#071B36] opacity-20 sm:text-6xl"
+            {[
+              { l: "WhatsApp Direct", url: WHATSAPP_URL },
+              { l: "Instagram", url: "https://instagram.com/whitmoresaudi" },
+              { l: "TikTok", url: "https://tiktok.com/@whitmoresaudi" },
+            ].map(({ l, url }) => (
+              <a
+                key={l}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="group min-w-0 text-center"
+              >
+                <div className="mb-3 flex aspect-square w-full items-center justify-center border-2 border-[#071B36] bg-white p-2 transition-all group-hover:border-[#C6A45D] sm:border-4 sm:p-3">
+                  <QRCodeSVG
+                    value={url}
+                    bgColor="#ffffff"
+                    fgColor="#071B36"
+                    level="M"
+                    className="h-full w-full"
                   />
                 </div>
                 <span className="block break-words text-[10px] font-black uppercase leading-4 tracking-[0.08em] text-[#071B36] sm:text-xs sm:tracking-[0.12em]">
                   {l}
                 </span>
-              </div>
+              </a>
             ))}
           </div>
           <div className="space-y-5">
