@@ -191,7 +191,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100svh-68px)] items-center overflow-hidden py-14 pt-28 sm:min-h-[90vh] sm:py-20 sm:pt-32 lg:py-24"
+      className="relative flex min-h-[calc(100svh-68px)] items-center overflow-hidden py-14 pt-28 sm:min-h-[90vh] sm:py-20 sm:pt-32 lg:pb-24 lg:pt-40"
     >
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay absolute inset-0 z-10" />
