@@ -710,54 +710,31 @@ function FAQ() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer className="bg-[#071B36] pt-16 text-white sm:pt-20 lg:pt-24">
-      <div className="mx-auto mb-12 grid max-w-[1400px] grid-cols-1 gap-10 px-5 sm:px-8 md:grid-cols-4 md:gap-12 md:px-12 lg:mb-16 lg:px-20">
-        <div className="md:col-span-2">
-          <div className="mb-8">
-            <img
-              src={LOGO_IMG}
-              alt="Whitmore Saudi Connect"
-              className="h-12 w-auto max-w-[250px] brightness-0 invert sm:h-14"
-            />
-          </div>
-          <p className="mb-8 max-w-sm text-xs font-medium uppercase leading-7 tracking-[0.14em] text-white/60">
-            Bridging global capital with Saudi opportunity through architectural
-            precision and uncompromising service standards.
-          </p>
-          <div className="flex gap-6">
-            <MS name="language" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
-            <MS name="share" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
-            <MS name="verified" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
-          </div>
+    <footer className="bg-[#071B36] py-12 text-white sm:py-16 lg:py-20">
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-8 px-5 sm:px-8 md:px-12 lg:px-20">
+        <img
+          src={LOGO_IMG}
+          alt="Whitmore Saudi Connect"
+          className="h-12 w-auto max-w-[240px] brightness-0 invert sm:h-14"
+        />
+        <div className="flex gap-6">
+          <a href="#" aria-label="LinkedIn" className="text-white/50 transition-colors hover:text-[#C6A45D]">
+            <MS name="business_center" />
+          </a>
+          <a href="#" aria-label="Instagram" className="text-white/50 transition-colors hover:text-[#C6A45D]">
+            <MS name="photo_camera" />
+          </a>
+          <a href="#" aria-label="X" className="text-white/50 transition-colors hover:text-[#C6A45D]">
+            <MS name="alternate_email" />
+          </a>
+          <a href="#" aria-label="WhatsApp" className="text-white/50 transition-colors hover:text-[#C6A45D]">
+            <MS name="chat" />
+          </a>
         </div>
-        <FooterCol
-          title="Architecture"
-          items={[
-            ["Consultancy", "#services"],
-            ["Formations", "#packages"],
-            ["Deployment", "#process"],
-            ["Inquiry", "#contact"],
-          ]}
-        />
-        <FooterCol
-          title="Governance"
-          items={[
-            ["Privacy Protocol", "#"],
-            ["Terms of Engagement", "#"],
-            ["Legal Mandate", "#"],
-            ["Compliance", "#"],
-          ]}
-        />
-      </div>
-      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 border-t border-white/10 px-5 py-8 text-center sm:px-8 md:flex-row md:px-12 lg:px-20">
-        <p className="max-w-2xl text-[10px] font-black uppercase leading-5 tracking-[0.14em] text-white/40 md:text-left">
-          © {new Date().getFullYear()} Whitmore Saudi Connect. Independent consultancy. Government fees separate.
+        <div className="h-px w-full max-w-xs bg-white/10" />
+        <p className="text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
+          © {new Date().getFullYear()} Whitmore Saudi Connect. All rights reserved.
         </p>
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#C6A45D]">
-          <span>Riyadh</span>
-          <span>London</span>
-          <span>Dubai</span>
-        </div>
       </div>
     </footer>
   );
