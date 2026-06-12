@@ -194,7 +194,7 @@ function Hero() {
       className="relative flex min-h-[calc(100svh-68px)] items-center overflow-hidden py-14 pt-28 sm:min-h-[90vh] sm:py-20 sm:pt-32 lg:pb-24 lg:pt-40"
     >
       <div className="absolute inset-0 z-0">
-      <div className="absolute inset-0 z-10 bg-[#071B36]/85" />
+        <div className="hero-overlay absolute inset-0 z-10" />
         <img
           src={HERO_IMG}
           alt="Riyadh Financial District"
@@ -202,7 +202,7 @@ function Hero() {
         />
       </div>
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto flex max-w-4xl min-w-0 flex-col items-center text-center">
+        <div className="max-w-4xl min-w-0">
           <div className="mb-5 inline-block max-w-full bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
             Vision 2030 Aligned
           </div>
@@ -210,12 +210,12 @@ function Hero() {
             Establish Your{" "}
             <span className="text-[#C6A45D]">Empire</span> In Saudi Arabia
           </h1>
-          <p className="mb-8 max-w-2xl text-base leading-8 text-white/80 sm:mb-10 sm:text-xl">
+          <p className="mb-8 max-w-2xl border-l-4 border-[#C6A45D] pl-5 text-base leading-8 text-white/80 sm:mb-10 sm:pl-8 sm:text-xl">
             The premier gateway for 100% foreign-owned corporate entities. We
             handle the complexity of MISA licensing, registration, and
             institutional setup with uncompromising precision.
           </p>
-          <div className="mb-10 flex w-full flex-col justify-center gap-4 sm:mb-14 sm:w-auto sm:flex-row sm:gap-5 lg:mb-16">
+          <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:gap-5 lg:mb-16">
             <a
               href="#contact"
               className="flex min-h-14 items-center justify-center bg-[#C6A45D] px-5 py-4 text-center text-[12px] font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:px-8"
@@ -229,7 +229,7 @@ function Hero() {
               Our Packages
             </a>
           </div>
-          <div className="grid w-full grid-cols-2 gap-x-5 gap-y-7 border-t-2 border-white/10 pt-8 text-center sm:gap-8 sm:pt-10 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-7 border-t-2 border-white/10 pt-8 sm:gap-8 sm:pt-10 md:grid-cols-4">
             {[
               ["100%", "Foreign Ownership"],
               ["03 Days", "Fast-Track Setup"],
