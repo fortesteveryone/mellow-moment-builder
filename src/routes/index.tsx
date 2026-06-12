@@ -1,5 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import type { IconType } from "react-icons";
+import {
+  FiMessageCircle,
+  FiX,
+  FiMenu,
+  FiCheckSquare,
+  FiZap,
+  FiPhone,
+  FiMail,
+  FiAward,
+  FiCheckCircle,
+  FiBriefcase,
+  FiFileText,
+  FiClipboard,
+  FiUserCheck,
+  FiCreditCard,
+  FiShare2,
+  FiHome,
+} from "react-icons/fi";
+import { LuLandmark, LuBuilding2 } from "react-icons/lu";
+import { FaGavel, FaLinkedinIn, FaInstagram, FaWhatsapp, FaXTwitter, FaQuoteLeft } from "react-icons/fa6";
 
 const HERO_IMG =
   "https://lh3.googleusercontent.com/aida/AP1WRLu5mUmi6luUgJxlxS38lB8dnZCXNuUZBWrqoonn-uq6veTVbgNjAgX_JAhdSXgzdOphyQFPzEgua9QQ-Bsc911Q71ghi2j0KoRO33jgGCrAUBwzQ_vNiYn573FRfuApzCERVTRlMezLIhptoqooYRjsSTK0q-loDxhgqEbfQ0fq_CSWyNh7qmrjmRomjGI2gC50T-QBeT4MBO7qqZHNchOdtc-snK-v4v9NHD4DKS5NUaK6KaMSmXqK_OI";
@@ -32,10 +53,33 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const ICON_MAP: Record<string, IconType> = {
+  chat: FiMessageCircle,
+  close: FiX,
+  menu: FiMenu,
+  check_box: FiCheckSquare,
+  bolt: FiZap,
+  call: FiPhone,
+  mail: FiMail,
+  account_balance: LuLandmark,
+  gavel: FaGavel,
+  hub: FiShare2,
+  badge: FiAward,
+  verified: FiCheckCircle,
+  business: FiBriefcase,
+  corporate_fare: LuBuilding2,
+  article: FiFileText,
+  receipt_long: FiClipboard,
+  assignment_ind: FiUserCheck,
+  payments: FiCreditCard,
+  home: FiHome,
+};
+
 function MS({ name, className = "" }: { name: string; className?: string }) {
+  const Icon = ICON_MAP[name] ?? FiCheckCircle;
   return (
-    <span className={`material-symbols-outlined ${className}`} aria-hidden>
-      {name}
+    <span className={`inline-flex items-center justify-center ${className}`} aria-hidden>
+      <Icon />
     </span>
   );
 }
@@ -717,18 +761,25 @@ function Footer() {
           alt="Whitmore Saudi Connect"
           className="h-12 w-auto max-w-[240px] brightness-0 invert sm:h-14"
         />
-        <div className="flex gap-6">
-          <a href="#" aria-label="LinkedIn" className="text-white/50 transition-colors hover:text-[#C6A45D]">
-            <MS name="business_center" />
+        <figure className="relative max-w-xl px-6 text-center">
+          <FaQuoteLeft className="absolute left-0 top-0 text-2xl text-[#C6A45D]/60" aria-hidden />
+          <blockquote className="font-display text-base italic leading-7 text-white/80 sm:text-lg">
+            Bridging visionary investors with the boundless opportunity of the
+            Kingdom — discretion, precision, and excellence at every step.
+          </blockquote>
+        </figure>
+        <div className="flex gap-5 text-lg">
+          <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+            <FaLinkedinIn />
           </a>
-          <a href="#" aria-label="Instagram" className="text-white/50 transition-colors hover:text-[#C6A45D]">
-            <MS name="photo_camera" />
+          <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+            <FaInstagram />
           </a>
-          <a href="#" aria-label="X" className="text-white/50 transition-colors hover:text-[#C6A45D]">
-            <MS name="alternate_email" />
+          <a href="#" aria-label="X" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+            <FaXTwitter />
           </a>
-          <a href="#" aria-label="WhatsApp" className="text-white/50 transition-colors hover:text-[#C6A45D]">
-            <MS name="chat" />
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+            <FaWhatsapp />
           </a>
         </div>
         <div className="h-px w-full max-w-xs bg-white/10" />
