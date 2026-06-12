@@ -766,15 +766,15 @@ function Footer() {
 function FooterCol({ title, items }: { title: string; items: [string, string][] }) {
   return (
     <div>
-      <h5 className="mb-10 text-sm font-black uppercase tracking-[0.3em] text-[#C6A45D]">
+      <h5 className="mb-6 text-sm font-black uppercase leading-5 tracking-[0.18em] text-[#C6A45D]">
         {title}
       </h5>
-      <ul className="space-y-5">
+      <ul className="space-y-3">
         {items.map(([l, h]) => (
           <li key={l}>
             <a
               href={h}
-              className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-white"
+              className="break-words text-xs font-bold uppercase leading-5 tracking-[0.12em] text-white/60 transition-colors hover:text-white"
             >
               {l}
             </a>
