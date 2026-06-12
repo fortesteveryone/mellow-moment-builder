@@ -316,33 +316,33 @@ function Services() {
 /* ---------------- Packages ---------------- */
 function Packages() {
   return (
-    <section id="packages" className="bg-[#f5f3ee] py-24 md:py-32">
+    <section id="packages" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto mb-20 max-w-4xl text-center">
-          <h2 className="mb-6 font-display text-4xl font-bold uppercase text-[#071B36] sm:text-5xl md:text-[56px]">
+        <div className="mx-auto mb-12 max-w-4xl text-center lg:mb-16">
+          <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Elite Formation Tiers
           </h2>
-          <p className="text-lg text-[#44474d] sm:text-xl">
+          <p className="text-base leading-7 text-[#44474d] sm:text-xl">
             Select the engagement model that matches your strategic timeline.
           </p>
         </div>
-        <div className="mx-auto grid max-w-6xl border-4 border-[#071B36] shadow-2xl md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl border-2 border-[#071B36] shadow-2xl md:grid-cols-2 md:border-4">
           {/* Enterprise */}
-          <div className="flex flex-col border-b-4 border-[#071B36] bg-white p-10 md:border-b-0 md:border-r-4 md:p-16">
-            <div className="mb-12">
-              <h3 className="mb-4 font-display text-3xl font-black uppercase text-[#071B36]">
+          <div className="flex min-w-0 flex-col border-b-2 border-[#071B36] bg-white p-6 sm:p-8 md:border-b-0 md:border-r-4 lg:p-12 xl:p-16">
+            <div className="mb-8">
+              <h3 className="mb-4 break-words font-display text-2xl font-black uppercase leading-tight text-[#071B36] sm:text-3xl">
                 Enterprise Standard
               </h3>
-              <p className="mb-8 text-xs font-bold uppercase tracking-widest text-[#44474d]">
+              <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-[#44474d]">
                 Standard 30-Day Deployment
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-5xl font-black text-[#071B36]">
+                <span className="font-display text-4xl font-black text-[#071B36] sm:text-5xl">
                   £15,000
                 </span>
               </div>
             </div>
-            <ul className="mb-16 flex-grow space-y-6">
+            <ul className="mb-10 flex-grow space-y-4 sm:mb-12 sm:space-y-5">
               {[
                 "Full Corporate Consultancy",
                 "MISA License Coordination",
@@ -350,38 +350,38 @@ function Packages() {
                 "Institutional Bank Prep",
                 "24/7 WhatsApp Support",
               ].map((it) => (
-                <li key={it} className="flex gap-4 font-bold text-[#071B36]">
-                  <MS name="check_box" className="text-[#C6A45D]" />
-                  {it}
+                <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-[#071B36]">
+                  <MS name="check_box" className="shrink-0 pt-0.5 text-[#C6A45D]" />
+                  <span className="min-w-0 break-words">{it}</span>
                 </li>
               ))}
             </ul>
             <a
               href="#contact"
-              className="w-full border-4 border-[#071B36] py-6 text-center text-sm font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white"
+              className="w-full border-2 border-[#071B36] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white sm:py-5 sm:text-sm"
             >
               Enquire Now
             </a>
           </div>
           {/* Elite */}
-          <div className="relative flex flex-col bg-[#071B36] p-10 text-white md:p-16">
-            <div className="absolute right-6 top-6 bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#071B36] sm:right-10 sm:top-10 sm:px-6">
+          <div className="flex min-w-0 flex-col bg-[#071B36] p-6 text-white sm:p-8 lg:p-12 xl:p-16">
+            <div className="mb-8 w-fit max-w-full bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-[#071B36] sm:px-6">
               Priority Fast-Track
             </div>
-            <div className="mb-12 mt-12 sm:mt-0">
-              <h3 className="mb-4 font-display text-3xl font-black uppercase text-[#C6A45D]">
+            <div className="mb-8">
+              <h3 className="mb-4 break-words font-display text-2xl font-black uppercase leading-tight text-[#C6A45D] sm:text-3xl">
                 Elite Strategic
               </h3>
-              <p className="mb-8 text-xs font-bold uppercase tracking-widest text-white/60">
+              <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-white/60">
                 Priority 3-Day Executive Deployment
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-5xl font-black text-[#C6A45D]">
+                <span className="font-display text-4xl font-black text-[#C6A45D] sm:text-5xl">
                   £20,000
                 </span>
               </div>
             </div>
-            <ul className="mb-16 flex-grow space-y-6">
+            <ul className="mb-10 flex-grow space-y-4 sm:mb-12 sm:space-y-5">
               {[
                 "Priority Senior Consultation",
                 "Urgent Documentation Review",
@@ -389,21 +389,21 @@ function Packages() {
                 "Dedicated Senior Lead",
                 "Global Partner Concierge",
               ].map((it) => (
-                <li key={it} className="flex gap-4 font-bold text-white">
-                  <MS name="bolt" className="text-[#C6A45D]" />
-                  {it}
+                <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-white">
+                  <MS name="bolt" className="shrink-0 pt-0.5 text-[#C6A45D]" />
+                  <span className="min-w-0 break-words">{it}</span>
                 </li>
               ))}
             </ul>
             <a
               href="#contact"
-              className="w-full bg-[#C6A45D] py-6 text-center text-sm font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-white"
+              className="w-full bg-[#C6A45D] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm"
             >
               Secure Priority
             </a>
           </div>
         </div>
-        <p className="mt-12 text-center text-xs font-bold uppercase tracking-widest text-[#44474d] opacity-60">
+        <p className="mt-8 text-center text-xs font-bold uppercase leading-5 tracking-[0.12em] text-[#44474d] opacity-60">
           Official government fees are additional to professional consultancy
           rates.
         </p>
