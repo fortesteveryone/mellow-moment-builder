@@ -74,18 +74,15 @@ function Header() {
   ];
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b-4 border-[#071B36] bg-white">
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-20">
-        <a href="#home" className="flex items-center gap-3">
+      <nav className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 sm:py-4 md:gap-8 md:px-12 lg:px-20 lg:py-5">
+        <a href="#home" className="flex min-w-0 items-center">
           <img
             src={LOGO_IMG}
             alt="Whitmore Saudi Connect"
-            className="h-10 w-auto object-contain md:h-14"
+            className="h-10 w-auto shrink-0 object-contain sm:h-12 md:h-14"
           />
-          <span className="hidden font-display text-2xl font-extrabold uppercase tracking-tight text-[#071B36] xl:block">
-            Whitmore Saudi Connect
-          </span>
         </a>
-        <div className="hidden items-center gap-10 lg:flex">
+        <div className="hidden items-center justify-center gap-6 xl:gap-10 lg:flex">
           {nav.map((n, i) => (
             <a
               key={n.h}
@@ -101,23 +98,24 @@ function Header() {
             </a>
           ))}
         </div>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="hidden items-center gap-3 bg-[#071B36] px-6 py-3.5 text-[13px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-8 md:py-4"
-        >
-          <MS name="chat" />
-          <span className="hidden md:inline">Consult Now</span>
-          <span className="md:hidden">Consult</span>
-        </a>
-        <button
-          onClick={() => setOpen(!open)}
-          className="ml-2 p-2 text-[#071B36] lg:hidden"
-          aria-label="Toggle menu"
-        >
-          <MS name={open ? "close" : "menu"} className="text-3xl" />
-        </button>
+        <div className="flex items-center justify-end gap-2 sm:gap-4">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 bg-[#071B36] px-4 py-3 text-[12px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-6 md:py-3.5 md:text-[13px] lg:px-8 lg:py-4"
+          >
+            <MS name="chat" />
+            <span>Consult</span>
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            className="p-2 text-[#071B36] lg:hidden"
+            aria-label="Toggle menu"
+          >
+            <MS name={open ? "close" : "menu"} className="text-3xl" />
+          </button>
+        </div>
       </nav>
       {open && (
         <div className="border-t-2 border-[#071B36]/10 bg-white lg:hidden">
@@ -144,7 +142,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[90vh] items-center overflow-hidden pt-28"
+      className="relative flex min-h-[90vh] items-center overflow-hidden pt-24 sm:pt-28"
     >
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay absolute inset-0 z-10" />
@@ -226,7 +224,7 @@ function Intro() {
   ];
   return (
     <section className="corporate-grid bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-20 flex flex-col items-end justify-between gap-8 lg:flex-row">
           <div className="max-w-2xl">
             <h2 className="mb-6 font-display text-4xl font-bold uppercase leading-tight text-[#071B36] sm:text-5xl md:text-[56px]">
@@ -282,7 +280,7 @@ function Services() {
       className="relative overflow-hidden bg-[#071B36] py-24 text-white md:py-32"
     >
       <div className="absolute right-0 top-0 h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5" />
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-24 text-center">
           <h2 className="mb-4 font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-[56px]">
             Operational Capabilities
@@ -319,7 +317,7 @@ function Services() {
 function Packages() {
   return (
     <section id="packages" className="bg-[#f5f3ee] py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <h2 className="mb-6 font-display text-4xl font-bold uppercase text-[#071B36] sm:text-5xl md:text-[56px]">
             Elite Formation Tiers
@@ -425,7 +423,7 @@ function Process() {
   ];
   return (
     <section id="process" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <h2 className="mb-24 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
           Strategic Deployment Roadmap
         </h2>
@@ -472,7 +470,7 @@ function WhyUs() {
   ];
   return (
     <section className="bg-[#071B36] py-24 text-white md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-6 md:px-20 lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2 lg:gap-20">
         <div className="order-2 lg:order-1">
           <h2 className="mb-12 border-l-8 border-[#C6A45D] pl-6 font-display text-4xl font-bold uppercase sm:text-5xl md:pl-8">
             Prerequisite Assets
@@ -520,7 +518,7 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
   return (
     <section id="contact" className="corporate-grid bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 md:px-20 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2">
         <div>
           <h2 className="mb-10 font-display text-4xl font-bold uppercase leading-none text-[#071B36] sm:text-5xl md:text-[56px]">
             Initiate Your
@@ -669,7 +667,7 @@ function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section id="faq" className="bg-[#f5f3ee] py-24 md:py-32">
-      <div className="mx-auto max-w-[900px] px-6 md:px-20">
+      <div className="mx-auto max-w-[900px] px-5 sm:px-8 md:px-12 lg:px-20">
         <h2 className="mb-20 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
           Essential Intelligence
         </h2>
@@ -715,15 +713,12 @@ function Footer() {
     <footer className="bg-[#071B36] pt-24 text-white">
       <div className="mx-auto mb-20 grid max-w-[1400px] grid-cols-1 gap-12 px-6 md:grid-cols-4 md:gap-20 md:px-20">
         <div className="md:col-span-2">
-          <div className="mb-10 flex items-center gap-3">
+          <div className="mb-10">
             <img
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
-              className="h-12 w-auto brightness-0 invert"
+              className="h-14 w-auto brightness-0 invert sm:h-16"
             />
-            <span className="font-display text-2xl font-black uppercase tracking-tight text-[#C6A45D]">
-              Whitmore Saudi Connect
-            </span>
           </div>
           <p className="mb-12 max-w-sm text-xs font-medium uppercase leading-relaxed tracking-widest text-white/60">
             Bridging global capital with Saudi opportunity through architectural
