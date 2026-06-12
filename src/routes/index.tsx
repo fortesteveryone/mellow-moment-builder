@@ -359,10 +359,6 @@ function Services() {
               <p className="text-sm leading-6 text-white/60 transition-colors group-hover:text-[#071B36]/80">
                 {s.body}
               </p>
-              <span className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#C6A45D] transition-colors group-hover:text-[#071B36]">
-                <FaWhatsapp className="text-base" />
-                Enquire on WhatsApp
-              </span>
             </a>
           ))}
         </div>
