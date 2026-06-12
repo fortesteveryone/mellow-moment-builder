@@ -1,82 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import heroImage from "@/assets/hero-riyadh.jpg";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  Menu,
-  X,
-  Check,
-  ArrowRight,
-  MessageCircle,
-  Phone,
-  Mail,
-  Globe,
-  Instagram,
-  Compass,
-  FileText,
-  Users,
-  Shield,
-  Zap,
-  Building2,
-  Briefcase,
-  Landmark,
-  CreditCard,
-  Stamp,
-  ScrollText,
-  UserCheck,
-  ClipboardCheck,
-  Sparkles,
-} from "lucide-react";
+
+const HERO_IMG =
+  "https://lh3.googleusercontent.com/aida/AP1WRLu5mUmi6luUgJxlxS38lB8dnZCXNuUZBWrqoonn-uq6veTVbgNjAgX_JAhdSXgzdOphyQFPzEgua9QQ-Bsc911Q71ghi2j0KoRO33jgGCrAUBwzQ_vNiYn573FRfuApzCERVTRlMezLIhptoqooYRjsSTK0q-loDxhgqEbfQ0fq_CSWyNh7qmrjmRomjGI2gC50T-QBeT4MBO7qqZHNchOdtc-snK-v4v9NHD4DKS5NUaK6KaMSmXqK_OI";
+
+const LOGO_IMG =
+  "https://lh3.googleusercontent.com/aida/AP1WRLsPfsm2MxJ_FFvxjX0rS4bcQiFwrb7688cTBsj6ex8w1YYkpM4GXzDCip_SORJzE3KzLH3UjJXp46DfrCVe9WBTgg6Xu6JINZLkZG3GiOuDhv84BCtY8O8J48lxwLjcUTK4UVR_-Evbll79BqU8mzHMfUJAg10gaeEPgiWuGjeQCyZuvTEMHDDcxqIKy61Wi7AVscWeNxTynKwXUWS5Dazl9oqHp859c1zXInnbaOukv9AqpCUNZOe4TVM";
+
+const WHATSAPP_URL = "https://wa.me/440000000000";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
         title:
-          "Whitmore Saudi Connect — Premium Saudi Business Setup Consultancy",
+          "Whitmore Saudi Connect | Premium Saudi Company Formation",
       },
       {
         name: "description",
         content:
-          "End-to-end consultancy for international investors setting up 100% foreign-owned companies in Saudi Arabia. Investment license, CR, tax, visa, and bank account opening support.",
+          "Premium consultancy for 100% foreign-owned company formation in Saudi Arabia. End-to-end investment licensing and registration support.",
       },
-      {
-        property: "og:title",
-        content: "Whitmore Saudi Connect — Premium Saudi Business Setup",
-      },
+      { property: "og:title", content: "Whitmore Saudi Connect" },
       {
         property: "og:description",
         content:
-          "Premium consultancy helping international investors establish companies in Saudi Arabia.",
+          "Premium consultancy for 100% foreign-owned company formation in Saudi Arabia.",
       },
     ],
   }),
   component: Index,
 });
 
-const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Packages", href: "#packages" },
-  { label: "Process", href: "#process" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
-];
-
-const WHATSAPP_URL = "https://wa.me/44000000000";
+function MS({ name, className = "" }: { name: string; className?: string }) {
+  return (
+    <span className={`material-symbols-outlined ${className}`} aria-hidden>
+      {name}
+    </span>
+  );
+}
 
 function Index() {
   return (
-    <div className="min-h-screen bg-[var(--color-brand-offwhite)] text-[var(--color-brand-ink)]">
+    <div
+      className="min-h-screen bg-[#fbf9f4] font-sans text-[#1b1c19] selection:bg-[#C6A45D]/30"
+      style={{ scrollBehavior: "smooth" }}
+    >
       <Header />
       <main>
         <Hero />
@@ -84,10 +53,8 @@ function Index() {
         <Services />
         <Packages />
         <Process />
-        <Documents />
         <WhyUs />
-        <QRContact />
-        <LeadForm />
+        <Contact />
         <FAQ />
       </main>
       <Footer />
@@ -98,62 +65,73 @@ function Index() {
 /* ---------------- Header ---------------- */
 function Header() {
   const [open, setOpen] = useState(false);
+  const nav = [
+    { l: "Home", h: "#home" },
+    { l: "Services", h: "#services" },
+    { l: "Packages", h: "#packages" },
+    { l: "Process", h: "#process" },
+    { l: "Contact", h: "#contact" },
+  ];
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-brand-gold)]/20 bg-[var(--color-brand-navy)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--color-brand-navy)]/80">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#home" className="flex items-center gap-3 text-white">
-          <Logo />
-          <span className="font-display text-xl font-semibold tracking-wide">
-            Whitmore <span className="text-[var(--color-brand-gold)]">Saudi Connect</span>
+    <header className="fixed left-0 top-0 z-50 w-full border-b-4 border-[#071B36] bg-white">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-20">
+        <a href="#home" className="flex items-center gap-3">
+          <img
+            src={LOGO_IMG}
+            alt="Whitmore Saudi Connect"
+            className="h-10 w-auto object-contain md:h-14"
+          />
+          <span className="hidden font-display text-2xl font-extrabold uppercase tracking-tight text-[#071B36] xl:block">
+            Whitmore Saudi Connect
           </span>
         </a>
-        <nav className="hidden items-center gap-8 lg:flex">
-          {NAV.map((n) => (
+        <div className="hidden items-center gap-10 lg:flex">
+          {nav.map((n, i) => (
             <a
-              key={n.href}
-              href={n.href}
-              className="text-sm font-medium text-white/80 transition hover:text-[var(--color-brand-gold)]"
+              key={n.h}
+              href={n.h}
+              className={
+                "pb-1 text-[14px] font-bold uppercase tracking-[0.1em] transition-colors hover:text-[#C6A45D] " +
+                (i === 0
+                  ? "border-b-4 border-[#C6A45D] font-black text-[#071B36]"
+                  : "text-[#44474d]")
+              }
             >
-              {n.label}
+              {n.l}
             </a>
           ))}
-        </nav>
-        <div className="hidden lg:block">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-gold)] bg-[var(--color-brand-gold)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-navy)] transition hover:bg-[var(--color-brand-gold-warm)]"
-          >
-            Book Consultation <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="hidden items-center gap-3 bg-[#071B36] px-6 py-3.5 text-[13px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-8 md:py-4"
+        >
+          <MS name="chat" />
+          <span className="hidden md:inline">Consult Now</span>
+          <span className="md:hidden">Consult</span>
+        </a>
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-md p-2 text-white lg:hidden"
+          className="ml-2 p-2 text-[#071B36] lg:hidden"
           aria-label="Toggle menu"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <MS name={open ? "close" : "menu"} className="text-3xl" />
         </button>
-      </div>
+      </nav>
       {open && (
-        <div className="border-t border-white/10 bg-[var(--color-brand-navy)] lg:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
-            {NAV.map((n) => (
+        <div className="border-t-2 border-[#071B36]/10 bg-white lg:hidden">
+          <div className="mx-auto flex max-w-[1400px] flex-col px-6 py-4">
+            {nav.map((n) => (
               <a
-                key={n.href}
-                href={n.href}
+                key={n.h}
+                href={n.h}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/5 hover:text-[var(--color-brand-gold)]"
+                className="border-b border-[#071B36]/10 py-3 text-sm font-bold uppercase tracking-widest text-[#071B36]"
               >
-                {n.label}
+                {n.l}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-brand-gold)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-navy)]"
-            >
-              Book Consultation
-            </a>
           </div>
         </div>
       )}
@@ -161,77 +139,63 @@ function Header() {
   );
 }
 
-function Logo() {
-  return (
-    <div className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-[var(--color-brand-gold)]/60 bg-[var(--color-brand-royal)]">
-      <span className="font-display text-lg font-semibold text-[var(--color-brand-gold)]">
-        W
-      </span>
-    </div>
-  );
-}
-
 /* ---------------- Hero ---------------- */
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-[var(--color-brand-navy)]">
-      <img
-        src={heroImage}
-        alt="Abstract Riyadh skyline with Middle Eastern arches"
-        width={1920}
-        height={1280}
-        className="absolute inset-0 h-full w-full object-cover opacity-60"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-brand-navy)]/80 via-[var(--color-brand-navy)]/70 to-[var(--color-brand-navy)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand-navy)] via-transparent to-transparent" />
-
-      <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-24 sm:pt-32 lg:pb-40 lg:pt-40">
-        <div className="max-w-3xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-gold)]/40 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-brand-gold)]">
-            <Sparkles className="h-3.5 w-3.5" /> Premium Saudi Consultancy
+    <section
+      id="home"
+      className="relative flex min-h-[90vh] items-center overflow-hidden pt-28"
+    >
+      <div className="absolute inset-0 z-0">
+        <div className="hero-overlay absolute inset-0 z-10" />
+        <img
+          src={HERO_IMG}
+          alt="Riyadh Financial District"
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-6 text-white md:px-20">
+        <div className="max-w-4xl">
+          <div className="mb-6 inline-block bg-[#C6A45D] px-4 py-1 text-xs font-black uppercase tracking-[0.3em] text-[#071B36]">
+            Vision 2030 Partner
           </div>
-          <h1 className="font-display text-4xl font-medium leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-            Start Your{" "}
-            <span className="text-[var(--color-brand-gold)]">
-              100% Foreign-Owned
-            </span>{" "}
-            Company in Saudi Arabia
+          <h1 className="mb-8 font-display text-5xl font-extrabold uppercase leading-[1.05] sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.1]">
+            Establish Your{" "}
+            <span className="text-[#C6A45D]">Empire</span> In Saudi Arabia
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-            Premium end-to-end consultancy for investment license, commercial
-            registration, tax registration, visa support, and bank account
-            opening assistance.
+          <p className="mb-12 max-w-2xl border-l-4 border-[#C6A45D] pl-8 text-lg leading-relaxed text-white/80 sm:text-xl">
+            The premier gateway for 100% foreign-owned corporate entities. We
+            handle the complexity of MISA licensing, registration, and
+            institutional setup with uncompromising precision.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mb-20 flex flex-col gap-6 sm:flex-row">
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-gold)] px-7 py-3.5 text-sm font-semibold text-[var(--color-brand-navy)] shadow-lg shadow-[var(--color-brand-gold)]/20 transition hover:bg-[var(--color-brand-gold-warm)]"
+              href="#contact"
+              className="flex items-center justify-center gap-3 bg-[#C6A45D] px-10 py-5 text-[13px] font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-white"
             >
-              <MessageCircle className="h-4 w-4" /> Book Consultation on WhatsApp
+              Request Strategic Briefing
             </a>
             <a
               href="#packages"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-[var(--color-brand-gold)] hover:text-[var(--color-brand-gold)]"
+              className="border-2 border-white/30 px-10 py-5 text-center text-[13px] font-black uppercase tracking-widest text-white transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]"
             >
-              View Packages <ArrowRight className="h-4 w-4" />
+              Our Packages
             </a>
           </div>
-
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-12 border-t-2 border-white/10 pt-12 md:grid-cols-4">
             {[
-              "100% Foreign Ownership Support",
-              "Fast-Track Package Available",
-              "End-to-End Setup Assistance",
-              "International Client Support",
-            ].map((b) => (
-              <div
-                key={b}
-                className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3 text-xs font-medium text-white/85 backdrop-blur"
-              >
-                <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--color-brand-gold)]" />
-                {b}
+              ["100%", "Foreign Ownership"],
+              ["03 Days", "Fast-Track Setup"],
+              ["Elite", "Consultancy Model"],
+              ["Global", "Investor Network"],
+            ].map(([n, l]) => (
+              <div key={l}>
+                <div className="mb-2 font-display text-3xl font-black text-[#C6A45D] sm:text-4xl">
+                  {n}
+                </div>
+                <div className="text-[10px] font-black uppercase tracking-widest text-white/60">
+                  {l}
+                </div>
               </div>
             ))}
           </div>
@@ -243,55 +207,54 @@ function Hero() {
 
 /* ---------------- Intro ---------------- */
 function Intro() {
-  const features = [
+  const items = [
     {
-      icon: Compass,
-      title: "Strategic Guidance",
-      body: "Clarity at every stage — from market entry strategy to post-setup coordination, tailored to international investors.",
+      icon: "account_balance",
+      title: "Strategic Authority",
+      body: "Navigating the nuances of the Saudi market with expert advice tailored to your specific business activities and long-term goals.",
     },
     {
-      icon: FileText,
-      title: "Document & Application Support",
-      body: "Meticulous document review, preparation, and submission guidance handled by experienced consultants.",
+      icon: "gavel",
+      title: "Legal Framework",
+      body: "Precision-focused preparation of all legal documentation, ensuring seamless compliance with Ministry of Investment requirements.",
     },
     {
-      icon: Users,
-      title: "Premium Client Coordination",
-      body: "A dedicated consultant maintains direct communication, keeping you informed and supported throughout.",
+      icon: "hub",
+      title: "Institutional Access",
+      body: "Dedicated account managers bridging the gap between your international headquarters and Saudi Arabian authorities.",
     },
   ];
   return (
-    <section className="bg-[var(--color-brand-offwhite)] py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>Introduction</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-            Your Gateway to Business Ownership in Saudi Arabia
-          </h2>
-          <div className="mx-auto mt-6 h-px w-24 gold-divider" />
-          <p className="mt-8 text-base leading-relaxed text-[var(--color-brand-ink)]/70 sm:text-lg">
-            Whitmore Saudi Connect helps international entrepreneurs and
-            investors navigate the Saudi company formation process with clarity,
-            speed, and professional guidance. From documentation to registration
-            support, our consultancy process is designed for clients who want a
-            smooth and premium experience.
-          </p>
+    <section className="corporate-grid bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+        <div className="mb-20 flex flex-col items-end justify-between gap-8 lg:flex-row">
+          <div className="max-w-2xl">
+            <h2 className="mb-6 font-display text-4xl font-bold uppercase leading-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+              Architecting Your Saudi Expansion
+            </h2>
+            <p className="text-lg italic text-[#44474d] sm:text-xl">
+              We provide the structural foundation for international
+              corporations to thrive in the Kingdom's evolving economic
+              landscape.
+            </p>
+          </div>
+          <div className="h-2 w-48 bg-[#C6A45D]" />
         </div>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {features.map((f) => (
+        <div className="grid border-2 border-[#071B36] md:grid-cols-3">
+          {items.map((it, i) => (
             <div
-              key={f.title}
-              className="group rounded-2xl border border-[var(--color-brand-navy)]/10 bg-white p-8 transition hover:-translate-y-1 hover:border-[var(--color-brand-gold)]/50 hover:shadow-xl hover:shadow-[var(--color-brand-navy)]/5"
+              key={it.title}
+              className={
+                "group border-l-4 border-[#C6A45D] bg-white p-10 transition-all duration-300 hover:border-l-[12px] hover:bg-[#071B36]/[0.02] md:p-12 " +
+                (i < items.length - 1 ? "md:border-r-2 md:border-r-[#071B36]" : "")
+              }
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--color-brand-navy)] text-[var(--color-brand-gold)] transition group-hover:bg-[var(--color-brand-gold)] group-hover:text-[var(--color-brand-navy)]">
-                <f.icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-6 font-display text-xl font-semibold text-[var(--color-brand-navy)]">
-                {f.title}
+              <MS name={it.icon} className="mb-8 text-5xl text-[#071B36]" />
+              <h3 className="mb-6 font-display text-2xl font-bold uppercase text-[#071B36] md:text-[28px]">
+                {it.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-brand-ink)]/70">
-                {f.body}
+              <p className="font-medium leading-relaxed text-[#44474d]">
+                {it.body}
               </p>
             </div>
           ))}
@@ -301,60 +264,49 @@ function Intro() {
   );
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-brand-gold)]">
-      <span className="h-px w-8 bg-[var(--color-brand-gold)]" />
-      {children}
-      <span className="h-px w-8 bg-[var(--color-brand-gold)]" />
-    </div>
-  );
-}
-
 /* ---------------- Services ---------------- */
 function Services() {
   const services = [
-    { icon: Stamp, title: "Trade Name Reservation" },
-    { icon: ScrollText, title: "Investment License Assistance" },
-    { icon: Building2, title: "Commercial Registration / CR Support" },
-    { icon: Landmark, title: "Chamber of Commerce Signature Approval Support" },
-    { icon: ClipboardCheck, title: "Application Submission Guidance" },
-    { icon: Briefcase, title: "Qiwa Registration Support" },
-    { icon: UserCheck, title: "Muqeem Registration Support" },
-    { icon: FileText, title: "Zakat & Tax Registration Support" },
-    { icon: Shield, title: "General Manager Visa Assistance" },
-    { icon: CreditCard, title: "Bank Account Opening Support" },
-    { icon: Compass, title: "Business Setup Consultation" },
-    { icon: ScrollText, title: "Document Coordination" },
+    { icon: "badge", title: "Trade Name Reservation", body: "Expert assistance in securing your unique business identity across KSA." },
+    { icon: "verified", title: "Investment License", body: "Comprehensive MISA license application and processing support." },
+    { icon: "business", title: "Commercial Registry", body: "Full CR issuance management with Ministry of Commerce." },
+    { icon: "corporate_fare", title: "Chamber Approval", body: "Securing necessary institutional approvals and memberships." },
+    { icon: "article", title: "Application Filing", body: "Professional filing of all regulatory paperwork with authorities." },
+    { icon: "receipt_long", title: "ZATCA Compliance", body: "Zakat, Tax, and Customs Authority registration support." },
+    { icon: "assignment_ind", title: "GM Residency", body: "Strategic support for General Manager visas and residency." },
+    { icon: "payments", title: "Corporate Banking", body: "Introductory assistance for corporate banking within Saudi Arabia." },
   ];
   return (
-    <section id="services" className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Services</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-            Our Consultancy Services
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[#071B36] py-24 text-white md:py-32"
+    >
+      <div className="absolute right-0 top-0 h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5" />
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-20">
+        <div className="mb-24 text-center">
+          <h2 className="mb-4 font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-[56px]">
+            Operational Capabilities
           </h2>
-          <p className="mt-6 text-base text-[var(--color-brand-ink)]/65">
-            A complete suite of support services for international clients
-            establishing a presence in the Kingdom.
+          <p className="text-sm font-bold uppercase tracking-[0.4em] text-[#C6A45D]">
+            Comprehensive Enterprise Support
           </p>
         </div>
-
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-brand-navy)]/10 bg-[var(--color-brand-navy)]/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <div
               key={s.title}
-              className="group flex items-start gap-4 bg-white p-6 transition hover:bg-[var(--color-brand-offwhite)]"
+              className="group bg-[#071B36] p-10 transition-all duration-500 hover:bg-[#C6A45D]"
             >
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-[var(--color-brand-gold)]/40 bg-[var(--color-brand-offwhite)] text-[var(--color-brand-navy)] transition group-hover:bg-[var(--color-brand-navy)] group-hover:text-[var(--color-brand-gold)]">
-                <s.icon className="h-5 w-5" />
-              </div>
-              <div className="min-w-0">
-                <h3 className="font-display text-lg font-semibold text-[var(--color-brand-navy)]">
-                  {s.title}
-                </h3>
-              </div>
+              <MS
+                name={s.icon}
+                className="mb-6 text-4xl text-[#C6A45D] transition-colors group-hover:text-[#071B36]"
+              />
+              <h4 className="mb-4 font-display text-xl font-bold uppercase transition-colors group-hover:text-[#071B36]">
+                {s.title}
+              </h4>
+              <p className="text-sm text-white/60 transition-colors group-hover:text-[#071B36]/80">
+                {s.body}
+              </p>
             </div>
           ))}
         </div>
@@ -365,140 +317,97 @@ function Services() {
 
 /* ---------------- Packages ---------------- */
 function Packages() {
-  const pkgs = [
-    {
-      name: "Enterprise Package",
-      timeline: "30 Days",
-      price: "£15,000",
-      description:
-        "A complete consultancy package for clients who want professional support throughout the Saudi company setup process.",
-      includes: [
-        "Initial consultation",
-        "Document checklist",
-        "Application preparation support",
-        "Investment license assistance",
-        "Commercial registration support",
-        "Tax and registration guidance",
-        "Bank account opening support",
-        "WhatsApp consultant support",
-      ],
-      cta: "Choose Enterprise Package",
-      featured: false,
-    },
-    {
-      name: "Premium Fast-Track Package",
-      timeline: "3 Days",
-      price: "£20,000",
-      description:
-        "A priority consultancy package for urgent clients who require faster coordination, dedicated support, and premium handling.",
-      includes: [
-        "Priority consultation",
-        "Urgent document review",
-        "Fast-track coordination",
-        "Dedicated consultant support",
-        "Priority application preparation",
-        "CR, tax, visa, and banking support guidance",
-        "Direct WhatsApp communication",
-      ],
-      cta: "Choose Premium Package",
-      featured: true,
-    },
-  ];
   return (
-    <section id="packages" className="bg-[var(--color-brand-offwhite)] py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Packages</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-            Premium Saudi Company Formation Packages
+    <section id="packages" className="bg-[#f5f3ee] py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+        <div className="mx-auto mb-20 max-w-4xl text-center">
+          <h2 className="mb-6 font-display text-4xl font-bold uppercase text-[#071B36] sm:text-5xl md:text-[56px]">
+            Elite Formation Tiers
           </h2>
+          <p className="text-lg text-[#44474d] sm:text-xl">
+            Select the engagement model that matches your strategic timeline.
+          </p>
         </div>
-
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          {pkgs.map((p) => (
-            <div
-              key={p.name}
-              className={
-                "relative rounded-3xl p-8 sm:p-10 transition " +
-                (p.featured
-                  ? "bg-[var(--color-brand-navy)] text-white shadow-2xl shadow-[var(--color-brand-navy)]/20 ring-1 ring-[var(--color-brand-gold)]/40"
-                  : "border border-[var(--color-brand-navy)]/10 bg-white text-[var(--color-brand-ink)]")
-              }
-            >
-              {p.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[var(--color-brand-gold)] px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--color-brand-navy)]">
-                  Most Popular
-                </div>
-              )}
-              <div
-                className={
-                  "text-xs font-semibold uppercase tracking-[0.25em] " +
-                  (p.featured ? "text-[var(--color-brand-gold)]" : "text-[var(--color-brand-gold)]")
-                }
-              >
-                {p.timeline}
-              </div>
-              <h3
-                className={
-                  "mt-3 font-display text-3xl font-semibold sm:text-4xl " +
-                  (p.featured ? "text-white" : "text-[var(--color-brand-navy)]")
-                }
-              >
-                {p.name}
+        <div className="mx-auto grid max-w-6xl border-4 border-[#071B36] shadow-2xl md:grid-cols-2">
+          {/* Enterprise */}
+          <div className="flex flex-col border-b-4 border-[#071B36] bg-white p-10 md:border-b-0 md:border-r-4 md:p-16">
+            <div className="mb-12">
+              <h3 className="mb-4 font-display text-3xl font-black uppercase text-[#071B36]">
+                Enterprise Standard
               </h3>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span
-                  className={
-                    "font-display text-5xl font-semibold " +
-                    (p.featured ? "text-[var(--color-brand-gold)]" : "text-[var(--color-brand-navy)]")
-                  }
-                >
-                  {p.price}
+              <p className="mb-8 text-xs font-bold uppercase tracking-widest text-[#44474d]">
+                Standard 30-Day Deployment
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display text-5xl font-black text-[#071B36]">
+                  £15,000
                 </span>
               </div>
-              <p
-                className={
-                  "mt-5 text-sm leading-relaxed " +
-                  (p.featured ? "text-white/75" : "text-[var(--color-brand-ink)]/70")
-                }
-              >
-                {p.description}
-              </p>
-              <div className={"my-8 h-px " + (p.featured ? "bg-white/10" : "bg-[var(--color-brand-navy)]/10")} />
-              <ul className="space-y-3">
-                {p.includes.map((i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm">
-                    <Check
-                      className={
-                        "mt-0.5 h-4 w-4 shrink-0 " +
-                        (p.featured ? "text-[var(--color-brand-gold)]" : "text-[var(--color-brand-navy)]")
-                      }
-                    />
-                    <span className={p.featured ? "text-white/90" : "text-[var(--color-brand-ink)]/80"}>
-                      {i}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className={
-                  "mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition " +
-                  (p.featured
-                    ? "bg-[var(--color-brand-gold)] text-[var(--color-brand-navy)] hover:bg-[var(--color-brand-gold-warm)]"
-                    : "border border-[var(--color-brand-navy)] text-[var(--color-brand-navy)] hover:bg-[var(--color-brand-navy)] hover:text-white")
-                }
-              >
-                {p.cta} <ArrowRight className="h-4 w-4" />
-              </a>
             </div>
-          ))}
+            <ul className="mb-16 flex-grow space-y-6">
+              {[
+                "Full Corporate Consultancy",
+                "MISA License Coordination",
+                "Commercial Registration",
+                "Institutional Bank Prep",
+                "24/7 WhatsApp Support",
+              ].map((it) => (
+                <li key={it} className="flex gap-4 font-bold text-[#071B36]">
+                  <MS name="check_box" className="text-[#C6A45D]" />
+                  {it}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#contact"
+              className="w-full border-4 border-[#071B36] py-6 text-center text-sm font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white"
+            >
+              Enquire Now
+            </a>
+          </div>
+          {/* Elite */}
+          <div className="relative flex flex-col bg-[#071B36] p-10 text-white md:p-16">
+            <div className="absolute right-6 top-6 bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#071B36] sm:right-10 sm:top-10 sm:px-6">
+              Priority Fast-Track
+            </div>
+            <div className="mb-12 mt-12 sm:mt-0">
+              <h3 className="mb-4 font-display text-3xl font-black uppercase text-[#C6A45D]">
+                Elite Strategic
+              </h3>
+              <p className="mb-8 text-xs font-bold uppercase tracking-widest text-white/60">
+                Priority 3-Day Executive Deployment
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display text-5xl font-black text-[#C6A45D]">
+                  £20,000
+                </span>
+              </div>
+            </div>
+            <ul className="mb-16 flex-grow space-y-6">
+              {[
+                "Priority Senior Consultation",
+                "Urgent Documentation Review",
+                "Accelerated MISA Processing",
+                "Dedicated Senior Lead",
+                "Global Partner Concierge",
+              ].map((it) => (
+                <li key={it} className="flex gap-4 font-bold text-white">
+                  <MS name="bolt" className="text-[#C6A45D]" />
+                  {it}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#contact"
+              className="w-full bg-[#C6A45D] py-6 text-center text-sm font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-white"
+            >
+              Secure Priority
+            </a>
+          </div>
         </div>
-
-        <p className="mx-auto mt-10 max-w-3xl text-center text-xs leading-relaxed text-[var(--color-brand-ink)]/55">
-          Processing time may depend on authority approval, document readiness,
-          client eligibility, and third-party/government processing timelines.
-          Government fees are not included unless clearly stated in writing.
+        <p className="mt-12 text-center text-xs font-bold uppercase tracking-widest text-[#44474d] opacity-60">
+          Official government fees are additional to professional consultancy
+          rates.
         </p>
       </div>
     </section>
@@ -508,91 +417,37 @@ function Packages() {
 /* ---------------- Process ---------------- */
 function Process() {
   const steps = [
-    { n: "01", t: "Book a Consultation", d: "Schedule a discovery call with a senior consultant via WhatsApp or the contact form." },
-    { n: "02", t: "Document Review & Eligibility Check", d: "We review your documents and confirm eligibility against activity requirements." },
-    { n: "03", t: "Application Preparation", d: "Our team prepares all applications and coordinates required signatures and approvals." },
-    { n: "04", t: "Submission & Registration Support", d: "Guided submission for investment license, commercial registration, and tax." },
-    { n: "05", t: "Final Setup Guidance", d: "Visa coordination, banking introductions, and post-setup advisory to operate smoothly." },
+    { n: "01", t: "Strategic Intake", d: "Detailed assessment of corporate objectives and market alignment." },
+    { n: "02", t: "Validation", d: "Rigorous verification of global credentials and legal standing." },
+    { n: "03", t: "Execution", d: "Simultaneous filing across all relevant Saudi ministries." },
+    { n: "04", t: "Deployment", d: "License issuance and commercial registry activation." },
+    { n: "05", t: "Continuity", d: "Post-formation support for banking and executive residency." },
   ];
   return (
-    <section id="process" className="bg-[var(--color-brand-navy)] py-24 text-white sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Process</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-white sm:text-5xl">
-            How The Process Works
-          </h2>
-        </div>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+    <section id="process" className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+        <h2 className="mb-24 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+          Strategic Deployment Roadmap
+        </h2>
+        <div className="grid border-t-8 border-[#071B36] lg:grid-cols-5">
           {steps.map((s, i) => (
             <div
               key={s.n}
-              className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur transition hover:border-[var(--color-brand-gold)]/40 hover:bg-white/[0.06]"
+              className={
+                "group p-10 " +
+                (i % 2 === 1 ? "bg-[#f5f3ee] " : "") +
+                (i < steps.length - 1 ? "border-b-2 border-[#071B36] lg:border-b-0 lg:border-r-2 " : "")
+              }
             >
-              <div className="font-display text-4xl font-semibold text-[var(--color-brand-gold)]">
+              <div className="mb-6 font-display text-6xl font-black text-[#C6A45D] opacity-30 transition-opacity group-hover:opacity-100">
                 {s.n}
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-white">
+              <h4 className="mb-4 font-display text-xl font-bold uppercase text-[#071B36]">
                 {s.t}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/65">{s.d}</p>
-              {i < steps.length - 1 && (
-                <div className="absolute -right-3 top-10 hidden h-px w-6 bg-[var(--color-brand-gold)]/40 lg:block" />
-              )}
+              </h4>
+              <p className="text-sm font-medium text-[#44474d]">{s.d}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------------- Documents ---------------- */
-function Documents() {
-  const docs = [
-    "Passport copy",
-    "Proposed company name",
-    "Business activity details",
-    "Shareholder information",
-    "Contact details",
-    "Existing company documents, if applicable",
-    "Power of attorney, if required",
-    "Additional documents based on activity type",
-  ];
-  return (
-    <section className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          <div>
-            <Eyebrow>Documents</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-              Basic Document Checklist
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-[var(--color-brand-ink)]/70">
-              A clear list of the essentials needed to begin your Saudi company
-              formation journey. Our consultants will guide you through every
-              additional requirement specific to your business.
-            </p>
-            <p className="mt-6 rounded-xl border border-[var(--color-brand-gold)]/30 bg-[var(--color-brand-offwhite)] p-4 text-xs leading-relaxed text-[var(--color-brand-ink)]/70">
-              <strong className="text-[var(--color-brand-navy)]">Note:</strong>{" "}
-              Final document requirements may vary depending on business
-              activity, ownership structure, and authority requirements.
-            </p>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {docs.map((d) => (
-              <div
-                key={d}
-                className="flex items-start gap-3 rounded-xl border border-[var(--color-brand-navy)]/10 bg-[var(--color-brand-offwhite)] p-4 text-sm transition hover:border-[var(--color-brand-gold)]/50"
-              >
-                <div className="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-[var(--color-brand-navy)] text-[var(--color-brand-gold)]">
-                  <Check className="h-3.5 w-3.5" />
-                </div>
-                <span className="text-[var(--color-brand-ink)]/80">{d}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -601,271 +456,254 @@ function Documents() {
 
 /* ---------------- Why Us ---------------- */
 function WhyUs() {
-  const items = [
-    { icon: Sparkles, t: "Premium Client Experience", d: "Boutique-style service designed for serious investors and high-ticket clients." },
-    { icon: Compass, t: "Clear Step-by-Step Guidance", d: "A transparent roadmap from first call through to final setup — no surprises." },
-    { icon: Building2, t: "Saudi Market Entry Support", d: "Practical, current insight into the local landscape for international entrants." },
-    { icon: MessageCircle, t: "Fast Communication Through WhatsApp", d: "Direct access to your consultant for prompt, dedicated responses." },
+  const assets = [
+    { i: "passport", l: "Global Passports" },
+    { i: "history_edu", l: "Proposed Nomenclature" },
+    { i: "analytics", l: "Activity Definitions" },
+    { i: "group", l: "Shareholder Structure" },
+    { i: "map", l: "Regional Presence" },
+    { i: "verified_user", l: "Notarized POA" },
+  ];
+  const standards = [
+    { t: "Unrivaled Precision", d: "Eliminating administrative friction through deep institutional intelligence." },
+    { t: "Senior Advisory", d: "You deal with partners, not assistants. Expert guidance at every touchpoint." },
+    { t: "Confidentiality", d: "Discrete handling of high-value corporate expansions and investor data." },
+    { t: "Velocity", d: "Harnessing priority channels to ensure market entry at the speed of business." },
   ];
   return (
-    <section className="bg-[var(--color-brand-offwhite)] py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Why Us</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-            Why Investors Choose Whitmore Saudi Connect
+    <section className="bg-[#071B36] py-24 text-white md:py-32">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-6 md:px-20 lg:grid-cols-2 lg:gap-20">
+        <div className="order-2 lg:order-1">
+          <h2 className="mb-12 border-l-8 border-[#C6A45D] pl-6 font-display text-4xl font-bold uppercase sm:text-5xl md:pl-8">
+            Prerequisite Assets
           </h2>
-        </div>
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <div
-              key={it.t}
-              className="group rounded-2xl border border-[var(--color-brand-navy)]/10 bg-white p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-brand-navy)]/5"
-            >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--color-brand-navy)] text-[var(--color-brand-gold)]">
-                <it.icon className="h-5 w-5" />
+          <div className="grid gap-6 sm:grid-cols-2">
+            {assets.map((a) => (
+              <div
+                key={a.l}
+                className="group flex items-center gap-6 border-2 border-white/10 p-6 transition-all hover:border-[#C6A45D]"
+              >
+                <MS
+                  name={a.i}
+                  className="text-3xl text-[#C6A45D] transition-transform group-hover:scale-110"
+                />
+                <span className="text-sm font-bold uppercase tracking-widest">
+                  {a.l}
+                </span>
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-[var(--color-brand-navy)]">
-                {it.t}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-brand-ink)]/70">{it.d}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className="relative order-1 overflow-hidden bg-[#C6A45D] p-10 text-[#071B36] shadow-2xl md:p-16 lg:order-2">
+          <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full border-[40px] border-[#071B36]/5 bg-[#071B36]/5" />
+          <h2 className="relative mb-12 font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
+            The Whitmore Standard
+          </h2>
+          <div className="relative z-10 space-y-10">
+            {standards.map((s) => (
+              <div key={s.t}>
+                <h4 className="mb-2 text-lg font-black uppercase tracking-widest text-[#071B36]">
+                  {s.t}
+                </h4>
+                <p className="font-medium">{s.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------------- QR / Contact CTA ---------------- */
-function QRContact() {
-  const qrs = [
-    { label: "WhatsApp", handle: "+44 XXX XXX XXXX" },
-    { label: "Instagram", handle: "@whitmoresaudiconnect" },
-    { label: "TikTok", handle: "@whitmoresaudiconnect" },
-  ];
-  return (
-    <section className="relative overflow-hidden bg-[var(--color-brand-navy)] py-24 text-white sm:py-32">
-      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #C6A45D 1px, transparent 0)", backgroundSize: "32px 32px" }} />
-      <div className="relative mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Connect</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-white sm:text-5xl">
-            Scan, Connect, Start Your Saudi Business Journey
-          </h2>
-          <p className="mt-6 text-base text-white/70">
-            Scan the QR code to speak with our consultant directly or follow us
-            on social media for updates.
-          </p>
-        </div>
-
-        <div className="mt-16 grid gap-6 sm:grid-cols-3">
-          {qrs.map((q) => (
-            <div
-              key={q.label}
-              className="flex flex-col items-center rounded-2xl border border-[var(--color-brand-gold)]/30 bg-white/[0.04] p-8 text-center backdrop-blur"
-            >
-              <div className="grid aspect-square w-40 place-items-center rounded-xl border border-[var(--color-brand-gold)]/30 bg-white">
-                <QRPlaceholder />
-              </div>
-              <div className="mt-5 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-brand-gold)]">
-                {q.label}
-              </div>
-              <div className="mt-1 text-sm text-white/85">{q.handle}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <ContactItem icon={MessageCircle} label="WhatsApp" value="+44 XXX XXX XXXX" href={WHATSAPP_URL} />
-          <ContactItem icon={Phone} label="Phone" value="+44 XXX XXX XXXX" href="tel:+44000000000" />
-          <ContactItem icon={Mail} label="Email" value="info@whitmoresaudiconnect.com" href="mailto:info@whitmoresaudiconnect.com" />
-          <ContactItem icon={Globe} label="Website" value="www.whitmoresaudiconnect.com" href="#" />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ContactItem({ icon: Icon, label, value, href }: { icon: typeof MessageCircle; label: string; value: string; href: string }) {
-  return (
-    <a
-      href={href}
-      className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-[var(--color-brand-gold)]/50 hover:bg-white/[0.06]"
-    >
-      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[var(--color-brand-gold)] text-[var(--color-brand-navy)]">
-        <Icon className="h-4 w-4" />
-      </div>
-      <div className="min-w-0">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-gold)]">{label}</div>
-        <div className="truncate text-sm text-white/90">{value}</div>
-      </div>
-    </a>
-  );
-}
-
-function QRPlaceholder() {
-  return (
-    <svg viewBox="0 0 100 100" className="h-32 w-32 text-[var(--color-brand-navy)]" aria-hidden>
-      <rect width="100" height="100" fill="white" />
-      {/* corner squares */}
-      {[
-        [6, 6],
-        [70, 6],
-        [6, 70],
-      ].map(([x, y]) => (
-        <g key={`${x}-${y}`}>
-          <rect x={x} y={y} width="24" height="24" fill="currentColor" />
-          <rect x={x + 4} y={y + 4} width="16" height="16" fill="white" />
-          <rect x={x + 8} y={y + 8} width="8" height="8" fill="currentColor" />
-        </g>
-      ))}
-      {/* dots */}
-      {Array.from({ length: 60 }).map((_, i) => {
-        const cx = 36 + (i % 8) * 4;
-        const cy = 36 + Math.floor(i / 8) * 4;
-        if ((i * 7) % 3 === 0) return null;
-        return <rect key={i} x={cx} y={cy} width="3" height="3" fill="currentColor" />;
-      })}
-    </svg>
-  );
-}
-
-/* ---------------- Lead Form ---------------- */
-function LeadForm() {
+/* ---------------- Contact ---------------- */
+function Contact() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="contact" className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <Eyebrow>Request Consultation</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-            Speak With a Senior Consultant
+    <section id="contact" className="corporate-grid bg-white py-24 md:py-32">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 md:px-20 lg:grid-cols-2">
+        <div>
+          <h2 className="mb-10 font-display text-4xl font-bold uppercase leading-none text-[#071B36] sm:text-5xl md:text-[56px]">
+            Initiate Your
+            <br />
+            <span className="text-[#C6A45D]">Onboarding</span>
           </h2>
-          <p className="mt-6 text-base text-[var(--color-brand-ink)]/70">
-            Share a few details and our team will contact you to discuss your
-            Saudi setup requirements.
+          <p className="mb-16 max-w-lg text-lg font-medium text-[#44474d] sm:text-xl">
+            Our consultants are available for immediate consultation across our
+            global offices. Scan to connect instantly or utilize our formal
+            intake form.
           </p>
+          <div className="mb-16 grid grid-cols-3 gap-6 md:gap-10">
+            {["WhatsApp Direct", "Instagram", "TikTok"].map((l) => (
+              <div key={l} className="group text-center">
+                <div className="mb-4 flex aspect-square w-full items-center justify-center border-4 border-[#071B36] p-4 transition-all group-hover:border-[#C6A45D]">
+                  <MS
+                    name="qr_code_scanner"
+                    className="text-5xl text-[#071B36] opacity-20 sm:text-6xl"
+                  />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#071B36] sm:text-xs">
+                  {l}
+                </span>
+              </div>
+            ))}
+          </div>
+          <div className="space-y-6">
+            <a
+              href="tel:+440000000000"
+              className="group flex items-center gap-6"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
+                <MS name="call" />
+              </div>
+              <span className="font-display text-lg font-bold uppercase tracking-tight text-[#071B36] sm:text-xl">
+                +44 XXX XXX XXXX
+              </span>
+            </a>
+            <a
+              href="mailto:info@whitmoresaudi.com"
+              className="group flex items-center gap-6"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
+                <MS name="mail" />
+              </div>
+              <span className="font-display text-base font-bold uppercase tracking-tight text-[#071B36] sm:text-xl">
+                info@whitmoresaudi.com
+              </span>
+            </a>
+          </div>
         </div>
 
         <form
           onSubmit={(e) => {
             e.preventDefault();
             setSubmitted(true);
+            setTimeout(() => setSubmitted(false), 5000);
           }}
-          className="mt-12 rounded-3xl border border-[var(--color-brand-navy)]/10 bg-[var(--color-brand-offwhite)] p-8 sm:p-10"
+          className="border-b-[16px] border-[#C6A45D] bg-[#071B36] p-10 text-white shadow-2xl md:p-16"
         >
-          {submitted ? (
-            <div className="py-12 text-center">
-              <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[var(--color-brand-navy)] text-[var(--color-brand-gold)]">
-                <Check className="h-6 w-6" />
-              </div>
-              <h3 className="mt-6 font-display text-2xl font-semibold text-[var(--color-brand-navy)]">
-                Thank you.
-              </h3>
-              <p className="mt-2 text-sm text-[var(--color-brand-ink)]/70">
-                Our consultant will contact you shortly.
-              </p>
+          <h3 className="mb-12 font-display text-3xl font-black uppercase text-[#C6A45D]">
+            Formal Inquiry
+          </h3>
+          <div className="space-y-10">
+            <div className="grid gap-10 sm:grid-cols-2">
+              <FormField label="Corporate Name" placeholder="e.g. Whitmore Global" required />
+              <FormField label="Email Address" type="email" placeholder="office@company.com" required />
             </div>
-          ) : (
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Full Name" id="name"><Input id="name" required placeholder="Your full name" /></Field>
-              <Field label="Email" id="email"><Input id="email" type="email" required placeholder="you@email.com" /></Field>
-              <Field label="Phone / WhatsApp Number" id="phone"><Input id="phone" required placeholder="+44 ..." /></Field>
-              <Field label="Country" id="country"><Input id="country" placeholder="United Kingdom" /></Field>
-              <Field label="Preferred Package" id="package">
-                <select id="package" className="flex h-10 w-full rounded-md border border-[var(--color-brand-navy)]/15 bg-white px-3 py-2 text-sm text-[var(--color-brand-ink)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-gold)]">
-                  <option>Enterprise Package — £15,000</option>
-                  <option>Premium Fast-Track Package — £20,000</option>
-                  <option>Not sure yet</option>
-                </select>
-              </Field>
-              <Field label="Business Activity" id="activity"><Input id="activity" placeholder="e.g. Consulting, Trading, Tech" /></Field>
-              <div className="sm:col-span-2">
-                <Field label="Message" id="message">
-                  <Textarea id="message" rows={5} placeholder="Tell us a little about your plans..." />
-                </Field>
-              </div>
-              <div className="sm:col-span-2">
-                <Button
-                  type="submit"
-                  className="h-12 w-full rounded-full bg-[var(--color-brand-navy)] text-base font-semibold text-white hover:bg-[var(--color-brand-royal)]"
+            <div className="grid gap-10 sm:grid-cols-2">
+              <FormField label="Phone Number" type="tel" placeholder="+44 ..." required />
+              <div>
+                <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+                  Selected Package
+                </label>
+                <select
+                  className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0"
                 >
-                  Request Consultation
-                </Button>
+                  <option className="bg-[#071B36]">Enterprise Standard</option>
+                  <option className="bg-[#071B36]">Elite Strategic (Fast-Track)</option>
+                </select>
               </div>
             </div>
-          )}
+            <div>
+              <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+                Proposed Activity
+              </label>
+              <textarea
+                rows={3}
+                placeholder="Provide a brief overview of intended business activities..."
+                className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-[#C6A45D] py-6 text-sm font-black uppercase tracking-[0.3em] text-[#071B36] transition-all hover:bg-white"
+            >
+              Submit Strategic Inquiry
+            </button>
+            {submitted && (
+              <p className="mt-6 text-center text-sm font-black uppercase tracking-widest text-[#C6A45D]">
+                Transmission Successful. A senior consultant will respond within
+                2 hours.
+              </p>
+            )}
+          </div>
         </form>
       </div>
     </section>
   );
 }
 
-function Field({ label, id, children }: { label: string; id: string; children: React.ReactNode }) {
+function FormField({
+  label,
+  type = "text",
+  placeholder,
+  required,
+}: {
+  label: string;
+  type?: string;
+  placeholder?: string;
+  required?: boolean;
+}) {
   return (
     <div>
-      <Label htmlFor={id} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[var(--color-brand-navy)]">
+      <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
         {label}
-      </Label>
-      {children}
+      </label>
+      <input
+        type={type}
+        placeholder={placeholder}
+        required={required}
+        className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+      />
     </div>
   );
 }
 
 /* ---------------- FAQ ---------------- */
 function FAQ() {
-  const faqs = [
-    {
-      q: "Can foreigners own 100% of a company in Saudi Arabia?",
-      a: "In many sectors, foreign ownership may be available subject to activity type, eligibility, documentation, and authority approval.",
-    },
-    {
-      q: "Is the 3-day package guaranteed?",
-      a: "The Premium Fast-Track Package provides priority consultancy and coordination. Final processing may depend on document readiness, eligibility, and authority timelines.",
-    },
-    {
-      q: "Are government fees included?",
-      a: "Government or third-party fees are not included unless clearly stated in the package agreement.",
-    },
-    {
-      q: "Can I start the process from outside Saudi Arabia?",
-      a: "Yes, initial consultation and documentation guidance can begin remotely.",
-    },
-    {
-      q: "Do you help with bank account opening?",
-      a: "Yes, we provide guidance and support for the bank account opening process, subject to bank requirements.",
-    },
-    {
-      q: "Do you assist with visa and tax registration?",
-      a: "Yes, we provide support and guidance for relevant registration and visa-related steps.",
-    },
+  const items = [
+    { q: "Corporate Sovereignty: 100% Ownership", a: "Under Ministry of Investment (MISA) frameworks, international entities are permitted 100% equity ownership across the vast majority of commercial and industrial sectors, negating the requirement for local sponsorship." },
+    { q: "Fast-Track Engagement Protocol", a: "Our Elite tier utilizes priority processing queues and pre-verified document templates to achieve MISA licensure within 72 business hours, contingent on stakeholder response speed." },
+    { q: "Fee Transparency Structure", a: "Our engagement fees cover high-level consultancy, legal oversight, and administrative handling. Government levies, municipal fees, and license costs are invoiced at cost directly from the respective authorities." },
+    { q: "Remote Deployment Capabilities", a: "Initialization of the license and registration process can be conducted via digital proxy. Physical presence is typically only required during the final stages of corporate bank account activation and biometric residency processing." },
   ];
+  const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-[var(--color-brand-offwhite)] py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="text-center">
-          <Eyebrow>FAQ</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl font-medium leading-tight text-[var(--color-brand-navy)] sm:text-5xl">
-            Frequently Asked Questions
-          </h2>
+    <section id="faq" className="bg-[#f5f3ee] py-24 md:py-32">
+      <div className="mx-auto max-w-[900px] px-6 md:px-20">
+        <h2 className="mb-20 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+          Essential Intelligence
+        </h2>
+        <div className="border-t-4 border-[#071B36]">
+          {items.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={i} className="border-b-2 border-[#071B36]/10">
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="group flex w-full items-center justify-between py-8 text-left transition-colors hover:text-[#C6A45D]"
+                >
+                  <span className="font-display text-base font-black uppercase text-[#071B36] sm:text-xl">
+                    {f.q}
+                  </span>
+                  <MS
+                    name={isOpen ? "remove" : "add"}
+                    className="text-[#071B36] group-hover:text-[#C6A45D]"
+                  />
+                </button>
+                <div
+                  className={
+                    "overflow-hidden transition-all duration-300 ease-in-out " +
+                    (isOpen ? "max-h-96" : "max-h-0")
+                  }
+                >
+                  <p className="pb-10 font-medium leading-relaxed text-[#44474d]">
+                    {f.a}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <Accordion type="single" collapsible className="mt-12 space-y-3">
-          {faqs.map((f, i) => (
-            <AccordionItem
-              key={i}
-              value={`item-${i}`}
-              className="rounded-2xl border border-[var(--color-brand-navy)]/10 bg-white px-6"
-            >
-              <AccordionTrigger className="py-5 text-left font-display text-base font-semibold text-[var(--color-brand-navy)] hover:no-underline sm:text-lg">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="pb-5 text-sm leading-relaxed text-[var(--color-brand-ink)]/70">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
       </div>
     </section>
   );
@@ -874,67 +712,80 @@ function FAQ() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer className="border-t border-[var(--color-brand-gold)]/20 bg-[var(--color-brand-navy)] text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-4">
-        <div className="lg:col-span-2">
-          <div className="flex items-center gap-3">
-            <Logo />
-            <span className="font-display text-xl font-semibold">
-              Whitmore <span className="text-[var(--color-brand-gold)]">Saudi Connect</span>
+    <footer className="bg-[#071B36] pt-24 text-white">
+      <div className="mx-auto mb-20 grid max-w-[1400px] grid-cols-1 gap-12 px-6 md:grid-cols-4 md:gap-20 md:px-20">
+        <div className="md:col-span-2">
+          <div className="mb-10 flex items-center gap-3">
+            <img
+              src={LOGO_IMG}
+              alt="Whitmore Saudi Connect"
+              className="h-12 w-auto brightness-0 invert"
+            />
+            <span className="font-display text-2xl font-black uppercase tracking-tight text-[#C6A45D]">
+              Whitmore Saudi Connect
             </span>
           </div>
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-white/65">
-            Premium consultancy helping international investors and foreign
-            business owners establish their presence in the Kingdom of Saudi
-            Arabia with confidence and clarity.
+          <p className="mb-12 max-w-sm text-xs font-medium uppercase leading-relaxed tracking-widest text-white/60">
+            Bridging global capital with Saudi opportunity through architectural
+            precision and uncompromising service standards.
           </p>
-          <div className="mt-6 flex gap-3">
-            <a href={WHATSAPP_URL} className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-[var(--color-brand-gold)] hover:text-[var(--color-brand-gold)]" aria-label="WhatsApp">
-              <MessageCircle className="h-4 w-4" />
-            </a>
-            <a href="#" className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-[var(--color-brand-gold)] hover:text-[var(--color-brand-gold)]" aria-label="Instagram">
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a href="mailto:info@whitmoresaudiconnect.com" className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-[var(--color-brand-gold)] hover:text-[var(--color-brand-gold)]" aria-label="Email">
-              <Mail className="h-4 w-4" />
-            </a>
+          <div className="flex gap-8">
+            <MS name="language" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
+            <MS name="share" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
+            <MS name="verified" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
           </div>
         </div>
-
-        <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-brand-gold)]">Quick Links</h4>
-          <ul className="mt-5 space-y-3 text-sm text-white/75">
-            {NAV.map((n) => (
-              <li key={n.href}>
-                <a href={n.href} className="hover:text-[var(--color-brand-gold)]">{n.label}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-brand-gold)]">Contact</h4>
-          <ul className="mt-5 space-y-3 text-sm text-white/75">
-            <li>+44 XXX XXX XXXX</li>
-            <li>info@whitmoresaudiconnect.com</li>
-            <li>www.whitmoresaudiconnect.com</li>
-            <li>@whitmoresaudiconnect</li>
-          </ul>
-        </div>
+        <FooterCol
+          title="Architecture"
+          items={[
+            ["Consultancy", "#services"],
+            ["Formations", "#packages"],
+            ["Deployment", "#process"],
+            ["Inquiry", "#contact"],
+          ]}
+        />
+        <FooterCol
+          title="Governance"
+          items={[
+            ["Privacy Protocol", "#"],
+            ["Terms of Engagement", "#"],
+            ["Legal Mandate", "#"],
+            ["Compliance", "#"],
+          ]}
+        />
       </div>
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-8">
-          <p className="text-xs leading-relaxed text-white/55">
-            Whitmore Saudi Connect provides consultancy, coordination, and
-            support services. Final approvals, registrations, licenses, visas,
-            tax registrations, and bank account opening are subject to relevant
-            authority, bank, and third-party requirements.
-          </p>
-          <p className="mt-4 text-xs text-white/40">
-            © {new Date().getFullYear()} Whitmore Saudi Connect. All rights reserved.
-          </p>
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 border-t border-white/10 px-6 py-12 md:flex-row md:px-20">
+        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
+          © {new Date().getFullYear()} Whitmore Saudi Connect. Authorized by Ministry of Investment.
+        </p>
+        <div className="flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-[#C6A45D]">
+          <span>Riyadh</span>
+          <span>London</span>
+          <span>Dubai</span>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterCol({ title, items }: { title: string; items: [string, string][] }) {
+  return (
+    <div>
+      <h5 className="mb-10 text-sm font-black uppercase tracking-[0.3em] text-[#C6A45D]">
+        {title}
+      </h5>
+      <ul className="space-y-5">
+        {items.map(([l, h]) => (
+          <li key={l}>
+            <a
+              href={h}
+              className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-white"
+            >
+              {l}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
