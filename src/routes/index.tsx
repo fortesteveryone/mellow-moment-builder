@@ -43,7 +43,7 @@ function MS({ name, className = "" }: { name: string; className?: string }) {
 function Index() {
   return (
     <div
-      className="min-h-screen bg-[#fbf9f4] font-sans text-[#1b1c19] selection:bg-[#C6A45D]/30"
+      className="min-h-screen overflow-x-hidden bg-[#fbf9f4] font-sans text-[#1b1c19] selection:bg-[#C6A45D]/30"
       style={{ scrollBehavior: "smooth" }}
     >
       <Header />
@@ -73,13 +73,13 @@ function Header() {
     { l: "Contact", h: "#contact" },
   ];
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b-4 border-[#071B36] bg-white">
-      <nav className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 sm:py-4 md:gap-8 md:px-12 lg:px-20 lg:py-5">
+    <header className="fixed left-0 top-0 z-50 w-full border-b-2 border-[#071B36] bg-white">
+      <nav className="mx-auto grid max-w-[1400px] grid-cols-[minmax(0,auto)_1fr_auto] items-center gap-3 px-5 py-3 sm:px-8 sm:py-4 md:gap-8 md:px-12 lg:px-20">
         <a href="#home" className="flex min-w-0 items-center">
           <img
             src={LOGO_IMG}
             alt="Whitmore Saudi Connect"
-            className="h-10 w-auto shrink-0 object-contain sm:h-12 md:h-14"
+            className="h-9 w-auto max-w-[190px] shrink-0 object-contain sm:h-11 sm:max-w-[240px] md:h-12"
           />
         </a>
         <div className="hidden items-center justify-center gap-6 xl:gap-10 lg:flex">
@@ -103,14 +103,14 @@ function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 bg-[#071B36] px-4 py-3 text-[12px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-6 md:py-3.5 md:text-[13px] lg:px-8 lg:py-4"
+            className="hidden shrink-0 items-center gap-2 bg-[#071B36] px-4 py-3 text-[12px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-6 md:text-[13px]"
           >
             <MS name="chat" />
             <span>Consult</span>
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="p-2 text-[#071B36] lg:hidden"
+            className="shrink-0 p-2 text-[#071B36] lg:hidden"
             aria-label="Toggle menu"
           >
             <MS name={open ? "close" : "menu"} className="text-3xl" />
@@ -119,7 +119,7 @@ function Header() {
       </nav>
       {open && (
         <div className="border-t-2 border-[#071B36]/10 bg-white lg:hidden">
-          <div className="mx-auto flex max-w-[1400px] flex-col px-6 py-4">
+          <div className="mx-auto flex max-w-[1400px] flex-col px-5 py-3 sm:px-8">
             {nav.map((n) => (
               <a
                 key={n.h}
@@ -142,7 +142,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[90vh] items-center overflow-hidden pt-24 sm:pt-28"
+      className="relative flex min-h-[calc(100svh-68px)] items-center overflow-hidden py-14 pt-28 sm:min-h-[90vh] sm:py-20 sm:pt-32 lg:py-24"
     >
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay absolute inset-0 z-10" />
@@ -152,46 +152,46 @@ function Hero() {
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-6 text-white md:px-20">
-        <div className="max-w-4xl">
-          <div className="mb-6 inline-block bg-[#C6A45D] px-4 py-1 text-xs font-black uppercase tracking-[0.3em] text-[#071B36]">
-            Vision 2030 Partner
+      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
+        <div className="max-w-4xl min-w-0">
+          <div className="mb-5 inline-block max-w-full bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
+            Vision 2030 Aligned
           </div>
-          <h1 className="mb-8 font-display text-5xl font-extrabold uppercase leading-[1.05] sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.1]">
+          <h1 className="mb-6 max-w-[12ch] break-words font-display text-[42px] font-extrabold uppercase leading-[1.02] text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.06]">
             Establish Your{" "}
             <span className="text-[#C6A45D]">Empire</span> In Saudi Arabia
           </h1>
-          <p className="mb-12 max-w-2xl border-l-4 border-[#C6A45D] pl-8 text-lg leading-relaxed text-white/80 sm:text-xl">
+          <p className="mb-8 max-w-2xl border-l-4 border-[#C6A45D] pl-5 text-base leading-8 text-white/80 sm:mb-10 sm:pl-8 sm:text-xl">
             The premier gateway for 100% foreign-owned corporate entities. We
             handle the complexity of MISA licensing, registration, and
             institutional setup with uncompromising precision.
           </p>
-          <div className="mb-20 flex flex-col gap-6 sm:flex-row">
+          <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:gap-5 lg:mb-16">
             <a
               href="#contact"
-              className="flex items-center justify-center gap-3 bg-[#C6A45D] px-10 py-5 text-[13px] font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-white"
+              className="flex min-h-14 items-center justify-center bg-[#C6A45D] px-5 py-4 text-center text-[12px] font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:px-8"
             >
               Request Strategic Briefing
             </a>
             <a
               href="#packages"
-              className="border-2 border-white/30 px-10 py-5 text-center text-[13px] font-black uppercase tracking-widest text-white transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]"
+              className="flex min-h-14 items-center justify-center border-2 border-white/30 px-5 py-4 text-center text-[12px] font-black uppercase leading-5 tracking-[0.14em] text-white transition-all hover:border-[#C6A45D] hover:text-[#C6A45D] sm:px-8"
             >
               Our Packages
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-12 border-t-2 border-white/10 pt-12 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-7 border-t-2 border-white/10 pt-8 sm:gap-8 sm:pt-10 md:grid-cols-4">
             {[
               ["100%", "Foreign Ownership"],
               ["03 Days", "Fast-Track Setup"],
               ["Elite", "Consultancy Model"],
               ["Global", "Investor Network"],
             ].map(([n, l]) => (
-              <div key={l}>
-                <div className="mb-2 font-display text-3xl font-black text-[#C6A45D] sm:text-4xl">
+              <div key={l} className="min-w-0">
+                <div className="mb-2 font-display text-2xl font-black text-[#C6A45D] sm:text-4xl">
                   {n}
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-white/60">
+                <div className="break-words text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/60">
                   {l}
                 </div>
               </div>
@@ -223,35 +223,35 @@ function Intro() {
     },
   ];
   return (
-    <section className="corporate-grid bg-white py-24 md:py-32">
+    <section className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-20 flex flex-col items-end justify-between gap-8 lg:flex-row">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:mb-16 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <h2 className="mb-6 font-display text-4xl font-bold uppercase leading-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+            <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
               Architecting Your Saudi Expansion
             </h2>
-            <p className="text-lg italic text-[#44474d] sm:text-xl">
+            <p className="text-base italic leading-8 text-[#44474d] sm:text-xl">
               We provide the structural foundation for international
               corporations to thrive in the Kingdom's evolving economic
               landscape.
             </p>
           </div>
-          <div className="h-2 w-48 bg-[#C6A45D]" />
+          <div className="h-1.5 w-28 bg-[#C6A45D] sm:w-48" />
         </div>
         <div className="grid border-2 border-[#071B36] md:grid-cols-3">
           {items.map((it, i) => (
             <div
               key={it.title}
               className={
-                "group border-l-4 border-[#C6A45D] bg-white p-10 transition-all duration-300 hover:border-l-[12px] hover:bg-[#071B36]/[0.02] md:p-12 " +
+                "group border-l-4 border-[#C6A45D] bg-white p-6 transition-all duration-300 hover:bg-[#071B36]/[0.02] sm:p-8 lg:p-10 " +
                 (i < items.length - 1 ? "md:border-r-2 md:border-r-[#071B36]" : "")
               }
             >
-              <MS name={it.icon} className="mb-8 text-5xl text-[#071B36]" />
-              <h3 className="mb-6 font-display text-2xl font-bold uppercase text-[#071B36] md:text-[28px]">
+              <MS name={it.icon} className="mb-6 text-4xl text-[#071B36] sm:text-5xl" />
+              <h3 className="mb-4 break-words font-display text-xl font-bold uppercase leading-tight text-[#071B36] sm:text-2xl">
                 {it.title}
               </h3>
-              <p className="font-medium leading-relaxed text-[#44474d]">
+              <p className="font-medium leading-7 text-[#44474d]">
                 {it.body}
               </p>
             </div>
@@ -277,15 +277,15 @@ function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#071B36] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#071B36] py-16 text-white sm:py-20 lg:py-28"
     >
-      <div className="absolute right-0 top-0 h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5" />
+      <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-24 text-center">
-          <h2 className="mb-4 font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-[56px]">
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
             Operational Capabilities
           </h2>
-          <p className="text-sm font-bold uppercase tracking-[0.4em] text-[#C6A45D]">
+          <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
             Comprehensive Enterprise Support
           </p>
         </div>
@@ -293,16 +293,16 @@ function Services() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="group bg-[#071B36] p-10 transition-all duration-500 hover:bg-[#C6A45D]"
+              className="group bg-[#071B36] p-6 transition-all duration-500 hover:bg-[#C6A45D] sm:p-8 lg:p-10"
             >
               <MS
                 name={s.icon}
                 className="mb-6 text-4xl text-[#C6A45D] transition-colors group-hover:text-[#071B36]"
               />
-              <h4 className="mb-4 font-display text-xl font-bold uppercase transition-colors group-hover:text-[#071B36]">
+              <h4 className="mb-3 break-words font-display text-lg font-bold uppercase leading-tight transition-colors group-hover:text-[#071B36] sm:text-xl">
                 {s.title}
               </h4>
-              <p className="text-sm text-white/60 transition-colors group-hover:text-[#071B36]/80">
+              <p className="text-sm leading-6 text-white/60 transition-colors group-hover:text-[#071B36]/80">
                 {s.body}
               </p>
             </div>
@@ -316,33 +316,33 @@ function Services() {
 /* ---------------- Packages ---------------- */
 function Packages() {
   return (
-    <section id="packages" className="bg-[#f5f3ee] py-24 md:py-32">
+    <section id="packages" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto mb-20 max-w-4xl text-center">
-          <h2 className="mb-6 font-display text-4xl font-bold uppercase text-[#071B36] sm:text-5xl md:text-[56px]">
+        <div className="mx-auto mb-12 max-w-4xl text-center lg:mb-16">
+          <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Elite Formation Tiers
           </h2>
-          <p className="text-lg text-[#44474d] sm:text-xl">
+          <p className="text-base leading-7 text-[#44474d] sm:text-xl">
             Select the engagement model that matches your strategic timeline.
           </p>
         </div>
-        <div className="mx-auto grid max-w-6xl border-4 border-[#071B36] shadow-2xl md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl border-2 border-[#071B36] shadow-2xl md:grid-cols-2 md:border-4">
           {/* Enterprise */}
-          <div className="flex flex-col border-b-4 border-[#071B36] bg-white p-10 md:border-b-0 md:border-r-4 md:p-16">
-            <div className="mb-12">
-              <h3 className="mb-4 font-display text-3xl font-black uppercase text-[#071B36]">
+          <div className="flex min-w-0 flex-col border-b-2 border-[#071B36] bg-white p-6 sm:p-8 md:border-b-0 md:border-r-4 lg:p-12 xl:p-16">
+            <div className="mb-8">
+              <h3 className="mb-4 break-words font-display text-2xl font-black uppercase leading-tight text-[#071B36] sm:text-3xl">
                 Enterprise Standard
               </h3>
-              <p className="mb-8 text-xs font-bold uppercase tracking-widest text-[#44474d]">
+              <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-[#44474d]">
                 Standard 30-Day Deployment
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-5xl font-black text-[#071B36]">
+                <span className="font-display text-4xl font-black text-[#071B36] sm:text-5xl">
                   £15,000
                 </span>
               </div>
             </div>
-            <ul className="mb-16 flex-grow space-y-6">
+            <ul className="mb-10 flex-grow space-y-4 sm:mb-12 sm:space-y-5">
               {[
                 "Full Corporate Consultancy",
                 "MISA License Coordination",
@@ -350,38 +350,38 @@ function Packages() {
                 "Institutional Bank Prep",
                 "24/7 WhatsApp Support",
               ].map((it) => (
-                <li key={it} className="flex gap-4 font-bold text-[#071B36]">
-                  <MS name="check_box" className="text-[#C6A45D]" />
-                  {it}
+                <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-[#071B36]">
+                  <MS name="check_box" className="shrink-0 pt-0.5 text-[#C6A45D]" />
+                  <span className="min-w-0 break-words">{it}</span>
                 </li>
               ))}
             </ul>
             <a
               href="#contact"
-              className="w-full border-4 border-[#071B36] py-6 text-center text-sm font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white"
+              className="w-full border-2 border-[#071B36] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white sm:py-5 sm:text-sm"
             >
               Enquire Now
             </a>
           </div>
           {/* Elite */}
-          <div className="relative flex flex-col bg-[#071B36] p-10 text-white md:p-16">
-            <div className="absolute right-6 top-6 bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#071B36] sm:right-10 sm:top-10 sm:px-6">
+          <div className="flex min-w-0 flex-col bg-[#071B36] p-6 text-white sm:p-8 lg:p-12 xl:p-16">
+            <div className="mb-8 w-fit max-w-full bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-[#071B36] sm:px-6">
               Priority Fast-Track
             </div>
-            <div className="mb-12 mt-12 sm:mt-0">
-              <h3 className="mb-4 font-display text-3xl font-black uppercase text-[#C6A45D]">
+            <div className="mb-8">
+              <h3 className="mb-4 break-words font-display text-2xl font-black uppercase leading-tight text-[#C6A45D] sm:text-3xl">
                 Elite Strategic
               </h3>
-              <p className="mb-8 text-xs font-bold uppercase tracking-widest text-white/60">
+              <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-white/60">
                 Priority 3-Day Executive Deployment
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-5xl font-black text-[#C6A45D]">
+                <span className="font-display text-4xl font-black text-[#C6A45D] sm:text-5xl">
                   £20,000
                 </span>
               </div>
             </div>
-            <ul className="mb-16 flex-grow space-y-6">
+            <ul className="mb-10 flex-grow space-y-4 sm:mb-12 sm:space-y-5">
               {[
                 "Priority Senior Consultation",
                 "Urgent Documentation Review",
@@ -389,21 +389,21 @@ function Packages() {
                 "Dedicated Senior Lead",
                 "Global Partner Concierge",
               ].map((it) => (
-                <li key={it} className="flex gap-4 font-bold text-white">
-                  <MS name="bolt" className="text-[#C6A45D]" />
-                  {it}
+                <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-white">
+                  <MS name="bolt" className="shrink-0 pt-0.5 text-[#C6A45D]" />
+                  <span className="min-w-0 break-words">{it}</span>
                 </li>
               ))}
             </ul>
             <a
               href="#contact"
-              className="w-full bg-[#C6A45D] py-6 text-center text-sm font-black uppercase tracking-widest text-[#071B36] transition-all hover:bg-white"
+              className="w-full bg-[#C6A45D] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm"
             >
               Secure Priority
             </a>
           </div>
         </div>
-        <p className="mt-12 text-center text-xs font-bold uppercase tracking-widest text-[#44474d] opacity-60">
+        <p className="mt-8 text-center text-xs font-bold uppercase leading-5 tracking-[0.12em] text-[#44474d] opacity-60">
           Official government fees are additional to professional consultancy
           rates.
         </p>
@@ -422,28 +422,28 @@ function Process() {
     { n: "05", t: "Continuity", d: "Post-formation support for banking and executive residency." },
   ];
   return (
-    <section id="process" className="bg-white py-24 md:py-32">
+    <section id="process" className="bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <h2 className="mb-24 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+        <h2 className="mx-auto mb-12 max-w-3xl break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
           Strategic Deployment Roadmap
         </h2>
-        <div className="grid border-t-8 border-[#071B36] lg:grid-cols-5">
+        <div className="grid border-t-4 border-[#071B36] lg:grid-cols-5 lg:border-t-8">
           {steps.map((s, i) => (
             <div
               key={s.n}
               className={
-                "group p-10 " +
+                "group p-6 sm:p-8 lg:p-6 xl:p-8 " +
                 (i % 2 === 1 ? "bg-[#f5f3ee] " : "") +
                 (i < steps.length - 1 ? "border-b-2 border-[#071B36] lg:border-b-0 lg:border-r-2 " : "")
               }
             >
-              <div className="mb-6 font-display text-6xl font-black text-[#C6A45D] opacity-30 transition-opacity group-hover:opacity-100">
+              <div className="mb-5 font-display text-5xl font-black text-[#C6A45D] opacity-30 transition-opacity group-hover:opacity-100 sm:text-6xl">
                 {s.n}
               </div>
-              <h4 className="mb-4 font-display text-xl font-bold uppercase text-[#071B36]">
+              <h4 className="mb-3 break-words font-display text-lg font-bold uppercase leading-tight text-[#071B36] sm:text-xl">
                 {s.t}
               </h4>
-              <p className="text-sm font-medium text-[#44474d]">{s.d}</p>
+              <p className="text-sm font-medium leading-6 text-[#44474d]">{s.d}</p>
             </div>
           ))}
         </div>
@@ -469,41 +469,41 @@ function WhyUs() {
     { t: "Velocity", d: "Harnessing priority channels to ensure market entry at the speed of business." },
   ];
   return (
-    <section className="bg-[#071B36] py-24 text-white md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2 lg:gap-20">
+    <section className="bg-[#071B36] py-16 text-white sm:py-20 lg:py-28">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
         <div className="order-2 lg:order-1">
-          <h2 className="mb-12 border-l-8 border-[#C6A45D] pl-6 font-display text-4xl font-bold uppercase sm:text-5xl md:pl-8">
+          <h2 className="mb-8 border-l-4 border-[#C6A45D] pl-4 font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:pl-6 lg:text-5xl">
             Prerequisite Assets
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {assets.map((a) => (
               <div
                 key={a.l}
-                className="group flex items-center gap-6 border-2 border-white/10 p-6 transition-all hover:border-[#C6A45D]"
+                className="group flex min-w-0 items-center gap-4 border-2 border-white/10 p-4 transition-all hover:border-[#C6A45D] sm:p-5"
               >
                 <MS
                   name={a.i}
-                  className="text-3xl text-[#C6A45D] transition-transform group-hover:scale-110"
+                  className="shrink-0 text-3xl text-[#C6A45D] transition-transform group-hover:scale-110"
                 />
-                <span className="text-sm font-bold uppercase tracking-widest">
+                <span className="min-w-0 break-words text-xs font-bold uppercase leading-5 tracking-[0.12em] sm:text-sm">
                   {a.l}
                 </span>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative order-1 overflow-hidden bg-[#C6A45D] p-10 text-[#071B36] shadow-2xl md:p-16 lg:order-2">
+        <div className="relative order-1 overflow-hidden bg-[#C6A45D] p-6 text-[#071B36] shadow-2xl sm:p-8 lg:order-2 lg:p-12 xl:p-16">
           <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full border-[40px] border-[#071B36]/5 bg-[#071B36]/5" />
-          <h2 className="relative mb-12 font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
+          <h2 className="relative mb-8 break-words font-display text-3xl font-black uppercase leading-tight sm:text-4xl lg:text-5xl">
             The Whitmore Standard
           </h2>
-          <div className="relative z-10 space-y-10">
+          <div className="relative z-10 space-y-6 sm:space-y-8">
             {standards.map((s) => (
               <div key={s.t}>
-                <h4 className="mb-2 text-lg font-black uppercase tracking-widest text-[#071B36]">
+                <h4 className="mb-2 break-words text-base font-black uppercase leading-6 tracking-[0.12em] text-[#071B36] sm:text-lg">
                   {s.t}
                 </h4>
-                <p className="font-medium">{s.d}</p>
+                <p className="font-medium leading-7">{s.d}</p>
               </div>
             ))}
           </div>
@@ -517,54 +517,54 @@ function WhyUs() {
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="contact" className="corporate-grid bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2">
-        <div>
-          <h2 className="mb-10 font-display text-4xl font-bold uppercase leading-none text-[#071B36] sm:text-5xl md:text-[56px]">
+    <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
+        <div className="min-w-0">
+          <h2 className="mb-6 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Initiate Your
             <br />
             <span className="text-[#C6A45D]">Onboarding</span>
           </h2>
-          <p className="mb-16 max-w-lg text-lg font-medium text-[#44474d] sm:text-xl">
+          <p className="mb-10 max-w-lg text-base font-medium leading-8 text-[#44474d] sm:text-xl lg:mb-12">
             Our consultants are available for immediate consultation across our
             global offices. Scan to connect instantly or utilize our formal
             intake form.
           </p>
-          <div className="mb-16 grid grid-cols-3 gap-6 md:gap-10">
+          <div className="mb-10 grid grid-cols-3 gap-3 sm:gap-6 lg:mb-12 lg:gap-8">
             {["WhatsApp Direct", "Instagram", "TikTok"].map((l) => (
-              <div key={l} className="group text-center">
-                <div className="mb-4 flex aspect-square w-full items-center justify-center border-4 border-[#071B36] p-4 transition-all group-hover:border-[#C6A45D]">
+              <div key={l} className="group min-w-0 text-center">
+                <div className="mb-3 flex aspect-square w-full items-center justify-center border-2 border-[#071B36] p-2 transition-all group-hover:border-[#C6A45D] sm:border-4 sm:p-4">
                   <MS
                     name="qr_code_scanner"
-                    className="text-5xl text-[#071B36] opacity-20 sm:text-6xl"
+                    className="text-4xl text-[#071B36] opacity-20 sm:text-6xl"
                   />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#071B36] sm:text-xs">
+                <span className="block break-words text-[10px] font-black uppercase leading-4 tracking-[0.08em] text-[#071B36] sm:text-xs sm:tracking-[0.12em]">
                   {l}
                 </span>
               </div>
             ))}
           </div>
-          <div className="space-y-6">
+          <div className="space-y-5">
             <a
               href="tel:+440000000000"
-              className="group flex items-center gap-6"
+              className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="call" />
               </div>
-              <span className="font-display text-lg font-bold uppercase tracking-tight text-[#071B36] sm:text-xl">
+              <span className="min-w-0 break-words font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
                 +44 XXX XXX XXXX
               </span>
             </a>
             <a
               href="mailto:info@whitmoresaudi.com"
-              className="group flex items-center gap-6"
+              className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="mail" />
               </div>
-              <span className="font-display text-base font-bold uppercase tracking-tight text-[#071B36] sm:text-xl">
+              <span className="min-w-0 break-all font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
                 info@whitmoresaudi.com
               </span>
             </a>
@@ -577,24 +577,24 @@ function Contact() {
             setSubmitted(true);
             setTimeout(() => setSubmitted(false), 5000);
           }}
-          className="border-b-[16px] border-[#C6A45D] bg-[#071B36] p-10 text-white shadow-2xl md:p-16"
+          className="min-w-0 border-b-8 border-[#C6A45D] bg-[#071B36] p-6 text-white shadow-2xl sm:p-8 md:border-b-[12px] lg:p-12 xl:p-16"
         >
-          <h3 className="mb-12 font-display text-3xl font-black uppercase text-[#C6A45D]">
+          <h3 className="mb-8 break-words font-display text-2xl font-black uppercase leading-tight text-[#C6A45D] sm:text-3xl">
             Formal Inquiry
           </h3>
-          <div className="space-y-10">
-            <div className="grid gap-10 sm:grid-cols-2">
+          <div className="space-y-7 sm:space-y-8">
+            <div className="grid gap-7 sm:grid-cols-2">
               <FormField label="Corporate Name" placeholder="e.g. Whitmore Global" required />
               <FormField label="Email Address" type="email" placeholder="office@company.com" required />
             </div>
-            <div className="grid gap-10 sm:grid-cols-2">
+            <div className="grid gap-7 sm:grid-cols-2">
               <FormField label="Phone Number" type="tel" placeholder="+44 ..." required />
               <div>
-                <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+                <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
                   Selected Package
                 </label>
                 <select
-                  className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+                  className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
                 >
                   <option className="bg-[#071B36]">Enterprise Standard</option>
                   <option className="bg-[#071B36]">Elite Strategic (Fast-Track)</option>
@@ -602,23 +602,23 @@ function Contact() {
               </div>
             </div>
             <div>
-              <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+              <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
                 Proposed Activity
               </label>
               <textarea
                 rows={3}
                 placeholder="Provide a brief overview of intended business activities..."
-                className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+                className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-[#C6A45D] py-6 text-sm font-black uppercase tracking-[0.3em] text-[#071B36] transition-all hover:bg-white"
+              className="w-full bg-[#C6A45D] px-4 py-4 text-xs font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm sm:tracking-[0.2em]"
             >
               Submit Strategic Inquiry
             </button>
             {submitted && (
-              <p className="mt-6 text-center text-sm font-black uppercase tracking-widest text-[#C6A45D]">
+              <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-[#C6A45D] sm:text-sm">
                 Transmission Successful. A senior consultant will respond within
                 2 hours.
               </p>
@@ -643,14 +643,14 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+      <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
         {label}
       </label>
       <input
         type={type}
         placeholder={placeholder}
         required={required}
-        className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+        className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
       />
     </div>
   );
@@ -666,9 +666,9 @@ function FAQ() {
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-[#f5f3ee] py-24 md:py-32">
-      <div className="mx-auto max-w-[900px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <h2 className="mb-20 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+    <section id="faq" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-[980px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <h2 className="mb-12 break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
           Essential Intelligence
         </h2>
         <div className="border-t-4 border-[#071B36]">
@@ -678,14 +678,14 @@ function FAQ() {
               <div key={i} className="border-b-2 border-[#071B36]/10">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="group flex w-full items-center justify-between py-8 text-left transition-colors hover:text-[#C6A45D]"
+                  className="group flex w-full items-start justify-between gap-4 py-6 text-left transition-colors hover:text-[#C6A45D] sm:items-center sm:py-8"
                 >
-                  <span className="font-display text-base font-black uppercase text-[#071B36] sm:text-xl">
+                  <span className="min-w-0 break-words font-display text-base font-black uppercase leading-tight text-[#071B36] sm:text-xl">
                     {f.q}
                   </span>
                   <MS
                     name={isOpen ? "remove" : "add"}
-                    className="text-[#071B36] group-hover:text-[#C6A45D]"
+                    className="shrink-0 text-[#071B36] group-hover:text-[#C6A45D]"
                   />
                 </button>
                 <div
@@ -694,7 +694,7 @@ function FAQ() {
                     (isOpen ? "max-h-96" : "max-h-0")
                   }
                 >
-                  <p className="pb-10 font-medium leading-relaxed text-[#44474d]">
+                  <p className="pb-8 font-medium leading-7 text-[#44474d] sm:pb-10">
                     {f.a}
                   </p>
                 </div>
@@ -710,21 +710,21 @@ function FAQ() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer className="bg-[#071B36] pt-24 text-white">
-      <div className="mx-auto mb-20 grid max-w-[1400px] grid-cols-1 gap-12 px-6 md:grid-cols-4 md:gap-20 md:px-20">
+    <footer className="bg-[#071B36] pt-16 text-white sm:pt-20 lg:pt-24">
+      <div className="mx-auto mb-12 grid max-w-[1400px] grid-cols-1 gap-10 px-5 sm:px-8 md:grid-cols-4 md:gap-12 md:px-12 lg:mb-16 lg:px-20">
         <div className="md:col-span-2">
-          <div className="mb-10">
+          <div className="mb-8">
             <img
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
-              className="h-14 w-auto brightness-0 invert sm:h-16"
+              className="h-12 w-auto max-w-[250px] brightness-0 invert sm:h-14"
             />
           </div>
-          <p className="mb-12 max-w-sm text-xs font-medium uppercase leading-relaxed tracking-widest text-white/60">
+          <p className="mb-8 max-w-sm text-xs font-medium uppercase leading-7 tracking-[0.14em] text-white/60">
             Bridging global capital with Saudi opportunity through architectural
             precision and uncompromising service standards.
           </p>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             <MS name="language" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
             <MS name="share" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
             <MS name="verified" className="cursor-pointer text-white/40 transition-colors hover:text-[#C6A45D]" />
@@ -749,11 +749,11 @@ function Footer() {
           ]}
         />
       </div>
-      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 border-t border-white/10 px-6 py-12 md:flex-row md:px-20">
-        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">
-          © {new Date().getFullYear()} Whitmore Saudi Connect. Authorized by Ministry of Investment.
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-6 border-t border-white/10 px-5 py-8 text-center sm:px-8 md:flex-row md:px-12 lg:px-20">
+        <p className="max-w-2xl text-[10px] font-black uppercase leading-5 tracking-[0.14em] text-white/40 md:text-left">
+          © {new Date().getFullYear()} Whitmore Saudi Connect. Independent consultancy. Government fees separate.
         </p>
-        <div className="flex gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-[#C6A45D]">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-black uppercase tracking-[0.18em] text-[#C6A45D]">
           <span>Riyadh</span>
           <span>London</span>
           <span>Dubai</span>
@@ -766,15 +766,15 @@ function Footer() {
 function FooterCol({ title, items }: { title: string; items: [string, string][] }) {
   return (
     <div>
-      <h5 className="mb-10 text-sm font-black uppercase tracking-[0.3em] text-[#C6A45D]">
+      <h5 className="mb-6 text-sm font-black uppercase leading-5 tracking-[0.18em] text-[#C6A45D]">
         {title}
       </h5>
-      <ul className="space-y-5">
+      <ul className="space-y-3">
         {items.map(([l, h]) => (
           <li key={l}>
             <a
               href={h}
-              className="text-xs font-bold uppercase tracking-widest text-white/60 transition-colors hover:text-white"
+              className="break-words text-xs font-bold uppercase leading-5 tracking-[0.12em] text-white/60 transition-colors hover:text-white"
             >
               {l}
             </a>
