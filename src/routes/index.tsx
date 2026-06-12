@@ -20,6 +20,7 @@ import {
   FiHome,
 } from "react-icons/fi";
 import { LuLandmark, LuBuilding2 } from "react-icons/lu";
+import { FiChevronDown } from "react-icons/fi";
 import { FaGavel, FaLinkedinIn, FaInstagram, FaWhatsapp, FaXTwitter, FaQuoteLeft } from "react-icons/fa6";
 
 const HERO_IMG =
@@ -727,9 +728,12 @@ function FAQ() {
                   <span className="min-w-0 break-words font-display text-base font-black uppercase leading-tight text-[#071B36] sm:text-xl">
                     {f.q}
                   </span>
-                  <MS
-                    name={isOpen ? "remove" : "add"}
-                    className="shrink-0 text-[#071B36] group-hover:text-[#C6A45D]"
+                  <FiChevronDown
+                    className={
+                      "shrink-0 text-2xl text-[#071B36] transition-transform duration-300 group-hover:text-[#C6A45D] " +
+                      (isOpen ? "rotate-180" : "")
+                    }
+                    aria-hidden
                   />
                 </button>
                 <div
