@@ -274,7 +274,7 @@ function Intro() {
   return (
     <section className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:mb-16 lg:flex-row lg:items-end">
+        <div className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-6 text-center lg:mb-16">
           <div className="max-w-2xl">
             <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
               Architecting Your Saudi Expansion
