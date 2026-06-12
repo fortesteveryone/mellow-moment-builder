@@ -74,18 +74,15 @@ function Header() {
   ];
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b-4 border-[#071B36] bg-white">
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-20">
-        <a href="#home" className="flex items-center gap-3">
+      <nav className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-3 sm:px-6 sm:py-4 md:gap-8 md:px-12 lg:px-20 lg:py-5">
+        <a href="#home" className="flex min-w-0 items-center">
           <img
             src={LOGO_IMG}
             alt="Whitmore Saudi Connect"
-            className="h-10 w-auto object-contain md:h-14"
+            className="h-10 w-auto shrink-0 object-contain sm:h-12 md:h-14"
           />
-          <span className="hidden font-display text-2xl font-extrabold uppercase tracking-tight text-[#071B36] xl:block">
-            Whitmore Saudi Connect
-          </span>
         </a>
-        <div className="hidden items-center gap-10 lg:flex">
+        <div className="hidden items-center justify-center gap-6 xl:gap-10 lg:flex">
           {nav.map((n, i) => (
             <a
               key={n.h}
@@ -101,23 +98,24 @@ function Header() {
             </a>
           ))}
         </div>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="hidden items-center gap-3 bg-[#071B36] px-6 py-3.5 text-[13px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-8 md:py-4"
-        >
-          <MS name="chat" />
-          <span className="hidden md:inline">Consult Now</span>
-          <span className="md:hidden">Consult</span>
-        </a>
-        <button
-          onClick={() => setOpen(!open)}
-          className="ml-2 p-2 text-[#071B36] lg:hidden"
-          aria-label="Toggle menu"
-        >
-          <MS name={open ? "close" : "menu"} className="text-3xl" />
-        </button>
+        <div className="flex items-center justify-end gap-2 sm:gap-4">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden items-center gap-2 bg-[#071B36] px-4 py-3 text-[12px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#C6A45D] hover:text-[#071B36] sm:inline-flex md:px-6 md:py-3.5 md:text-[13px] lg:px-8 lg:py-4"
+          >
+            <MS name="chat" />
+            <span>Consult</span>
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            className="p-2 text-[#071B36] lg:hidden"
+            aria-label="Toggle menu"
+          >
+            <MS name={open ? "close" : "menu"} className="text-3xl" />
+          </button>
+        </div>
       </nav>
       {open && (
         <div className="border-t-2 border-[#071B36]/10 bg-white lg:hidden">
