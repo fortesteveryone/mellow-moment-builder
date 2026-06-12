@@ -224,7 +224,7 @@ function Intro() {
   ];
   return (
     <section className="corporate-grid bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-20 flex flex-col items-end justify-between gap-8 lg:flex-row">
           <div className="max-w-2xl">
             <h2 className="mb-6 font-display text-4xl font-bold uppercase leading-tight text-[#071B36] sm:text-5xl md:text-[56px]">
@@ -280,7 +280,7 @@ function Services() {
       className="relative overflow-hidden bg-[#071B36] py-24 text-white md:py-32"
     >
       <div className="absolute right-0 top-0 h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5" />
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-24 text-center">
           <h2 className="mb-4 font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl md:text-[56px]">
             Operational Capabilities
@@ -317,7 +317,7 @@ function Services() {
 function Packages() {
   return (
     <section id="packages" className="bg-[#f5f3ee] py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-20 max-w-4xl text-center">
           <h2 className="mb-6 font-display text-4xl font-bold uppercase text-[#071B36] sm:text-5xl md:text-[56px]">
             Elite Formation Tiers
@@ -423,7 +423,7 @@ function Process() {
   ];
   return (
     <section id="process" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-20">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <h2 className="mb-24 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
           Strategic Deployment Roadmap
         </h2>
@@ -470,7 +470,7 @@ function WhyUs() {
   ];
   return (
     <section className="bg-[#071B36] py-24 text-white md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-6 md:px-20 lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2 lg:gap-20">
         <div className="order-2 lg:order-1">
           <h2 className="mb-12 border-l-8 border-[#C6A45D] pl-6 font-display text-4xl font-bold uppercase sm:text-5xl md:pl-8">
             Prerequisite Assets
@@ -518,7 +518,7 @@ function Contact() {
   const [submitted, setSubmitted] = useState(false);
   return (
     <section id="contact" className="corporate-grid bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-6 md:px-20 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2">
         <div>
           <h2 className="mb-10 font-display text-4xl font-bold uppercase leading-none text-[#071B36] sm:text-5xl md:text-[56px]">
             Initiate Your
@@ -667,7 +667,7 @@ function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section id="faq" className="bg-[#f5f3ee] py-24 md:py-32">
-      <div className="mx-auto max-w-[900px] px-6 md:px-20">
+      <div className="mx-auto max-w-[900px] px-5 sm:px-8 md:px-12 lg:px-20">
         <h2 className="mb-20 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
           Essential Intelligence
         </h2>
