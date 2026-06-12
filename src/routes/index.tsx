@@ -422,28 +422,28 @@ function Process() {
     { n: "05", t: "Continuity", d: "Post-formation support for banking and executive residency." },
   ];
   return (
-    <section id="process" className="bg-white py-24 md:py-32">
+    <section id="process" className="bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <h2 className="mb-24 text-center font-display text-4xl font-bold uppercase tracking-tight text-[#071B36] sm:text-5xl md:text-[56px]">
+        <h2 className="mx-auto mb-12 max-w-3xl break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
           Strategic Deployment Roadmap
         </h2>
-        <div className="grid border-t-8 border-[#071B36] lg:grid-cols-5">
+        <div className="grid border-t-4 border-[#071B36] lg:grid-cols-5 lg:border-t-8">
           {steps.map((s, i) => (
             <div
               key={s.n}
               className={
-                "group p-10 " +
+                "group p-6 sm:p-8 lg:p-6 xl:p-8 " +
                 (i % 2 === 1 ? "bg-[#f5f3ee] " : "") +
                 (i < steps.length - 1 ? "border-b-2 border-[#071B36] lg:border-b-0 lg:border-r-2 " : "")
               }
             >
-              <div className="mb-6 font-display text-6xl font-black text-[#C6A45D] opacity-30 transition-opacity group-hover:opacity-100">
+              <div className="mb-5 font-display text-5xl font-black text-[#C6A45D] opacity-30 transition-opacity group-hover:opacity-100 sm:text-6xl">
                 {s.n}
               </div>
-              <h4 className="mb-4 font-display text-xl font-bold uppercase text-[#071B36]">
+              <h4 className="mb-3 break-words font-display text-lg font-bold uppercase leading-tight text-[#071B36] sm:text-xl">
                 {s.t}
               </h4>
-              <p className="text-sm font-medium text-[#44474d]">{s.d}</p>
+              <p className="text-sm font-medium leading-6 text-[#44474d]">{s.d}</p>
             </div>
           ))}
         </div>
@@ -469,41 +469,41 @@ function WhyUs() {
     { t: "Velocity", d: "Harnessing priority channels to ensure market entry at the speed of business." },
   ];
   return (
-    <section className="bg-[#071B36] py-24 text-white md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2 lg:gap-20">
+    <section className="bg-[#071B36] py-16 text-white sm:py-20 lg:py-28">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
         <div className="order-2 lg:order-1">
-          <h2 className="mb-12 border-l-8 border-[#C6A45D] pl-6 font-display text-4xl font-bold uppercase sm:text-5xl md:pl-8">
+          <h2 className="mb-8 border-l-4 border-[#C6A45D] pl-4 font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:pl-6 lg:text-5xl">
             Prerequisite Assets
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {assets.map((a) => (
               <div
                 key={a.l}
-                className="group flex items-center gap-6 border-2 border-white/10 p-6 transition-all hover:border-[#C6A45D]"
+                className="group flex min-w-0 items-center gap-4 border-2 border-white/10 p-4 transition-all hover:border-[#C6A45D] sm:p-5"
               >
                 <MS
                   name={a.i}
-                  className="text-3xl text-[#C6A45D] transition-transform group-hover:scale-110"
+                  className="shrink-0 text-3xl text-[#C6A45D] transition-transform group-hover:scale-110"
                 />
-                <span className="text-sm font-bold uppercase tracking-widest">
+                <span className="min-w-0 break-words text-xs font-bold uppercase leading-5 tracking-[0.12em] sm:text-sm">
                   {a.l}
                 </span>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative order-1 overflow-hidden bg-[#C6A45D] p-10 text-[#071B36] shadow-2xl md:p-16 lg:order-2">
+        <div className="relative order-1 overflow-hidden bg-[#C6A45D] p-6 text-[#071B36] shadow-2xl sm:p-8 lg:order-2 lg:p-12 xl:p-16">
           <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full border-[40px] border-[#071B36]/5 bg-[#071B36]/5" />
-          <h2 className="relative mb-12 font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
+          <h2 className="relative mb-8 break-words font-display text-3xl font-black uppercase leading-tight sm:text-4xl lg:text-5xl">
             The Whitmore Standard
           </h2>
-          <div className="relative z-10 space-y-10">
+          <div className="relative z-10 space-y-6 sm:space-y-8">
             {standards.map((s) => (
               <div key={s.t}>
-                <h4 className="mb-2 text-lg font-black uppercase tracking-widest text-[#071B36]">
+                <h4 className="mb-2 break-words text-base font-black uppercase leading-6 tracking-[0.12em] text-[#071B36] sm:text-lg">
                   {s.t}
                 </h4>
-                <p className="font-medium">{s.d}</p>
+                <p className="font-medium leading-7">{s.d}</p>
               </div>
             ))}
           </div>
