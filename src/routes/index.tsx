@@ -142,7 +142,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[90vh] items-center overflow-hidden pt-28"
+      className="relative flex min-h-[90vh] items-center overflow-hidden pt-24 sm:pt-28"
     >
       <div className="absolute inset-0 z-0">
         <div className="hero-overlay absolute inset-0 z-10" />
