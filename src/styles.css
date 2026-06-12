@@ -183,8 +183,7 @@
   background: linear-gradient(to right, rgba(7, 27, 54, 0.95) 0%, rgba(7, 27, 54, 0.7) 100%);
 }
 
-@layer base {
-  .material-symbols-outlined {
+.material-symbols-outlined {
     font-family: "Material Symbols Outlined";
     font-weight: normal;
     font-style: normal;
@@ -200,5 +199,4 @@
     font-feature-settings: "liga";
     -webkit-font-feature-settings: "liga";
     -webkit-font-smoothing: antialiased;
-  }
 }
