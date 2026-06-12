@@ -159,7 +159,7 @@ function Header() {
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="-mr-2 shrink-0 p-2 text-[#071B36] lg:hidden"
+            className="-mr-3 shrink-0 p-2 text-[#071B36] sm:-mr-4 md:-mr-6 lg:hidden"
             aria-label="Toggle menu"
           >
             <MS name={open ? "close" : "menu"} className="text-3xl" />
