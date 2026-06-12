@@ -781,35 +781,35 @@ function FAQ() {
 function Footer() {
   return (
     <footer className="bg-[#071B36] py-12 text-white sm:py-16 lg:py-20">
-      <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-8 px-5 sm:px-8 md:px-12 lg:px-20">
-        <img
-          src={LOGO_IMG}
-          alt="Whitmore Saudi Connect"
-          className="h-12 w-auto max-w-[240px] brightness-0 invert sm:h-14"
-        />
-        <figure className="relative max-w-xl px-6 text-center">
-          <FaQuoteLeft className="absolute left-0 top-0 text-2xl text-[#C6A45D]/60" aria-hidden />
-          <blockquote className="font-display text-base italic leading-7 text-white/80 sm:text-lg">
-            Bridging visionary investors with the boundless opportunity of the
-            Kingdom — discretion, precision, and excellence at every step.
-          </blockquote>
-        </figure>
-        <div className="flex gap-5 text-lg">
-          <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-            <FaLinkedinIn />
-          </a>
-          <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-            <FaInstagram />
-          </a>
-          <a href="#" aria-label="X" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-            <FaXTwitter />
-          </a>
-          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-            <FaWhatsapp />
-          </a>
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+          <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+            <img
+              src={LOGO_IMG}
+              alt="Whitmore Saudi Connect"
+              className="h-12 w-auto max-w-[220px] brightness-0 invert sm:h-14"
+            />
+            <p className="max-w-md text-sm leading-6 text-white/60 sm:text-base">
+              Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
+            </p>
+          </div>
+          <div className="flex justify-center gap-4 text-lg md:justify-end">
+            <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+              <FaLinkedinIn />
+            </a>
+            <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+              <FaInstagram />
+            </a>
+            <a href="#" aria-label="X" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+              <FaXTwitter />
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+              <FaWhatsapp />
+            </a>
+          </div>
         </div>
-        <div className="h-px w-full max-w-xs bg-white/10" />
-        <p className="text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
+        <div className="mt-10 h-px w-full bg-white/10" />
+        <p className="mt-6 text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
           © {new Date().getFullYear()} Whitmore Saudi Connect. All rights reserved.
         </p>
       </div>
