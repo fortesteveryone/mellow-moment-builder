@@ -296,20 +296,6 @@ function Hero() {
                   </a>
                 </div>
               </div>
-              <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-4 text-center">
-                {[
-                  ["MISA", "Licensed"],
-                  ["24/7", "Support"],
-                  ["NDA", "Protected"],
-                ].map(([n, l]) => (
-                  <div key={l}>
-                    <div className="font-display text-sm font-black text-[#C6A45D]">{n}</div>
-                    <div className="mt-1 text-[9px] font-bold uppercase tracking-[0.14em] text-white/50">
-                      {l}
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </aside>
         </div>
