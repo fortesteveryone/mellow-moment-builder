@@ -517,54 +517,54 @@ function WhyUs() {
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="contact" className="corporate-grid bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1400px] items-center gap-16 px-5 sm:px-8 md:px-12 lg:px-20 lg:grid-cols-2">
-        <div>
-          <h2 className="mb-10 font-display text-4xl font-bold uppercase leading-none text-[#071B36] sm:text-5xl md:text-[56px]">
+    <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
+        <div className="min-w-0">
+          <h2 className="mb-6 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Initiate Your
             <br />
             <span className="text-[#C6A45D]">Onboarding</span>
           </h2>
-          <p className="mb-16 max-w-lg text-lg font-medium text-[#44474d] sm:text-xl">
+          <p className="mb-10 max-w-lg text-base font-medium leading-8 text-[#44474d] sm:text-xl lg:mb-12">
             Our consultants are available for immediate consultation across our
             global offices. Scan to connect instantly or utilize our formal
             intake form.
           </p>
-          <div className="mb-16 grid grid-cols-3 gap-6 md:gap-10">
+          <div className="mb-10 grid grid-cols-3 gap-3 sm:gap-6 lg:mb-12 lg:gap-8">
             {["WhatsApp Direct", "Instagram", "TikTok"].map((l) => (
-              <div key={l} className="group text-center">
-                <div className="mb-4 flex aspect-square w-full items-center justify-center border-4 border-[#071B36] p-4 transition-all group-hover:border-[#C6A45D]">
+              <div key={l} className="group min-w-0 text-center">
+                <div className="mb-3 flex aspect-square w-full items-center justify-center border-2 border-[#071B36] p-2 transition-all group-hover:border-[#C6A45D] sm:border-4 sm:p-4">
                   <MS
                     name="qr_code_scanner"
-                    className="text-5xl text-[#071B36] opacity-20 sm:text-6xl"
+                    className="text-4xl text-[#071B36] opacity-20 sm:text-6xl"
                   />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#071B36] sm:text-xs">
+                <span className="block break-words text-[10px] font-black uppercase leading-4 tracking-[0.08em] text-[#071B36] sm:text-xs sm:tracking-[0.12em]">
                   {l}
                 </span>
               </div>
             ))}
           </div>
-          <div className="space-y-6">
+          <div className="space-y-5">
             <a
               href="tel:+440000000000"
-              className="group flex items-center gap-6"
+              className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="call" />
               </div>
-              <span className="font-display text-lg font-bold uppercase tracking-tight text-[#071B36] sm:text-xl">
+              <span className="min-w-0 break-words font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
                 +44 XXX XXX XXXX
               </span>
             </a>
             <a
               href="mailto:info@whitmoresaudi.com"
-              className="group flex items-center gap-6"
+              className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="mail" />
               </div>
-              <span className="font-display text-base font-bold uppercase tracking-tight text-[#071B36] sm:text-xl">
+              <span className="min-w-0 break-all font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
                 info@whitmoresaudi.com
               </span>
             </a>
@@ -577,24 +577,24 @@ function Contact() {
             setSubmitted(true);
             setTimeout(() => setSubmitted(false), 5000);
           }}
-          className="border-b-[16px] border-[#C6A45D] bg-[#071B36] p-10 text-white shadow-2xl md:p-16"
+          className="min-w-0 border-b-8 border-[#C6A45D] bg-[#071B36] p-6 text-white shadow-2xl sm:p-8 md:border-b-[12px] lg:p-12 xl:p-16"
         >
-          <h3 className="mb-12 font-display text-3xl font-black uppercase text-[#C6A45D]">
+          <h3 className="mb-8 break-words font-display text-2xl font-black uppercase leading-tight text-[#C6A45D] sm:text-3xl">
             Formal Inquiry
           </h3>
-          <div className="space-y-10">
-            <div className="grid gap-10 sm:grid-cols-2">
+          <div className="space-y-7 sm:space-y-8">
+            <div className="grid gap-7 sm:grid-cols-2">
               <FormField label="Corporate Name" placeholder="e.g. Whitmore Global" required />
               <FormField label="Email Address" type="email" placeholder="office@company.com" required />
             </div>
-            <div className="grid gap-10 sm:grid-cols-2">
+            <div className="grid gap-7 sm:grid-cols-2">
               <FormField label="Phone Number" type="tel" placeholder="+44 ..." required />
               <div>
-                <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+                <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
                   Selected Package
                 </label>
                 <select
-                  className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+                  className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
                 >
                   <option className="bg-[#071B36]">Enterprise Standard</option>
                   <option className="bg-[#071B36]">Elite Strategic (Fast-Track)</option>
@@ -602,23 +602,23 @@ function Contact() {
               </div>
             </div>
             <div>
-              <label className="mb-4 block text-[10px] font-black uppercase tracking-[0.2em] text-white/50">
+              <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
                 Proposed Activity
               </label>
               <textarea
                 rows={3}
                 placeholder="Provide a brief overview of intended business activities..."
-                className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0"
+                className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-[#C6A45D] py-6 text-sm font-black uppercase tracking-[0.3em] text-[#071B36] transition-all hover:bg-white"
+              className="w-full bg-[#C6A45D] px-4 py-4 text-xs font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm sm:tracking-[0.2em]"
             >
               Submit Strategic Inquiry
             </button>
             {submitted && (
-              <p className="mt-6 text-center text-sm font-black uppercase tracking-widest text-[#C6A45D]">
+              <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-[#C6A45D] sm:text-sm">
                 Transmission Successful. A senior consultant will respond within
                 2 hours.
               </p>
