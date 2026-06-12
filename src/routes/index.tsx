@@ -713,15 +713,12 @@ function Footer() {
     <footer className="bg-[#071B36] pt-24 text-white">
       <div className="mx-auto mb-20 grid max-w-[1400px] grid-cols-1 gap-12 px-6 md:grid-cols-4 md:gap-20 md:px-20">
         <div className="md:col-span-2">
-          <div className="mb-10 flex items-center gap-3">
+          <div className="mb-10">
             <img
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
-              className="h-12 w-auto brightness-0 invert"
+              className="h-14 w-auto brightness-0 invert sm:h-16"
             />
-            <span className="font-display text-2xl font-black uppercase tracking-tight text-[#C6A45D]">
-              Whitmore Saudi Connect
-            </span>
           </div>
           <p className="mb-12 max-w-sm text-xs font-medium uppercase leading-relaxed tracking-widest text-white/60">
             Bridging global capital with Saudi opportunity through architectural
