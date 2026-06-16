@@ -236,8 +236,18 @@ function Hero() {
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-16">
           <div className="max-w-4xl min-w-0">
-          <div className="mb-5 inline-block max-w-full bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
-            Vision 2030 Aligned
+          <div
+            className="mb-4 font-arabic text-xl text-[#C6A45D] sm:text-2xl"
+            dir="rtl"
+            lang="ar"
+          >
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </div>
+          <div className="mb-5 inline-flex max-w-full items-center gap-3 bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
+            <span>Vision 2030 Aligned</span>
+            <span className="font-arabic text-base font-normal normal-case tracking-normal" dir="rtl" lang="ar">
+              رؤية ٢٠٣٠
+            </span>
           </div>
           <h1 className="mb-6 max-w-[12ch] break-words font-display text-[42px] font-extrabold uppercase leading-[1.02] text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.06]">
             Establish Your{" "}
