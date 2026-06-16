@@ -23,12 +23,12 @@ import { LuLandmark, LuBuilding2 } from "react-icons/lu";
 import { FiChevronDown } from "react-icons/fi";
 import { QRCodeSVG } from "qrcode.react";
 import { FaGavel, FaLinkedinIn, FaInstagram, FaWhatsapp, FaXTwitter, FaQuoteLeft } from "react-icons/fa6";
+import logoImg from "@/assets/logo.png";
 
 const HERO_IMG =
   "https://lh3.googleusercontent.com/aida/AP1WRLu5mUmi6luUgJxlxS38lB8dnZCXNuUZBWrqoonn-uq6veTVbgNjAgX_JAhdSXgzdOphyQFPzEgua9QQ-Bsc911Q71ghi2j0KoRO33jgGCrAUBwzQ_vNiYn573FRfuApzCERVTRlMezLIhptoqooYRjsSTK0q-loDxhgqEbfQ0fq_CSWyNh7qmrjmRomjGI2gC50T-QBeT4MBO7qqZHNchOdtc-snK-v4v9NHD4DKS5NUaK6KaMSmXqK_OI";
 
-const LOGO_IMG =
-  "https://lh3.googleusercontent.com/aida/AP1WRLsPfsm2MxJ_FFvxjX0rS4bcQiFwrb7688cTBsj6ex8w1YYkpM4GXzDCip_SORJzE3KzLH3UjJXp46DfrCVe9WBTgg6Xu6JINZLkZG3GiOuDhv84BCtY8O8J48lxwLjcUTK4UVR_-Evbll79BqU8mzHMfUJAg10gaeEPgiWuGjeQCyZuvTEMHDDcxqIKy61Wi7AVscWeNxTynKwXUWS5Dazl9oqHp859c1zXInnbaOukv9AqpCUNZOe4TVM";
+const LOGO_IMG = logoImg;
 
 const WHATSAPP_URL = "https://wa.me/440000000000";
 const WHATSAPP_PHONE = "440000000000";
