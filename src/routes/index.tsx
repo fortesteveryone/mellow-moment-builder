@@ -147,7 +147,7 @@ function Header() {
             src={LOGO_IMG}
             alt="Whitmore Saudi Connect"
             style={{ margin: 0, padding: 0 }}
-            className="-mx-3 block h-20 w-auto max-w-[340px] shrink-0 object-contain sm:-mx-4 sm:h-24 sm:max-w-[420px] md:-mx-5 md:h-28 md:max-w-[480px]"
+            className="-mx-2 block h-12 w-auto max-w-[180px] shrink-0 object-contain sm:h-14 sm:max-w-[220px] md:h-16 md:max-w-[260px]"
           />
         </a>
         <div className="hidden items-center justify-center gap-6 xl:gap-10 lg:flex">
@@ -883,7 +883,7 @@ function Footer() {
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
               style={{ margin: 0, padding: 0 }}
-              className="-mx-4 block h-28 w-auto max-w-[420px] sm:-mx-5 sm:h-32 sm:max-w-[500px] md:-mx-6 md:h-36 md:max-w-[560px]"
+              className="-mx-2 block h-16 w-auto max-w-[240px] sm:h-20 sm:max-w-[300px] md:h-24 md:max-w-[340px]"
             />
             <p className="max-w-md text-sm leading-6 text-white/60 sm:text-base">
               Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
