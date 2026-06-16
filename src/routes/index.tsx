@@ -219,6 +219,20 @@ function Hero() {
           className="h-full w-full object-cover"
         />
       </div>
+      {/* Subtle Islamic geometric pattern overlay */}
+      <div className="islamic-pattern pointer-events-none absolute inset-0 z-10 opacity-[0.07]" aria-hidden />
+      {/* Decorative arch silhouette on the right */}
+      <svg
+        aria-hidden
+        viewBox="0 0 200 400"
+        className="pointer-events-none absolute right-0 top-1/2 z-10 hidden h-[80%] -translate-y-1/2 opacity-10 lg:block"
+        fill="none"
+        stroke="#C6A45D"
+        strokeWidth="1"
+      >
+        <path d="M20 380 L20 140 Q20 20 100 20 Q180 20 180 140 L180 380" />
+        <path d="M40 380 L40 150 Q40 40 100 40 Q160 40 160 150 L160 380" />
+      </svg>
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-16">
           <div className="max-w-4xl min-w-0">
