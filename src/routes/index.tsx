@@ -209,7 +209,7 @@ function Hero() {
           </div>
           <h1 className="mb-6 max-w-[12ch] break-words font-display text-[42px] font-extrabold uppercase leading-[1.02] text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.06]">
             Establish Your{" "}
-            <span className="text-[#C6A45D]">Empire</span> In Saudi Arabia
+            <span className="text-[#C6A45D]">Business</span> In Saudi Arabia
           </h1>
           <p className="mb-8 max-w-2xl border-l-4 border-[#C6A45D] pl-5 text-base leading-8 text-white/80 sm:mb-10 sm:pl-8 sm:text-xl">
             The premier gateway for 100% foreign-owned corporate entities. We
