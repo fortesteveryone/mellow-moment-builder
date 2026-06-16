@@ -590,9 +590,17 @@ function Process() {
   return (
     <section id="process" className="bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <h2 className="mx-auto mb-12 max-w-3xl break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
-          Strategic Deployment Roadmap
-        </h2>
+        <div className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            خارطة الطريق
+          </p>
+          <h2 className="break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
+            Strategic Deployment Roadmap
+          </h2>
+          <div className="mt-6 flex justify-center">
+            <StarOrnament />
+          </div>
+        </div>
         <div className="grid border-t-4 border-[#071B36] lg:grid-cols-5 lg:border-t-8">
           {steps.map((s, i) => (
             <div
