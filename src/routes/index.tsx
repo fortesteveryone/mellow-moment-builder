@@ -881,7 +881,7 @@ function Footer() {
             <img
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
-              className="h-28 w-auto max-w-[420px] brightness-0 invert sm:h-32 sm:max-w-[500px] md:h-36 md:max-w-[560px]"
+              className="h-28 w-auto max-w-[420px] sm:h-32 sm:max-w-[500px] md:h-36 md:max-w-[560px]"
             />
             <p className="max-w-md text-sm leading-6 text-white/60 sm:text-base">
               Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
