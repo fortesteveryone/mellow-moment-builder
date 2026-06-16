@@ -236,13 +236,18 @@ function Hero() {
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-16">
           <div className="max-w-4xl min-w-0">
-          <div className="mb-5 flex items-center gap-3">
-            <svg viewBox="0 0 40 40" className="h-5 w-5 text-[#C6A45D]" fill="currentColor" aria-hidden>
-              <polygon points="20,0 24,16 40,20 24,24 20,40 16,24 0,20 16,16" />
-            </svg>
-            <div className="inline-block bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
-              Vision 2030 Aligned
-            </div>
+          <div
+            className="mb-4 font-arabic text-xl text-[#C6A45D] sm:text-2xl"
+            dir="rtl"
+            lang="ar"
+          >
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </div>
+          <div className="mb-5 inline-flex max-w-full items-center gap-3 bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
+            <span>Vision 2030 Aligned</span>
+            <span className="font-arabic text-base font-normal normal-case tracking-normal" dir="rtl" lang="ar">
+              رؤية ٢٠٣٠
+            </span>
           </div>
           <h1 className="mb-6 max-w-[12ch] break-words font-display text-[42px] font-extrabold uppercase leading-[1.02] text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.06]">
             Establish Your{" "}
@@ -368,6 +373,9 @@ function Intro() {
         </div>
         <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:mb-16 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
+            <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+              بناء حضوركم في المملكة
+            </p>
             <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
               Architecting Your Saudi Expansion
             </h2>
@@ -423,6 +431,9 @@ function Services() {
       <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            خدماتنا التشغيلية
+          </p>
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
             Operational Capabilities
           </h2>
@@ -468,6 +479,9 @@ function Packages() {
     <section id="packages" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-12 max-w-4xl text-center lg:mb-16">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            باقاتنا المختارة
+          </p>
           <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Elite Formation Tiers
           </h2>
@@ -577,6 +591,9 @@ function Process() {
     <section id="process" className="bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            خارطة الطريق
+          </p>
           <h2 className="break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Strategic Deployment Roadmap
           </h2>
@@ -677,6 +694,9 @@ function Contact() {
     <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
         <div className="min-w-0">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            تواصلوا معنا
+          </p>
           <h2 className="mb-6 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Initiate Your
             <br />
@@ -887,6 +907,12 @@ function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-10 flex flex-col items-center gap-2 text-center">
           <StarOrnament />
+          <p className="font-arabic text-lg text-[#C6A45D] sm:text-xl" dir="rtl" lang="ar">
+            وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ
+          </p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/40">
+            “And for this let the competitors compete.” — Qur'an 83:26
+          </p>
         </div>
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
           <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
