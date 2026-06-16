@@ -89,38 +89,6 @@ function MS({ name, className = "" }: { name: string; className?: string }) {
   );
 }
 
-/* Islamic 8-point star ornament — used as a decorative divider */
-function StarOrnament({
-  className = "",
-  color = "#C6A45D",
-}: {
-  className?: string;
-  color?: string;
-}) {
-  return (
-    <span className={`inline-flex items-center gap-3 ${className}`} aria-hidden>
-      <span
-        className="h-px w-10 sm:w-16"
-        style={{ background: `linear-gradient(90deg, transparent, ${color})` }}
-      />
-      <svg viewBox="0 0 40 40" className="h-4 w-4 sm:h-5 sm:w-5" fill={color}>
-        <polygon points="20,0 24,16 40,20 24,24 20,40 16,24 0,20 16,16" opacity="0.95" />
-        <polygon
-          points="20,4 22,18 36,20 22,22 20,36 18,22 4,20 18,18"
-          fill="none"
-          stroke={color}
-          strokeWidth="0.8"
-          transform="rotate(45 20 20)"
-        />
-      </svg>
-      <span
-        className="h-px w-10 sm:w-16"
-        style={{ background: `linear-gradient(90deg, ${color}, transparent)` }}
-      />
-    </span>
-  );
-}
-
 function Index() {
   return (
     <div
@@ -236,18 +204,8 @@ function Hero() {
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-16">
           <div className="max-w-4xl min-w-0">
-          <div
-            className="mb-4 font-arabic text-xl text-[#C6A45D] sm:text-2xl"
-            dir="rtl"
-            lang="ar"
-          >
-            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-          </div>
-          <div className="mb-5 inline-flex max-w-full items-center gap-3 bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
-            <span>Vision 2030 Aligned</span>
-            <span className="font-arabic text-base font-normal normal-case tracking-normal" dir="rtl" lang="ar">
-              رؤية ٢٠٣٠
-            </span>
+          <div className="mb-5 inline-block max-w-full bg-[#C6A45D] px-4 py-1.5 text-[11px] font-black uppercase leading-none tracking-[0.22em] text-[#071B36] sm:text-xs">
+            Vision 2030 Aligned
           </div>
           <h1 className="mb-6 max-w-[12ch] break-words font-display text-[42px] font-extrabold uppercase leading-[1.02] text-white sm:max-w-4xl sm:text-6xl md:text-7xl lg:text-[72px] lg:leading-[1.06]">
             Establish Your{" "}
@@ -366,16 +324,10 @@ function Intro() {
     },
   ];
   return (
-    <section className="islamic-pattern py-16 sm:py-20 lg:py-28">
+    <section className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-6 flex justify-center">
-          <StarOrnament />
-        </div>
         <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:mb-16 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
-              بناء حضوركم في المملكة
-            </p>
             <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
               Architecting Your Saudi Expansion
             </h2>
@@ -431,18 +383,12 @@ function Services() {
       <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
-          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
-            خدماتنا التشغيلية
-          </p>
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
             Operational Capabilities
           </h2>
           <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
             Comprehensive Enterprise Support
           </p>
-          <div className="mt-6 flex justify-center">
-            <StarOrnament />
-          </div>
         </div>
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
@@ -479,18 +425,12 @@ function Packages() {
     <section id="packages" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-12 max-w-4xl text-center lg:mb-16">
-          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
-            باقاتنا المختارة
-          </p>
           <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Elite Formation Tiers
           </h2>
           <p className="text-base leading-7 text-[#44474d] sm:text-xl">
             Select the engagement model that matches your strategic timeline.
           </p>
-          <div className="mt-6 flex justify-center">
-            <StarOrnament />
-          </div>
         </div>
         <div className="mx-auto grid max-w-6xl border-2 border-[#071B36] shadow-2xl md:grid-cols-2 md:border-4">
           {/* Enterprise */}
@@ -590,17 +530,9 @@ function Process() {
   return (
     <section id="process" className="bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
-          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
-            خارطة الطريق
-          </p>
-          <h2 className="break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
-            Strategic Deployment Roadmap
-          </h2>
-          <div className="mt-6 flex justify-center">
-            <StarOrnament />
-          </div>
-        </div>
+        <h2 className="mx-auto mb-12 max-w-3xl break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
+          Strategic Deployment Roadmap
+        </h2>
         <div className="grid border-t-4 border-[#071B36] lg:grid-cols-5 lg:border-t-8">
           {steps.map((s, i) => (
             <div
@@ -694,9 +626,6 @@ function Contact() {
     <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
         <div className="min-w-0">
-          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
-            تواصلوا معنا
-          </p>
           <h2 className="mb-6 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Initiate Your
             <br />
@@ -905,15 +834,6 @@ function Footer() {
   return (
     <footer className="bg-[#071B36] py-12 text-white sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="mb-10 flex flex-col items-center gap-2 text-center">
-          <StarOrnament />
-          <p className="font-arabic text-lg text-[#C6A45D] sm:text-xl" dir="rtl" lang="ar">
-            وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ
-          </p>
-          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/40">
-            “And for this let the competitors compete.” — Qur'an 83:26
-          </p>
-        </div>
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
           <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
             <img

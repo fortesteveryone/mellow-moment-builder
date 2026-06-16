@@ -197,32 +197,6 @@
   background: linear-gradient(to right, rgba(7, 27, 54, 0.95) 0%, rgba(7, 27, 54, 0.7) 100%);
 }
 
-@utility font-arabic {
-  font-family: "Amiri", "Scheherazade New", serif;
-}
-
-/* Islamic geometric pattern — subtle gold tessellation on cream */
-@utility islamic-pattern {
-  background-color: #fbf9f4;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(198, 164, 93, 0.18) 1.5px, transparent 2px),
-    radial-gradient(circle at 0 0, rgba(198, 164, 93, 0.12) 1.5px, transparent 2px),
-    radial-gradient(circle at 100% 100%, rgba(198, 164, 93, 0.12) 1.5px, transparent 2px),
-    linear-gradient(45deg, transparent 47%, rgba(198, 164, 93, 0.08) 47%, rgba(198, 164, 93, 0.08) 53%, transparent 53%),
-    linear-gradient(-45deg, transparent 47%, rgba(198, 164, 93, 0.08) 47%, rgba(198, 164, 93, 0.08) 53%, transparent 53%);
-  background-size: 48px 48px, 48px 48px, 48px 48px, 48px 48px, 48px 48px;
-}
-
-/* Subtle dark variant for navy sections */
-@utility islamic-pattern-dark {
-  background-color: #071B36;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(198, 164, 93, 0.14) 1.5px, transparent 2px),
-    linear-gradient(45deg, transparent 47%, rgba(198, 164, 93, 0.05) 47%, rgba(198, 164, 93, 0.05) 53%, transparent 53%),
-    linear-gradient(-45deg, transparent 47%, rgba(198, 164, 93, 0.05) 47%, rgba(198, 164, 93, 0.05) 53%, transparent 53%);
-  background-size: 48px 48px, 48px 48px, 48px 48px;
-}
-
 .material-symbols-outlined {
     font-family: "Material Symbols Outlined";
     font-weight: normal;
