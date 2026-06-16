@@ -879,12 +879,14 @@ function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
           <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
-            <img
-              src={LOGO_IMG}
-              alt="Whitmore Saudi Connect"
-              style={{ margin: 0, padding: 0 }}
-              className="-mx-2 block h-16 w-auto max-w-[240px] sm:h-20 sm:max-w-[300px] md:h-24 md:max-w-[340px]"
-            />
+            <div className="inline-flex rounded-md bg-white px-4 py-3">
+              <img
+                src={LOGO_IMG}
+                alt="Whitmore Saudi Connect"
+                style={{ margin: 0, padding: 0 }}
+                className="block h-14 w-auto max-w-[220px] sm:h-16 sm:max-w-[260px] md:h-20 md:max-w-[300px]"
+              />
+            </div>
             <p className="max-w-md text-sm leading-6 text-white/60 sm:text-base">
               Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
             </p>
