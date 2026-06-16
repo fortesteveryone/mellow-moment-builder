@@ -89,6 +89,24 @@ function MS({ name, className = "" }: { name: string; className?: string }) {
   );
 }
 
+/* Small Islamic 8-point star ornament — used as a subtle divider accent */
+function StarOrnament({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      aria-hidden
+    >
+      <path d="M20 3 L25 15 L37 20 L25 25 L20 37 L15 25 L3 20 L15 15 Z" />
+      <path d="M20 9 L23 17 L31 20 L23 23 L20 31 L17 23 L9 20 L17 17 Z" />
+      <circle cx="20" cy="20" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 function Index() {
   return (
     <div
@@ -201,6 +219,20 @@ function Hero() {
           className="h-full w-full object-cover"
         />
       </div>
+      {/* Subtle Islamic geometric pattern overlay */}
+      <div className="islamic-pattern pointer-events-none absolute inset-0 z-10 opacity-[0.07]" aria-hidden />
+      {/* Decorative arch silhouette on the right */}
+      <svg
+        aria-hidden
+        viewBox="0 0 200 400"
+        className="pointer-events-none absolute right-0 top-1/2 z-10 hidden h-[80%] -translate-y-1/2 opacity-10 lg:block"
+        fill="none"
+        stroke="#C6A45D"
+        strokeWidth="1"
+      >
+        <path d="M20 380 L20 140 Q20 20 100 20 Q180 20 180 140 L180 380" />
+        <path d="M40 380 L40 150 Q40 40 100 40 Q160 40 160 150 L160 380" />
+      </svg>
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-5 text-white sm:px-8 md:px-12 lg:px-20">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px] xl:gap-16">
           <div className="max-w-4xl min-w-0">
@@ -337,7 +369,11 @@ function Intro() {
               landscape.
             </p>
           </div>
-          <div className="h-1.5 w-28 bg-[#C6A45D] sm:w-48" />
+          <div className="flex items-center gap-3 text-[#C6A45D]">
+            <span className="h-px w-16 bg-[#C6A45D] sm:w-28" />
+            <StarOrnament className="h-8 w-8 sm:h-10 sm:w-10" />
+            <span className="h-px w-16 bg-[#C6A45D] sm:w-28" />
+          </div>
         </div>
         <div className="grid border-2 border-[#071B36] md:grid-cols-3">
           {items.map((it, i) => (
@@ -381,6 +417,7 @@ function Services() {
       className="relative overflow-hidden bg-[#071B36] py-16 text-white sm:py-20 lg:py-28"
     >
       <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
+      <div className="islamic-pattern pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
@@ -389,6 +426,11 @@ function Services() {
           <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
             Comprehensive Enterprise Support
           </p>
+          <div className="mx-auto mt-6 flex items-center justify-center gap-3 text-[#C6A45D]/70">
+            <span className="h-px w-12 bg-[#C6A45D]/40" />
+            <StarOrnament className="h-6 w-6" />
+            <span className="h-px w-12 bg-[#C6A45D]/40" />
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
