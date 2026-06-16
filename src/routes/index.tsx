@@ -417,6 +417,7 @@ function Services() {
       className="relative overflow-hidden bg-[#071B36] py-16 text-white sm:py-20 lg:py-28"
     >
       <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
+      <div className="islamic-pattern pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
@@ -425,6 +426,11 @@ function Services() {
           <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
             Comprehensive Enterprise Support
           </p>
+          <div className="mx-auto mt-6 flex items-center justify-center gap-3 text-[#C6A45D]/70">
+            <span className="h-px w-12 bg-[#C6A45D]/40" />
+            <StarOrnament className="h-6 w-6" />
+            <span className="h-px w-12 bg-[#C6A45D]/40" />
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
