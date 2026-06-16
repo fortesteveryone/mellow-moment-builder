@@ -146,7 +146,7 @@ function Header() {
           <img
             src={LOGO_IMG}
             alt="Whitmore Saudi Connect"
-            className="h-14 w-auto max-w-[260px] shrink-0 object-contain sm:h-16 sm:max-w-[320px] md:h-20 md:max-w-[360px]"
+            className="h-20 w-auto max-w-[340px] shrink-0 object-contain sm:h-24 sm:max-w-[420px] md:h-28 md:max-w-[480px]"
           />
         </a>
         <div className="hidden items-center justify-center gap-6 xl:gap-10 lg:flex">
@@ -881,7 +881,7 @@ function Footer() {
             <img
               src={LOGO_IMG}
               alt="Whitmore Saudi Connect"
-              className="h-20 w-auto max-w-[320px] brightness-0 invert sm:h-24 sm:max-w-[380px]"
+              className="h-28 w-auto max-w-[420px] brightness-0 invert sm:h-32 sm:max-w-[500px] md:h-36 md:max-w-[560px]"
             />
             <p className="max-w-md text-sm leading-6 text-white/60 sm:text-base">
               Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
