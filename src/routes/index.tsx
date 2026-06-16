@@ -89,6 +89,24 @@ function MS({ name, className = "" }: { name: string; className?: string }) {
   );
 }
 
+/* Small Islamic 8-point star ornament — used as a subtle divider accent */
+function StarOrnament({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      aria-hidden
+    >
+      <path d="M20 3 L25 15 L37 20 L25 25 L20 37 L15 25 L3 20 L15 15 Z" />
+      <path d="M20 9 L23 17 L31 20 L23 23 L20 31 L17 23 L9 20 L17 17 Z" />
+      <circle cx="20" cy="20" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 function Index() {
   return (
     <div
