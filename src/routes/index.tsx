@@ -431,12 +431,18 @@ function Services() {
       <div className="absolute right-0 top-0 hidden h-full w-1/3 -skew-x-12 translate-x-20 bg-[#C6A45D]/5 sm:block" />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            خدماتنا التشغيلية
+          </p>
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
             Operational Capabilities
           </h2>
           <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
             Comprehensive Enterprise Support
           </p>
+          <div className="mt-6 flex justify-center">
+            <StarOrnament />
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
