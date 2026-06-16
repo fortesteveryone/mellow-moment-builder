@@ -366,10 +366,16 @@ function Intro() {
     },
   ];
   return (
-    <section className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
+    <section className="islamic-pattern py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <div className="mb-6 flex justify-center">
+          <StarOrnament />
+        </div>
         <div className="mb-12 flex flex-col items-start justify-between gap-6 lg:mb-16 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
+            <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+              بناء حضوركم في المملكة
+            </p>
             <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
               Architecting Your Saudi Expansion
             </h2>
