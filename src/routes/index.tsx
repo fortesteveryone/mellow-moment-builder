@@ -89,6 +89,38 @@ function MS({ name, className = "" }: { name: string; className?: string }) {
   );
 }
 
+/* Islamic 8-point star ornament — used as a decorative divider */
+function StarOrnament({
+  className = "",
+  color = "#C6A45D",
+}: {
+  className?: string;
+  color?: string;
+}) {
+  return (
+    <span className={`inline-flex items-center gap-3 ${className}`} aria-hidden>
+      <span
+        className="h-px w-10 sm:w-16"
+        style={{ background: `linear-gradient(90deg, transparent, ${color})` }}
+      />
+      <svg viewBox="0 0 40 40" className="h-4 w-4 sm:h-5 sm:w-5" fill={color}>
+        <polygon points="20,0 24,16 40,20 24,24 20,40 16,24 0,20 16,16" opacity="0.95" />
+        <polygon
+          points="20,4 22,18 36,20 22,22 20,36 18,22 4,20 18,18"
+          fill="none"
+          stroke={color}
+          strokeWidth="0.8"
+          transform="rotate(45 20 20)"
+        />
+      </svg>
+      <span
+        className="h-px w-10 sm:w-16"
+        style={{ background: `linear-gradient(90deg, ${color}, transparent)` }}
+      />
+    </span>
+  );
+}
+
 function Index() {
   return (
     <div
