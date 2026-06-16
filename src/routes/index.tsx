@@ -694,6 +694,9 @@ function Contact() {
     <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
         <div className="min-w-0">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            تواصلوا معنا
+          </p>
           <h2 className="mb-6 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Initiate Your
             <br />
