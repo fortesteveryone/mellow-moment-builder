@@ -905,6 +905,15 @@ function Footer() {
   return (
     <footer className="bg-[#071B36] py-12 text-white sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <div className="mb-10 flex flex-col items-center gap-2 text-center">
+          <StarOrnament />
+          <p className="font-arabic text-lg text-[#C6A45D] sm:text-xl" dir="rtl" lang="ar">
+            وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ
+          </p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/40">
+            “And for this let the competitors compete.” — Qur'an 83:26
+          </p>
+        </div>
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
           <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
             <img
