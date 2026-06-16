@@ -479,12 +479,18 @@ function Packages() {
     <section id="packages" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-12 max-w-4xl text-center lg:mb-16">
+          <p className="mb-3 font-arabic text-2xl text-[#C6A45D]" dir="rtl" lang="ar">
+            باقاتنا المختارة
+          </p>
           <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
             Elite Formation Tiers
           </h2>
           <p className="text-base leading-7 text-[#44474d] sm:text-xl">
             Select the engagement model that matches your strategic timeline.
           </p>
+          <div className="mt-6 flex justify-center">
+            <StarOrnament />
+          </div>
         </div>
         <div className="mx-auto grid max-w-6xl border-2 border-[#071B36] shadow-2xl md:grid-cols-2 md:border-4">
           {/* Enterprise */}
