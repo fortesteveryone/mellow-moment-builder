@@ -369,7 +369,11 @@ function Intro() {
               landscape.
             </p>
           </div>
-          <div className="h-1.5 w-28 bg-[#C6A45D] sm:w-48" />
+          <div className="flex items-center gap-3 text-[#C6A45D]">
+            <span className="h-px w-16 bg-[#C6A45D] sm:w-28" />
+            <StarOrnament className="h-8 w-8 sm:h-10 sm:w-10" />
+            <span className="h-px w-16 bg-[#C6A45D] sm:w-28" />
+          </div>
         </div>
         <div className="grid border-2 border-[#071B36] md:grid-cols-3">
           {items.map((it, i) => (
