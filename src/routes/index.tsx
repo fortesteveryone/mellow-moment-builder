@@ -30,8 +30,8 @@ const HERO_IMG =
 
 const LOGO_IMG = logoImg;
 
-const WHATSAPP_URL = "https://wa.me/440000000000";
-const WHATSAPP_PHONE = "440000000000";
+const WHATSAPP_URL = "https://wa.me/447471451865";
+const WHATSAPP_PHONE = "447471451865";
 const buildWhatsAppUrl = (message: string) =>
   `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 
@@ -312,10 +312,10 @@ function Hero() {
                     Or call
                   </div>
                   <a
-                    href="tel:+440000000000"
+                    href="tel:+447471451865"
                     className="mt-1 block font-display text-lg font-bold text-white transition-colors hover:text-[#C6A45D]"
                   >
-                    +44 0000 000000
+                    +44 7471 451865
                   </a>
                   <a
                     href={buildWhatsAppUrl(
@@ -709,14 +709,14 @@ function Contact() {
           </div>
           <div className="space-y-5">
             <a
-              href="tel:+440000000000"
+              href="tel:+447471451865"
               className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="call" />
               </div>
               <span className="min-w-0 break-words font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
-                +44 XXX XXX XXXX
+                +44 7471 451865
               </span>
             </a>
             <a
