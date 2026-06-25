@@ -467,6 +467,7 @@ function Services() {
 function Packages() {
   return (
     <section id="packages" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
+      <ResidencyMarker />
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mx-auto mb-12 max-w-4xl text-center lg:mb-16">
           <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
