@@ -902,10 +902,10 @@ function FormField({
 /* ---------------- FAQ ---------------- */
 function FAQ() {
   const items = [
-    { q: "Corporate Sovereignty: 100% Ownership", a: "Under Ministry of Investment (MISA) frameworks, international entities are permitted 100% equity ownership across the vast majority of commercial and industrial sectors, negating the requirement for local sponsorship." },
-    { q: "Fast-Track Engagement Protocol", a: "Our Elite tier utilizes priority processing queues and pre-verified document templates to achieve MISA licensure within 72 business hours, contingent on stakeholder response speed." },
-    { q: "Fee Transparency Structure", a: "Our engagement fees cover high-level consultancy, legal oversight, and administrative handling. Government levies, municipal fees, and license costs are invoiced at cost directly from the respective authorities." },
-    { q: "Remote Deployment Capabilities", a: "Initialization of the license and registration process can be conducted via digital proxy. Physical presence is typically only required during the final stages of corporate bank account activation and biometric residency processing." },
+    { q: "100% Foreign Ownership", a: "Under Ministry of Investment (MISA) frameworks, international entities may hold 100% equity ownership across most commercial and industrial sectors, subject to current eligibility and approval. Some regulated sectors retain specific conditions." },
+    { q: "Fast-Track Advisory Support", a: "Our Priority engagement uses senior advisors, pre-prepared documentation templates, and accelerated coordination to move applications as quickly as possible. Final timelines depend on document readiness, authority processing, and official approval." },
+    { q: "Fee Transparency", a: "Our engagement fees cover advisory, document handling, and coordination with authorities. Government fees, municipal charges, license costs, and third-party expenses are billed separately at cost." },
+    { q: "Remote Onboarding", a: "Most of the licensing and registration process can be initiated remotely through digital proxy. Physical presence is typically required only for the final stages of corporate bank account activation and biometric residency processing." },
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
