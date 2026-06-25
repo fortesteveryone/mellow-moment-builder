@@ -246,9 +246,9 @@ function Hero() {
             <span className="text-[#C6A45D]">Business</span> In Saudi Arabia
           </h1>
           <p className="mb-8 max-w-2xl border-l-4 border-[#C6A45D] pl-5 text-base leading-8 text-white/80 sm:mb-10 sm:pl-8 sm:text-xl">
-            The premier gateway for 100% foreign-owned corporate entities. We
-            handle the complexity of MISA licensing, registration, and
-            institutional setup with uncompromising precision.
+            A trusted advisory partner for international corporations,
+            investors, and individuals — guiding you through MISA licensing,
+            registration, and institutional setup in Saudi Arabia.
           </p>
           <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:gap-5 lg:mb-16">
             <a
@@ -267,7 +267,7 @@ function Hero() {
           <div className="grid grid-cols-2 gap-x-5 gap-y-7 border-t-2 border-white/10 pt-8 sm:gap-8 sm:pt-10 md:grid-cols-4">
             {[
               ["100%", "Foreign Ownership"],
-              ["03 Days", "Fast-Track Setup"],
+              ["Fast-Track", "Advisory Support"],
               ["Elite", "Consultancy Model"],
               ["Global", "Investor Network"],
             ].map(([n, l]) => (
@@ -300,7 +300,7 @@ function Hero() {
                 <div className="shrink-0 bg-white p-2.5">
                   <QRCodeSVG
                     value={buildWhatsAppUrl(
-                      "Hello Whitmore Saudi Connect, I'd like a strategic briefing on company formation in Saudi Arabia.",
+                      "Hello Whitmore Consultancy, I'd like a strategic briefing on company formation in Saudi Arabia.",
                     )}
                     size={108}
                     bgColor="#ffffff"
@@ -320,7 +320,7 @@ function Hero() {
                   </a>
                   <a
                     href={buildWhatsAppUrl(
-                      "Hello Whitmore Saudi Connect, I'd like a strategic briefing on company formation in Saudi Arabia.",
+                      "Hello Whitmore Consultancy, I'd like a strategic briefing on company formation in Saudi Arabia.",
                     )}
                     target="_blank"
                     rel="noreferrer"
