@@ -959,36 +959,74 @@ function Footer() {
   return (
     <footer className="bg-[#071B36] py-12 text-white sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-          <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+          {/* Brand */}
+          <div className="md:col-span-5">
             <div className="inline-flex rounded-md bg-white px-4 py-3">
               <img
                 src={LOGO_IMG}
                 alt="Whitmore Saudi Connect"
                 style={{ margin: 0, padding: 0 }}
-                className="block h-14 w-auto max-w-[220px] sm:h-16 sm:max-w-[260px] md:h-20 md:max-w-[300px]"
+                className="block h-14 w-auto max-w-[220px] sm:h-16 sm:max-w-[260px]"
               />
             </div>
-            <p className="max-w-md text-sm leading-6 text-white/60 sm:text-base">
+            <p className="mt-5 max-w-md text-sm leading-6 text-white/60 sm:text-base">
               Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
             </p>
+            <div className="mt-6 flex gap-3 text-base">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://www.instagram.com/uzglobalservices?igsh=NGYyZTlpMW9iaGFx" target="_blank" rel="noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+                <FaInstagram />
+              </a>
+              <a href="https://x.com/" target="_blank" rel="noreferrer" aria-label="X" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+                <FaXTwitter />
+              </a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
+                <FaWhatsapp />
+              </a>
+            </div>
           </div>
-          <div className="flex justify-center gap-4 text-lg md:justify-end">
-            <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-              <FaLinkedinIn />
-            </a>
-            <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-              <FaInstagram />
-            </a>
-            <a href="#" aria-label="X" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-              <FaXTwitter />
-            </a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
-              <FaWhatsapp />
-            </a>
+
+          {/* Explore */}
+          <div className="md:col-span-3">
+            <FooterCol
+              title="Explore"
+              items={[
+                ["Services", "#services"],
+                ["Packages", "#packages"],
+                ["Process", "#process"],
+                ["About", "#about"],
+                ["Contact", "#contact"],
+              ]}
+            />
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-4">
+            <h5 className="mb-6 text-sm font-black uppercase leading-5 tracking-[0.18em] text-[#C6A45D]">
+              Get in Touch
+            </h5>
+            <ul className="space-y-4 text-sm leading-6 text-white/70">
+              <li>
+                <a href="tel:+447471451865" className="transition-colors hover:text-[#C6A45D]">
+                  +44 7471 451865
+                </a>
+              </li>
+              <li>
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="transition-colors hover:text-[#C6A45D]">
+                  WhatsApp us directly
+                </a>
+              </li>
+              <li className="text-white/60">
+                Riyadh, Kingdom of Saudi Arabia
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="mt-10 h-px w-full bg-white/10" />
+
+        <div className="mt-12 h-px w-full bg-white/10" />
         <p className="mt-6 text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
           © {new Date().getFullYear()} Whitmore Saudi Connect. All rights reserved.
         </p>
