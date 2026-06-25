@@ -652,7 +652,7 @@ function Process() {
     { n: "05", t: "Continuity", d: "Post-formation support for banking and executive residency." },
   ];
   return (
-    <section id="process" className="bg-white py-16 sm:py-20 lg:py-28">
+    <section id="process" className="bg-[#f5f3ee] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <h2 className="mx-auto mb-12 max-w-3xl break-words text-center font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:mb-16 lg:text-[56px]">
           Strategic Deployment Roadmap
@@ -663,7 +663,7 @@ function Process() {
               key={s.n}
               className={
                 "group p-6 sm:p-8 lg:p-6 xl:p-8 " +
-                (i % 2 === 1 ? "bg-[#f5f3ee] " : "") +
+                (i % 2 === 1 ? "bg-white " : "") +
                 (i < steps.length - 1 ? "border-b-2 border-[#071B36] lg:border-b-0 lg:border-r-2 " : "")
               }
             >
