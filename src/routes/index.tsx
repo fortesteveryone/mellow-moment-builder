@@ -119,6 +119,7 @@ function Index() {
         <Intro />
         <Services />
         <Packages />
+        <Residency />
         <Process />
         <WhyUs />
         <Contact />
