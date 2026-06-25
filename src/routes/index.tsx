@@ -528,7 +528,6 @@ function Residency() {
                 <span className="font-display text-3xl font-bold text-[#C6A45D] sm:text-4xl">
                   {p.n}
                 </span>
-                <MS name={p.icon} className="text-3xl text-[#071B36] sm:text-4xl" />
               </div>
               <h3 className="mb-4 break-words font-display text-xl font-bold uppercase leading-tight text-[#071B36] sm:text-2xl">
                 {p.title}
