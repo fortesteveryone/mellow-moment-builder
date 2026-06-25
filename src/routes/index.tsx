@@ -663,7 +663,7 @@ function Process() {
               key={s.n}
               className={
                 "group p-6 sm:p-8 lg:p-6 xl:p-8 " +
-                (i % 2 === 1 ? "bg-[#f5f3ee] " : "") +
+                (i % 2 === 1 ? "bg-white " : "") +
                 (i < steps.length - 1 ? "border-b-2 border-[#071B36] lg:border-b-0 lg:border-r-2 " : "")
               }
             >
