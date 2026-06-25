@@ -40,18 +40,18 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "Whitmore Saudi Connect | Premium Saudi Company Formation",
+          "Whitmore Consultancy | Saudi Business Setup & Advisory",
       },
       {
         name: "description",
         content:
-          "Premium consultancy for 100% foreign-owned company formation in Saudi Arabia. End-to-end investment licensing and registration support.",
+          "Whitmore Consultancy is a premium advisory firm helping international corporations, investors, and individuals establish, operate, and grow within Saudi Arabia.",
       },
-      { property: "og:title", content: "Whitmore Saudi Connect" },
+      { property: "og:title", content: "Whitmore Consultancy" },
       {
         property: "og:description",
         content:
-          "Premium consultancy for 100% foreign-owned company formation in Saudi Arabia.",
+          "Premium Saudi-focused business setup and advisory consultancy for international clients.",
       },
     ],
   }),
