@@ -563,11 +563,11 @@ function Packages() {
                 Enterprise Standard
               </h3>
               <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-[#44474d]">
-                Standard 30-Day Deployment
+                Structured Advisory Engagement
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-4xl font-black text-[#071B36] sm:text-5xl">
-                  £15,000
+                <span className="font-display text-3xl font-black text-[#071B36] sm:text-4xl">
+                  On Request
                 </span>
               </div>
             </div>
@@ -577,7 +577,7 @@ function Packages() {
                 "MISA License Coordination",
                 "Commercial Registration",
                 "Institutional Bank Prep",
-                "24/7 WhatsApp Support",
+                "Dedicated WhatsApp Support",
               ].map((it) => (
                 <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-[#071B36]">
                   <MS name="check_box" className="shrink-0 pt-0.5 text-[#C6A45D]" />
@@ -589,24 +589,24 @@ function Packages() {
               href="#contact"
               className="w-full border-2 border-[#071B36] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white sm:py-5 sm:text-sm"
             >
-              Enquire Now
+              Request Quote
             </a>
           </div>
           {/* Elite */}
           <div className="flex min-w-0 flex-col bg-[#071B36] p-6 text-white sm:p-8 lg:p-12 xl:p-16">
             <div className="mb-8 w-fit max-w-full bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-[#071B36] sm:px-6">
-              Priority Fast-Track
+              Priority Engagement
             </div>
             <div className="mb-8">
               <h3 className="mb-4 break-words font-display text-2xl font-black uppercase leading-tight text-[#C6A45D] sm:text-3xl">
                 Elite Strategic
               </h3>
               <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-white/60">
-                Priority 3-Day Executive Deployment
+                Accelerated Application Coordination
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-4xl font-black text-[#C6A45D] sm:text-5xl">
-                  £20,000
+                <span className="font-display text-3xl font-black text-[#C6A45D] sm:text-4xl">
+                  On Request
                 </span>
               </div>
             </div>
@@ -614,7 +614,7 @@ function Packages() {
               {[
                 "Priority Senior Consultation",
                 "Urgent Documentation Review",
-                "Accelerated MISA Processing",
+                "Expedited Application Handling",
                 "Dedicated Senior Lead",
                 "Global Partner Concierge",
               ].map((it) => (
@@ -628,13 +628,14 @@ function Packages() {
               href="#contact"
               className="w-full bg-[#C6A45D] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm"
             >
-              Secure Priority
+              Discuss Package
             </a>
           </div>
         </div>
         <p className="mt-8 text-center text-xs font-bold uppercase leading-5 tracking-[0.12em] text-[#44474d] opacity-60">
-          Official government fees are additional to professional consultancy
-          rates.
+          Government fees, authority charges, and third-party costs are
+          separate from professional consultancy fees. Timelines depend on
+          document readiness, authority processing, and official approval.
         </p>
       </div>
     </section>
