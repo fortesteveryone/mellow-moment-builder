@@ -764,7 +764,7 @@ function Contact() {
             {[
               { l: "WhatsApp Direct", url: WHATSAPP_URL },
               { l: "Instagram", url: "https://www.instagram.com/uzglobalservices?igsh=NGYyZTlpMW9iaGFx" },
-              { l: "TikTok", url: "https://tiktok.com/@whitmoresaudi" },
+              { l: "TikTok", url: "https://tiktok.com/@whitmoreconsultancy" },
             ].map(({ l, url }) => (
               <a
                 key={l}
@@ -801,14 +801,14 @@ function Contact() {
               </span>
             </a>
             <a
-              href="mailto:info@whitmoresaudi.com"
+              href="mailto:info@whitmoreconsultancy.com"
               className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="mail" />
               </div>
               <span className="min-w-0 break-all font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
-                info@whitmoresaudi.com
+                info@whitmoreconsultancy.com
               </span>
             </a>
           </div>
@@ -827,20 +827,22 @@ function Contact() {
           </h3>
           <div className="space-y-7 sm:space-y-8">
             <div className="grid gap-7 sm:grid-cols-2">
-              <FormField label="Corporate Name" placeholder="e.g. Whitmore Global" required />
+              <FormField label="Full Name / Company" placeholder="e.g. Whitmore Consultancy" required />
               <FormField label="Email Address" type="email" placeholder="office@company.com" required />
             </div>
             <div className="grid gap-7 sm:grid-cols-2">
               <FormField label="Phone Number" type="tel" placeholder="+44 ..." required />
               <div>
                 <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
-                  Selected Package
+                  Area of Interest
                 </label>
                 <select
                   className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
                 >
-                  <option className="bg-[#071B36]">Enterprise Standard</option>
-                  <option className="bg-[#071B36]">Elite Strategic (Fast-Track)</option>
+                  <option className="bg-[#071B36]">Business Setup</option>
+                  <option className="bg-[#071B36]">Compliance & Regulatory</option>
+                  <option className="bg-[#071B36]">Residency Advisory</option>
+                  <option className="bg-[#071B36]">Growth Support</option>
                 </select>
               </div>
             </div>
@@ -858,12 +860,12 @@ function Contact() {
               type="submit"
               className="w-full bg-[#C6A45D] px-4 py-4 text-xs font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm sm:tracking-[0.2em]"
             >
-              Submit Strategic Inquiry
+              Submit Inquiry
             </button>
             {submitted && (
               <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-[#C6A45D] sm:text-sm">
-                Transmission Successful. A senior consultant will respond within
-                2 hours.
+                Thank you. A senior consultant from Whitmore Consultancy will
+                be in touch shortly.
               </p>
             )}
           </div>
