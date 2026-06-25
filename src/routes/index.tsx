@@ -366,8 +366,8 @@ function Intro() {
             </h2>
             <p className="text-base italic leading-8 text-[#44474d] sm:text-xl">
               We provide the structural foundation for international
-              corporations to thrive in the Kingdom's evolving economic
-              landscape.
+              corporations and individuals to thrive in the Kingdom's
+              evolving economic landscape.
             </p>
           </div>
           <div className="flex items-center gap-3 text-[#C6A45D]">
@@ -682,7 +682,7 @@ function Contact() {
           <div className="mb-10 grid grid-cols-3 gap-3 sm:gap-6 lg:mb-12 lg:gap-8">
             {[
               { l: "WhatsApp Direct", url: WHATSAPP_URL },
-              { l: "Instagram", url: "https://instagram.com/whitmoresaudi" },
+              { l: "Instagram", url: "https://www.instagram.com/uzglobalservices?igsh=NGYyZTlpMW9iaGFx" },
               { l: "TikTok", url: "https://tiktok.com/@whitmoresaudi" },
             ].map(({ l, url }) => (
               <a
