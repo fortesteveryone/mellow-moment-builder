@@ -796,7 +796,7 @@ function Contact() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="call" />
               </div>
-              <span className="min-w-0 break-words font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
+              <span className="min-w-0 break-words font-sans text-base font-bold text-[#071B36] sm:text-xl">
                 +44 7471 451865
               </span>
             </a>
@@ -807,7 +807,7 @@ function Contact() {
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="mail" />
               </div>
-              <span className="min-w-0 break-all font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
+              <span className="min-w-0 break-all font-sans text-base font-semibold lowercase text-[#071B36] sm:text-xl">
                 info@whitmoreconsultancy.com
               </span>
             </a>
