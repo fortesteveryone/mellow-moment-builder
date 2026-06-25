@@ -40,18 +40,18 @@ export const Route = createFileRoute("/")({
     meta: [
       {
         title:
-          "Whitmore Saudi Connect | Premium Saudi Company Formation",
+          "Whitmore Consultancy | Saudi Business Setup & Advisory",
       },
       {
         name: "description",
         content:
-          "Premium consultancy for 100% foreign-owned company formation in Saudi Arabia. End-to-end investment licensing and registration support.",
+          "Whitmore Consultancy is a premium advisory firm helping international corporations, investors, and individuals establish, operate, and grow within Saudi Arabia.",
       },
-      { property: "og:title", content: "Whitmore Saudi Connect" },
+      { property: "og:title", content: "Whitmore Consultancy" },
       {
         property: "og:description",
         content:
-          "Premium consultancy for 100% foreign-owned company formation in Saudi Arabia.",
+          "Premium Saudi-focused business setup and advisory consultancy for international clients.",
       },
     ],
   }),
@@ -146,7 +146,7 @@ function Header() {
         <a href="#home" className="flex min-w-0 items-center">
           <img
             src={LOGO_IMG}
-            alt="Whitmore Saudi Connect"
+            alt="Whitmore Consultancy"
             style={{ margin: 0, padding: 0 }}
             className="-mx-2 block h-12 w-auto max-w-[180px] shrink-0 object-contain sm:h-14 sm:max-w-[220px] md:h-16 md:max-w-[260px]"
           />
@@ -246,9 +246,9 @@ function Hero() {
             <span className="text-[#C6A45D]">Business</span> In Saudi Arabia
           </h1>
           <p className="mb-8 max-w-2xl border-l-4 border-[#C6A45D] pl-5 text-base leading-8 text-white/80 sm:mb-10 sm:pl-8 sm:text-xl">
-            The premier gateway for 100% foreign-owned corporate entities. We
-            handle the complexity of MISA licensing, registration, and
-            institutional setup with uncompromising precision.
+            A trusted advisory partner for international corporations,
+            investors, and individuals — guiding you through MISA licensing,
+            registration, and institutional setup in Saudi Arabia.
           </p>
           <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:gap-5 lg:mb-16">
             <a
@@ -267,7 +267,7 @@ function Hero() {
           <div className="grid grid-cols-2 gap-x-5 gap-y-7 border-t-2 border-white/10 pt-8 sm:gap-8 sm:pt-10 md:grid-cols-4">
             {[
               ["100%", "Foreign Ownership"],
-              ["03 Days", "Fast-Track Setup"],
+              ["Fast-Track", "Advisory Support"],
               ["Elite", "Consultancy Model"],
               ["Global", "Investor Network"],
             ].map(([n, l]) => (
@@ -300,7 +300,7 @@ function Hero() {
                 <div className="shrink-0 bg-white p-2.5">
                   <QRCodeSVG
                     value={buildWhatsAppUrl(
-                      "Hello Whitmore Saudi Connect, I'd like a strategic briefing on company formation in Saudi Arabia.",
+                      "Hello Whitmore Consultancy, I'd like a strategic briefing on company formation in Saudi Arabia.",
                     )}
                     size={108}
                     bgColor="#ffffff"
@@ -320,7 +320,7 @@ function Hero() {
                   </a>
                   <a
                     href={buildWhatsAppUrl(
-                      "Hello Whitmore Saudi Connect, I'd like a strategic briefing on company formation in Saudi Arabia.",
+                      "Hello Whitmore Consultancy, I'd like a strategic briefing on company formation in Saudi Arabia.",
                     )}
                     target="_blank"
                     rel="noreferrer"
@@ -404,14 +404,12 @@ function Intro() {
 /* ---------------- Services ---------------- */
 function Services() {
   const services = [
-    { icon: "badge", title: "Trade Name Reservation", body: "Expert assistance in securing your unique business identity across KSA." },
-    { icon: "verified", title: "Investment License", body: "Comprehensive MISA license application and processing support." },
-    { icon: "business", title: "Commercial Registry", body: "Full CR issuance management with Ministry of Commerce." },
-    { icon: "corporate_fare", title: "Chamber Approval", body: "Securing necessary institutional approvals and memberships." },
-    { icon: "article", title: "Application Filing", body: "Professional filing of all regulatory paperwork with authorities." },
-    { icon: "receipt_long", title: "ZATCA Compliance", body: "Zakat, Tax, and Customs Authority registration support." },
-    { icon: "assignment_ind", title: "GM Residency", body: "Strategic support for General Manager visas and residency." },
-    { icon: "payments", title: "Corporate Banking", body: "Introductory assistance for corporate banking within Saudi Arabia." },
+    { icon: "business", title: "Business Setup Services", body: "End-to-end advisory for company formation, MISA licensing, trade name reservation, and commercial registration in Saudi Arabia." },
+    { icon: "account_balance", title: "Government Liaison", body: "Coordinated engagement with Saudi ministries and authorities to streamline filings, approvals, and documentation." },
+    { icon: "gavel", title: "Compliance & Regulatory", body: "Guidance on ZATCA registration, GOSI, labour rules, and ongoing corporate compliance obligations." },
+    { icon: "article", title: "New Rules Advisory", body: "Up-to-date briefings on evolving Saudi investment policy, sector reforms, and regulatory changes." },
+    { icon: "hub", title: "Growth Support", body: "Strategic support for expansion, partnerships, market entry, and operational scaling within the Kingdom." },
+    { icon: "verified", title: "Comprehensive Support", body: "Continuity through corporate banking introductions, executive residency coordination, and post-formation advisory." },
   ];
   return (
     <section
@@ -423,10 +421,10 @@ function Services() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
-            Operational Capabilities
+            Our Services
           </h2>
           <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
-            Comprehensive Enterprise Support
+            Advisory for Setup, Compliance & Growth
           </p>
           <div className="mx-auto mt-6 flex items-center justify-center gap-3 text-[#C6A45D]/70">
             <span className="h-px w-12 bg-[#C6A45D]/40" />
@@ -434,12 +432,12 @@ function Services() {
             <span className="h-px w-12 bg-[#C6A45D]/40" />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <a
               key={s.title}
               href={buildWhatsAppUrl(
-                `Hello Mellow Moment Builder, I'm interested in your "${s.title}" service. Could you please share more details, pricing, and the next steps?`
+                `Hello Whitmore Consultancy, I'm interested in your "${s.title}" service. Could you please share more details and the next steps?`
               )}
               target="_blank"
               rel="noreferrer"
@@ -471,28 +469,28 @@ function Residency() {
       icon: "work",
       title: "Employment-Based Residency (Iqama)",
       body:
-        "The most common pathway is securing employment with a Saudi-based company that acts as your sponsor. Your employer arranges the work visa and processes your permanent residence permit (Iqama) within 90 days of arrival. An Iqama lets you open a local bank account, rent housing, and legally sponsor your immediate family.",
+        "The most common pathway is securing employment with a Saudi employer or sponsor. Subject to official approval, your employer arranges the work visa and processes your residence permit, known as the Iqama. Once issued, an Iqama may allow you to open a local bank account, rent housing, and sponsor eligible family members under applicable regulations.",
     },
     {
       n: "02",
       icon: "diamond",
       title: "Premium Residency",
       body:
-        "For high-net-worth individuals, investors, and entrepreneurs, Saudi Arabia offers a Premium Residency program — live, work, and own property without a traditional local sponsor. Investors qualify for a 5-year renewable residency from around SAR 400,000 (~$106,000). A permanent option is available via a lump-sum fee (historically SAR 800,000 / ~£160,000).",
+        "Saudi Arabia offers a Premium Residency program for qualifying investors, entrepreneurs, and high-net-worth individuals — designed to allow holders to live, work, and own property without a traditional local sponsor. Premium Residency options are subject to current Saudi eligibility criteria, official fees, documentation requirements, and approval.",
     },
     {
       n: "03",
       icon: "apartment",
       title: "Real Estate Ownership",
       body:
-        "Under recent reforms, non-Saudis are permitted to own residential real estate within the Kingdom — providing a strong anchor for long-term settlement and family relocation.",
+        "Non-Saudis may, in certain cases, own residential real estate within the Kingdom — subject to approved areas, ownership controls, and current Saudi regulations. We advise on eligibility before any commitment.",
     },
     {
       n: "04",
       icon: "family_restroom",
       title: "Family Sponsorship",
       body:
-        "If you already have immediate family living and working in Saudi Arabia under a valid Iqama, they can apply to sponsor you as a dependent so you may legally reside in the country.",
+        "Eligible dependents may be sponsored by a family member residing in Saudi Arabia. Family sponsorship depends on the sponsor's valid Iqama, eligibility under current rules, and official approval.",
     },
   ];
   return (
@@ -565,11 +563,11 @@ function Packages() {
                 Enterprise Standard
               </h3>
               <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-[#44474d]">
-                Standard 30-Day Deployment
+                Structured Advisory Engagement
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-4xl font-black text-[#071B36] sm:text-5xl">
-                  £15,000
+                <span className="font-display text-3xl font-black text-[#071B36] sm:text-4xl">
+                  On Request
                 </span>
               </div>
             </div>
@@ -579,7 +577,7 @@ function Packages() {
                 "MISA License Coordination",
                 "Commercial Registration",
                 "Institutional Bank Prep",
-                "24/7 WhatsApp Support",
+                "Dedicated WhatsApp Support",
               ].map((it) => (
                 <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-[#071B36]">
                   <MS name="check_box" className="shrink-0 pt-0.5 text-[#C6A45D]" />
@@ -591,24 +589,24 @@ function Packages() {
               href="#contact"
               className="w-full border-2 border-[#071B36] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-[#071B36] hover:text-white sm:py-5 sm:text-sm"
             >
-              Enquire Now
+              Request Quote
             </a>
           </div>
           {/* Elite */}
           <div className="flex min-w-0 flex-col bg-[#071B36] p-6 text-white sm:p-8 lg:p-12 xl:p-16">
             <div className="mb-8 w-fit max-w-full bg-[#C6A45D] px-4 py-2 text-[10px] font-black uppercase leading-4 tracking-[0.16em] text-[#071B36] sm:px-6">
-              Priority Fast-Track
+              Priority Engagement
             </div>
             <div className="mb-8">
               <h3 className="mb-4 break-words font-display text-2xl font-black uppercase leading-tight text-[#C6A45D] sm:text-3xl">
                 Elite Strategic
               </h3>
               <p className="mb-6 text-xs font-bold uppercase leading-5 tracking-[0.14em] text-white/60">
-                Priority 3-Day Executive Deployment
+                Accelerated Application Coordination
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-4xl font-black text-[#C6A45D] sm:text-5xl">
-                  £20,000
+                <span className="font-display text-3xl font-black text-[#C6A45D] sm:text-4xl">
+                  On Request
                 </span>
               </div>
             </div>
@@ -616,7 +614,7 @@ function Packages() {
               {[
                 "Priority Senior Consultation",
                 "Urgent Documentation Review",
-                "Accelerated MISA Processing",
+                "Expedited Application Handling",
                 "Dedicated Senior Lead",
                 "Global Partner Concierge",
               ].map((it) => (
@@ -630,13 +628,14 @@ function Packages() {
               href="#contact"
               className="w-full bg-[#C6A45D] px-4 py-4 text-center text-xs font-black uppercase leading-5 tracking-[0.16em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm"
             >
-              Secure Priority
+              Discuss Package
             </a>
           </div>
         </div>
         <p className="mt-8 text-center text-xs font-bold uppercase leading-5 tracking-[0.12em] text-[#44474d] opacity-60">
-          Official government fees are additional to professional consultancy
-          rates.
+          Government fees, authority charges, and third-party costs are
+          separate from professional consultancy fees. Timelines depend on
+          document readiness, authority processing, and official approval.
         </p>
       </div>
     </section>
@@ -765,7 +764,7 @@ function Contact() {
             {[
               { l: "WhatsApp Direct", url: WHATSAPP_URL },
               { l: "Instagram", url: "https://www.instagram.com/uzglobalservices?igsh=NGYyZTlpMW9iaGFx" },
-              { l: "TikTok", url: "https://tiktok.com/@whitmoresaudi" },
+              { l: "TikTok", url: "https://tiktok.com/@whitmoreconsultancy" },
             ].map(({ l, url }) => (
               <a
                 key={l}
@@ -802,14 +801,14 @@ function Contact() {
               </span>
             </a>
             <a
-              href="mailto:info@whitmoresaudi.com"
+              href="mailto:info@whitmoreconsultancy.com"
               className="group flex min-w-0 items-center gap-4 sm:gap-6"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#071B36] text-[#C6A45D] transition-all group-hover:bg-[#C6A45D] group-hover:text-[#071B36]">
                 <MS name="mail" />
               </div>
               <span className="min-w-0 break-all font-display text-base font-bold uppercase text-[#071B36] sm:text-xl">
-                info@whitmoresaudi.com
+                info@whitmoreconsultancy.com
               </span>
             </a>
           </div>
@@ -828,20 +827,22 @@ function Contact() {
           </h3>
           <div className="space-y-7 sm:space-y-8">
             <div className="grid gap-7 sm:grid-cols-2">
-              <FormField label="Corporate Name" placeholder="e.g. Whitmore Global" required />
+              <FormField label="Full Name / Company" placeholder="e.g. Whitmore Consultancy" required />
               <FormField label="Email Address" type="email" placeholder="office@company.com" required />
             </div>
             <div className="grid gap-7 sm:grid-cols-2">
               <FormField label="Phone Number" type="tel" placeholder="+44 ..." required />
               <div>
                 <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
-                  Selected Package
+                  Area of Interest
                 </label>
                 <select
                   className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
                 >
-                  <option className="bg-[#071B36]">Enterprise Standard</option>
-                  <option className="bg-[#071B36]">Elite Strategic (Fast-Track)</option>
+                  <option className="bg-[#071B36]">Business Setup</option>
+                  <option className="bg-[#071B36]">Compliance & Regulatory</option>
+                  <option className="bg-[#071B36]">Residency Advisory</option>
+                  <option className="bg-[#071B36]">Growth Support</option>
                 </select>
               </div>
             </div>
@@ -859,12 +860,12 @@ function Contact() {
               type="submit"
               className="w-full bg-[#C6A45D] px-4 py-4 text-xs font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm sm:tracking-[0.2em]"
             >
-              Submit Strategic Inquiry
+              Submit Inquiry
             </button>
             {submitted && (
               <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-[#C6A45D] sm:text-sm">
-                Transmission Successful. A senior consultant will respond within
-                2 hours.
+                Thank you. A senior consultant from Whitmore Consultancy will
+                be in touch shortly.
               </p>
             )}
           </div>
@@ -903,10 +904,10 @@ function FormField({
 /* ---------------- FAQ ---------------- */
 function FAQ() {
   const items = [
-    { q: "Corporate Sovereignty: 100% Ownership", a: "Under Ministry of Investment (MISA) frameworks, international entities are permitted 100% equity ownership across the vast majority of commercial and industrial sectors, negating the requirement for local sponsorship." },
-    { q: "Fast-Track Engagement Protocol", a: "Our Elite tier utilizes priority processing queues and pre-verified document templates to achieve MISA licensure within 72 business hours, contingent on stakeholder response speed." },
-    { q: "Fee Transparency Structure", a: "Our engagement fees cover high-level consultancy, legal oversight, and administrative handling. Government levies, municipal fees, and license costs are invoiced at cost directly from the respective authorities." },
-    { q: "Remote Deployment Capabilities", a: "Initialization of the license and registration process can be conducted via digital proxy. Physical presence is typically only required during the final stages of corporate bank account activation and biometric residency processing." },
+    { q: "100% Foreign Ownership", a: "Under Ministry of Investment (MISA) frameworks, international entities may hold 100% equity ownership across most commercial and industrial sectors, subject to current eligibility and approval. Some regulated sectors retain specific conditions." },
+    { q: "Fast-Track Advisory Support", a: "Our Priority engagement uses senior advisors, pre-prepared documentation templates, and accelerated coordination to move applications as quickly as possible. Final timelines depend on document readiness, authority processing, and official approval." },
+    { q: "Fee Transparency", a: "Our engagement fees cover advisory, document handling, and coordination with authorities. Government fees, municipal charges, license costs, and third-party expenses are billed separately at cost." },
+    { q: "Remote Onboarding", a: "Most of the licensing and registration process can be initiated remotely through digital proxy. Physical presence is typically required only for the final stages of corporate bank account activation and biometric residency processing." },
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
@@ -965,13 +966,14 @@ function Footer() {
             <div className="inline-flex rounded-md bg-white px-4 py-3">
               <img
                 src={LOGO_IMG}
-                alt="Whitmore Saudi Connect"
+                alt="Whitmore Consultancy"
                 style={{ margin: 0, padding: 0 }}
                 className="block h-14 w-auto max-w-[220px] sm:h-16 sm:max-w-[260px]"
               />
             </div>
             <p className="mt-5 max-w-md text-sm leading-6 text-white/60 sm:text-base">
-              Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
+              Whitmore Consultancy — your trusted partner for business setup,
+              advisory, and growth in the Kingdom of Saudi Arabia.
             </p>
             <div className="mt-6 flex gap-3 text-base">
               <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
@@ -1028,7 +1030,7 @@ function Footer() {
 
         <div className="mt-12 h-px w-full bg-white/10" />
         <p className="mt-6 text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
-          © {new Date().getFullYear()} Whitmore Saudi Connect. All rights reserved.
+          © {new Date().getFullYear()} Whitmore Consultancy. All rights reserved.
         </p>
       </div>
     </footer>
