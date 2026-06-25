@@ -404,14 +404,12 @@ function Intro() {
 /* ---------------- Services ---------------- */
 function Services() {
   const services = [
-    { icon: "badge", title: "Trade Name Reservation", body: "Expert assistance in securing your unique business identity across KSA." },
-    { icon: "verified", title: "Investment License", body: "Comprehensive MISA license application and processing support." },
-    { icon: "business", title: "Commercial Registry", body: "Full CR issuance management with Ministry of Commerce." },
-    { icon: "corporate_fare", title: "Chamber Approval", body: "Securing necessary institutional approvals and memberships." },
-    { icon: "article", title: "Application Filing", body: "Professional filing of all regulatory paperwork with authorities." },
-    { icon: "receipt_long", title: "ZATCA Compliance", body: "Zakat, Tax, and Customs Authority registration support." },
-    { icon: "assignment_ind", title: "GM Residency", body: "Strategic support for General Manager visas and residency." },
-    { icon: "payments", title: "Corporate Banking", body: "Introductory assistance for corporate banking within Saudi Arabia." },
+    { icon: "business", title: "Business Setup Services", body: "End-to-end advisory for company formation, MISA licensing, trade name reservation, and commercial registration in Saudi Arabia." },
+    { icon: "account_balance", title: "Government Liaison", body: "Coordinated engagement with Saudi ministries and authorities to streamline filings, approvals, and documentation." },
+    { icon: "gavel", title: "Compliance & Regulatory", body: "Guidance on ZATCA registration, GOSI, labour rules, and ongoing corporate compliance obligations." },
+    { icon: "article", title: "New Rules Advisory", body: "Up-to-date briefings on evolving Saudi investment policy, sector reforms, and regulatory changes." },
+    { icon: "hub", title: "Growth Support", body: "Strategic support for expansion, partnerships, market entry, and operational scaling within the Kingdom." },
+    { icon: "verified", title: "Comprehensive Support", body: "Continuity through corporate banking introductions, executive residency coordination, and post-formation advisory." },
   ];
   return (
     <section
@@ -423,10 +421,10 @@ function Services() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="mb-12 text-center lg:mb-16">
           <h2 className="mb-4 break-words font-display text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl lg:text-[56px]">
-            Operational Capabilities
+            Our Services
           </h2>
           <p className="text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
-            Comprehensive Enterprise Support
+            Advisory for Setup, Compliance & Growth
           </p>
           <div className="mx-auto mt-6 flex items-center justify-center gap-3 text-[#C6A45D]/70">
             <span className="h-px w-12 bg-[#C6A45D]/40" />
@@ -434,12 +432,12 @@ function Services() {
             <span className="h-px w-12 bg-[#C6A45D]/40" />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <a
               key={s.title}
               href={buildWhatsAppUrl(
-                `Hello Mellow Moment Builder, I'm interested in your "${s.title}" service. Could you please share more details, pricing, and the next steps?`
+                `Hello Whitmore Consultancy, I'm interested in your "${s.title}" service. Could you please share more details and the next steps?`
               )}
               target="_blank"
               rel="noreferrer"
