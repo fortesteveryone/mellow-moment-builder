@@ -146,7 +146,7 @@ function Header() {
         <a href="#home" className="flex min-w-0 items-center">
           <img
             src={LOGO_IMG}
-            alt="Whitmore Saudi Connect"
+            alt="Whitmore Consultancy"
             style={{ margin: 0, padding: 0 }}
             className="-mx-2 block h-12 w-auto max-w-[180px] shrink-0 object-contain sm:h-14 sm:max-w-[220px] md:h-16 md:max-w-[260px]"
           />
