@@ -966,13 +966,14 @@ function Footer() {
             <div className="inline-flex rounded-md bg-white px-4 py-3">
               <img
                 src={LOGO_IMG}
-                alt="Whitmore Saudi Connect"
+                alt="Whitmore Consultancy"
                 style={{ margin: 0, padding: 0 }}
                 className="block h-14 w-auto max-w-[220px] sm:h-16 sm:max-w-[260px]"
               />
             </div>
             <p className="mt-5 max-w-md text-sm leading-6 text-white/60 sm:text-base">
-              Your trusted partner for seamless business entry and growth in the Kingdom of Saudi Arabia.
+              Whitmore Consultancy — your trusted partner for business setup,
+              advisory, and growth in the Kingdom of Saudi Arabia.
             </p>
             <div className="mt-6 flex gap-3 text-base">
               <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/15 text-white/60 transition-all hover:border-[#C6A45D] hover:text-[#C6A45D]">
@@ -1029,7 +1030,7 @@ function Footer() {
 
         <div className="mt-12 h-px w-full bg-white/10" />
         <p className="mt-6 text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
-          © {new Date().getFullYear()} Whitmore Saudi Connect. All rights reserved.
+          © {new Date().getFullYear()} Whitmore Consultancy. All rights reserved.
         </p>
       </div>
     </footer>
