@@ -119,6 +119,7 @@ function Index() {
         <Intro />
         <Services />
         <Packages />
+        <Residency />
         <Process />
         <WhyUs />
         <Contact />
@@ -366,8 +367,8 @@ function Intro() {
             </h2>
             <p className="text-base italic leading-8 text-[#44474d] sm:text-xl">
               We provide the structural foundation for international
-              corporations to thrive in the Kingdom's evolving economic
-              landscape.
+              corporations and individuals to thrive in the Kingdom's
+              evolving economic landscape.
             </p>
           </div>
           <div className="flex items-center gap-3 text-[#C6A45D]">
@@ -455,6 +456,87 @@ function Services() {
                 {s.body}
               </p>
             </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Residency ---------------- */
+function Residency() {
+  const pathways = [
+    {
+      n: "01",
+      icon: "work",
+      title: "Employment-Based Residency (Iqama)",
+      body:
+        "The most common pathway is securing employment with a Saudi-based company that acts as your sponsor. Your employer arranges the work visa and processes your permanent residence permit (Iqama) within 90 days of arrival. An Iqama lets you open a local bank account, rent housing, and legally sponsor your immediate family.",
+    },
+    {
+      n: "02",
+      icon: "diamond",
+      title: "Premium Residency",
+      body:
+        "For high-net-worth individuals, investors, and entrepreneurs, Saudi Arabia offers a Premium Residency program — live, work, and own property without a traditional local sponsor. Investors qualify for a 5-year renewable residency from around SAR 400,000 (~$106,000). A permanent option is available via a lump-sum fee (historically SAR 800,000 / ~£160,000).",
+    },
+    {
+      n: "03",
+      icon: "apartment",
+      title: "Real Estate Ownership",
+      body:
+        "Under recent reforms, non-Saudis are permitted to own residential real estate within the Kingdom — providing a strong anchor for long-term settlement and family relocation.",
+    },
+    {
+      n: "04",
+      icon: "family_restroom",
+      title: "Family Sponsorship",
+      body:
+        "If you already have immediate family living and working in Saudi Arabia under a valid Iqama, they can apply to sponsor you as a dependent so you may legally reside in the country.",
+    },
+  ];
+  return (
+    <section id="residency" className="bg-white py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <div className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
+          <p className="mb-4 text-xs font-bold uppercase leading-5 tracking-[0.22em] text-[#C6A45D] sm:text-sm sm:tracking-[0.3em]">
+            Pathways to the Kingdom
+          </p>
+          <h2 className="mb-5 break-words font-display text-3xl font-bold uppercase leading-tight text-[#071B36] sm:text-4xl md:text-5xl lg:text-[56px]">
+            Residency Routes for Saudi Arabia
+          </h2>
+          <p className="text-base leading-7 text-[#44474d] sm:text-xl">
+            The most common route is securing a sponsored work contract leading
+            to an Iqama — but several structured pathways exist for
+            professionals, investors, property owners, and families.
+          </p>
+          <div className="mx-auto mt-6 flex items-center justify-center gap-3 text-[#C6A45D]/70">
+            <span className="h-px w-12 bg-[#C6A45D]/40" />
+            <StarOrnament className="h-6 w-6" />
+            <span className="h-px w-12 bg-[#C6A45D]/40" />
+          </div>
+        </div>
+        <div className="grid border-2 border-[#071B36] md:grid-cols-2">
+          {pathways.map((p, i) => (
+            <div
+              key={p.n}
+              className={
+                "group relative border-l-4 border-[#C6A45D] bg-white p-6 transition-all duration-300 hover:bg-[#071B36]/[0.02] sm:p-8 lg:p-10 " +
+                (i % 2 === 0 ? "md:border-r-2 md:border-r-[#071B36] " : "") +
+                (i < 2 ? "md:border-b-2 md:border-b-[#071B36]" : "")
+              }
+            >
+              <div className="mb-6 flex items-center gap-4">
+                <span className="font-display text-3xl font-bold text-[#C6A45D] sm:text-4xl">
+                  {p.n}
+                </span>
+                <MS name={p.icon} className="text-3xl text-[#071B36] sm:text-4xl" />
+              </div>
+              <h3 className="mb-4 break-words font-display text-xl font-bold uppercase leading-tight text-[#071B36] sm:text-2xl">
+                {p.title}
+              </h3>
+              <p className="font-medium leading-7 text-[#44474d]">{p.body}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -682,7 +764,7 @@ function Contact() {
           <div className="mb-10 grid grid-cols-3 gap-3 sm:gap-6 lg:mb-12 lg:gap-8">
             {[
               { l: "WhatsApp Direct", url: WHATSAPP_URL },
-              { l: "Instagram", url: "https://instagram.com/whitmoresaudi" },
+              { l: "Instagram", url: "https://www.instagram.com/uzglobalservices?igsh=NGYyZTlpMW9iaGFx" },
               { l: "TikTok", url: "https://tiktok.com/@whitmoresaudi" },
             ].map(({ l, url }) => (
               <a
