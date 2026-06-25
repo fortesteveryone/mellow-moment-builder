@@ -469,28 +469,28 @@ function Residency() {
       icon: "work",
       title: "Employment-Based Residency (Iqama)",
       body:
-        "The most common pathway is securing employment with a Saudi-based company that acts as your sponsor. Your employer arranges the work visa and processes your permanent residence permit (Iqama) within 90 days of arrival. An Iqama lets you open a local bank account, rent housing, and legally sponsor your immediate family.",
+        "The most common pathway is securing employment with a Saudi employer or sponsor. Subject to official approval, your employer arranges the work visa and processes your residence permit, known as the Iqama. Once issued, an Iqama may allow you to open a local bank account, rent housing, and sponsor eligible family members under applicable regulations.",
     },
     {
       n: "02",
       icon: "diamond",
       title: "Premium Residency",
       body:
-        "For high-net-worth individuals, investors, and entrepreneurs, Saudi Arabia offers a Premium Residency program — live, work, and own property without a traditional local sponsor. Investors qualify for a 5-year renewable residency from around SAR 400,000 (~$106,000). A permanent option is available via a lump-sum fee (historically SAR 800,000 / ~£160,000).",
+        "Saudi Arabia offers a Premium Residency program for qualifying investors, entrepreneurs, and high-net-worth individuals — designed to allow holders to live, work, and own property without a traditional local sponsor. Premium Residency options are subject to current Saudi eligibility criteria, official fees, documentation requirements, and approval.",
     },
     {
       n: "03",
       icon: "apartment",
       title: "Real Estate Ownership",
       body:
-        "Under recent reforms, non-Saudis are permitted to own residential real estate within the Kingdom — providing a strong anchor for long-term settlement and family relocation.",
+        "Non-Saudis may, in certain cases, own residential real estate within the Kingdom — subject to approved areas, ownership controls, and current Saudi regulations. We advise on eligibility before any commitment.",
     },
     {
       n: "04",
       icon: "family_restroom",
       title: "Family Sponsorship",
       body:
-        "If you already have immediate family living and working in Saudi Arabia under a valid Iqama, they can apply to sponsor you as a dependent so you may legally reside in the country.",
+        "Eligible dependents may be sponsored by a family member residing in Saudi Arabia. Family sponsorship depends on the sponsor's valid Iqama, eligibility under current rules, and official approval.",
     },
   ];
   return (
