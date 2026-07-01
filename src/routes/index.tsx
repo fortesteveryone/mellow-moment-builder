@@ -125,6 +125,7 @@ function Index() {
         <Contact />
         <FAQ />
       </main>
+      <CTA />
       <Footer />
     </div>
   );
