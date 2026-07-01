@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { submitInquiry } from "@/lib/inquiry.functions";
+import { toast } from "sonner";
 import type { IconType } from "react-icons";
 import {
   FiMessageCircle,
@@ -835,10 +836,13 @@ function Contact() {
               await submit({ data: form });
               setForm(initial);
               setStatus("success");
+              toast.success("Thank you. A senior consultant from Whitmore Consultancy will be in touch shortly.");
               setTimeout(() => setStatus("idle"), 5000);
             } catch (err) {
               console.error(err);
-              setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+              const msg = err instanceof Error ? err.message : "Something went wrong.";
+              setErrorMsg(msg);
+              toast.error(`Submission failed: ${msg}`);
               setStatus("error");
             }
           }}
