@@ -626,7 +626,7 @@ function Packages() {
                 "Global Partner Concierge",
               ].map((it) => (
                 <li key={it} className="flex min-w-0 items-start gap-3 font-bold leading-6 text-white">
-                  <MS name="bolt" className="shrink-0 pt-0.5 text-[#C6A45D]" />
+                  <MS name="check_box" className="shrink-0 pt-0.5 text-[#C6A45D]" />
                   <span className="min-w-0 break-words">{it}</span>
                 </li>
               ))}
