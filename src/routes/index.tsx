@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { submitInquiry } from "@/lib/inquiry.functions";
 import type { IconType } from "react-icons";
 import {
   FiMessageCircle,
