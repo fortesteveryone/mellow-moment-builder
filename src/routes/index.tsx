@@ -752,7 +752,12 @@ function WhyUs() {
 
 /* ---------------- Contact ---------------- */
 function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const submit = useServerFn(submitInquiry);
+  const initial = { name: "", email: "", phone: "", interest: "Business Setup", activity: "" };
+  const [form, setForm] = useState(initial);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const update = (k: keyof typeof initial) => (v: string) => setForm((f) => ({ ...f, [k]: v }));
   return (
     <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 sm:px-8 md:px-12 lg:grid-cols-2 lg:gap-16 lg:px-20">
@@ -822,10 +827,20 @@ function Contact() {
         </div>
 
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            setSubmitted(true);
-            setTimeout(() => setSubmitted(false), 5000);
+            setStatus("loading");
+            setErrorMsg("");
+            try {
+              await submit({ data: form });
+              setForm(initial);
+              setStatus("success");
+              setTimeout(() => setStatus("idle"), 5000);
+            } catch (err) {
+              console.error(err);
+              setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+              setStatus("error");
+            }
           }}
           className="min-w-0 border-b-8 border-[#C6A45D] bg-[#071B36] p-6 text-white shadow-2xl sm:p-8 md:border-b-[12px] lg:p-12 xl:p-16"
         >
@@ -834,16 +849,18 @@ function Contact() {
           </h3>
           <div className="space-y-7 sm:space-y-8">
             <div className="grid gap-7 sm:grid-cols-2">
-              <FormField label="Full Name / Company" placeholder="e.g. Whitmore Consultancy" required />
-              <FormField label="Email Address" type="email" placeholder="office@company.com" required />
+              <FormField label="Full Name / Company" placeholder="e.g. Whitmore Consultancy" required value={form.name} onChange={update("name")} />
+              <FormField label="Email Address" type="email" placeholder="office@company.com" required value={form.email} onChange={update("email")} />
             </div>
             <div className="grid gap-7 sm:grid-cols-2">
-              <FormField label="Phone Number" type="tel" placeholder="+44 ..." required />
+              <FormField label="Phone Number" type="tel" placeholder="+44 ..." required value={form.phone} onChange={update("phone")} />
               <div>
                 <label className="mb-2 block text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/50">
                   Area of Interest
                 </label>
                 <select
+                  value={form.interest}
+                  onChange={(e) => update("interest")(e.target.value)}
                   className="w-full appearance-none border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
                 >
                   <option className="bg-[#071B36]">Business Setup</option>
@@ -860,19 +877,27 @@ function Contact() {
               <textarea
                 rows={3}
                 placeholder="Provide a brief overview of intended business activities..."
+                value={form.activity}
+                onChange={(e) => update("activity")(e.target.value)}
                 className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-[#C6A45D] px-4 py-4 text-xs font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white sm:py-5 sm:text-sm sm:tracking-[0.2em]"
+              disabled={status === "loading"}
+              className="w-full bg-[#C6A45D] px-4 py-4 text-xs font-black uppercase leading-5 tracking-[0.14em] text-[#071B36] transition-all hover:bg-white disabled:opacity-60 sm:py-5 sm:text-sm sm:tracking-[0.2em]"
             >
-              Submit Inquiry
+              {status === "loading" ? "Submitting..." : "Submit Inquiry"}
             </button>
-            {submitted && (
+            {status === "success" && (
               <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-[#C6A45D] sm:text-sm">
                 Thank you. A senior consultant from Whitmore Consultancy will
                 be in touch shortly.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-red-300 sm:text-sm">
+                {errorMsg || "Submission failed. Please try again."}
               </p>
             )}
           </div>
@@ -887,11 +912,15 @@ function FormField({
   type = "text",
   placeholder,
   required,
+  value,
+  onChange,
 }: {
   label: string;
   type?: string;
   placeholder?: string;
   required?: boolean;
+  value: string;
+  onChange: (v: string) => void;
 }) {
   return (
     <div>
@@ -902,6 +931,8 @@ function FormField({
         type={type}
         placeholder={placeholder}
         required={required}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         className="w-full border-0 border-b-2 border-white/20 bg-transparent px-0 py-2 text-sm leading-6 text-white placeholder:text-white/30 focus:border-[#C6A45D] focus:outline-none focus:ring-0 sm:text-base"
       />
     </div>
