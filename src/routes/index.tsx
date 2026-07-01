@@ -927,6 +927,8 @@ function FAQ() {
             return (
               <div key={i} className="border-b-2 border-[#071B36]/10">
                 <button
+                  type="button"
+                  aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="group flex w-full items-start justify-between gap-4 py-6 text-left transition-colors hover:text-[#C6A45D] sm:items-center sm:py-8"
                 >
@@ -943,13 +945,15 @@ function FAQ() {
                 </button>
                 <div
                   className={
-                    "overflow-hidden transition-all duration-300 ease-in-out " +
-                    (isOpen ? "max-h-96" : "max-h-0")
+                    "grid transition-all duration-300 ease-in-out " +
+                    (isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")
                   }
                 >
-                  <p className="pb-8 font-medium leading-7 text-[#44474d] sm:pb-10">
-                    {f.a}
-                  </p>
+                  <div className="overflow-hidden">
+                    <p className="pb-8 font-medium leading-7 text-[#44474d] sm:pb-10">
+                      {f.a}
+                    </p>
+                  </div>
                 </div>
               </div>
             );
