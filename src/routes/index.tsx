@@ -565,11 +565,11 @@ function Packages() {
                 Structured Advisory Engagement
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-4xl font-black text-[#071B36] sm:text-5xl">
+                <span className="text-4xl font-black text-[#071B36] sm:text-5xl">
                   £15,000
                 </span>
                 <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#44474d]">
-                  USD
+                  GBP
                 </span>
               </div>
             </div>
@@ -607,11 +607,11 @@ function Packages() {
                 Accelerated Application Coordination
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="font-display text-4xl font-black text-[#C6A45D] sm:text-5xl">
+                <span className="text-4xl font-black text-[#C6A45D] sm:text-5xl">
                   £20,000
                 </span>
                 <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/60">
-                  USD
+                  GBP
                 </span>
               </div>
             </div>
