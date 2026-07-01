@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { submitInquiry } from "@/lib/inquiry.functions";
-import { toast } from "sonner";
 import type { IconType } from "react-icons";
 import {
   FiMessageCircle,
@@ -836,13 +835,9 @@ function Contact() {
               await submit({ data: form });
               setForm(initial);
               setStatus("success");
-              toast.success("Thank you. A senior consultant from Whitmore Consultancy will be in touch shortly.");
               setTimeout(() => setStatus("idle"), 5000);
             } catch (err) {
               console.error(err);
-              const msg = err instanceof Error ? err.message : "Something went wrong.";
-              setErrorMsg(msg);
-              toast.error(`Submission failed: ${msg}`);
               setStatus("error");
             }
           }}
@@ -900,8 +895,8 @@ function Contact() {
               </p>
             )}
             {status === "error" && (
-              <p className="mt-5 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-red-300 sm:text-sm">
-                {errorMsg || "Submission failed. Please try again."}
+              <p className="mt-5 border border-red-400/40 bg-red-500/10 px-4 py-3 text-center text-xs font-black uppercase leading-5 tracking-[0.12em] text-red-300 sm:text-sm">
+                Something went wrong. Please try again in a moment or call us at +44 7471 451865.
               </p>
             )}
           </div>
