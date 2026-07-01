@@ -967,7 +967,7 @@ function FAQ() {
 /* ---------------- Footer ---------------- */
 function Footer() {
   return (
-    <footer className="bg-[#071B36] py-12 text-white sm:py-16 lg:py-20">
+    <footer className="bg-[#071B36] pt-12 pb-6 text-white sm:pt-16 sm:pb-8 lg:pt-20 lg:pb-10">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
           {/* Brand */}
@@ -1037,8 +1037,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 h-px w-full bg-white/10" />
-        <p className="mt-6 text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
+        <div className="mt-10 h-px w-full bg-white/10" />
+        <p className="mt-4 text-center text-[10px] font-black uppercase leading-5 tracking-[0.18em] text-white/40">
           © {new Date().getFullYear()} Whitmore Consultancy. All rights reserved.
         </p>
       </div>
