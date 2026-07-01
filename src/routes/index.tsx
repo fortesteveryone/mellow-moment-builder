@@ -756,7 +756,6 @@ function Contact() {
   const initial = { name: "", email: "", phone: "", interest: "Business Setup", activity: "" };
   const [form, setForm] = useState(initial);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState("");
   const update = (k: keyof typeof initial) => (v: string) => setForm((f) => ({ ...f, [k]: v }));
   return (
     <section id="contact" className="corporate-grid bg-white py-16 sm:py-20 lg:py-28">
@@ -830,7 +829,6 @@ function Contact() {
           onSubmit={async (e) => {
             e.preventDefault();
             setStatus("loading");
-            setErrorMsg("");
             try {
               await submit({ data: form });
               setForm(initial);
