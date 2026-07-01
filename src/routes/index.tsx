@@ -125,6 +125,7 @@ function Index() {
         <Contact />
         <FAQ />
       </main>
+      <CTA />
       <Footer />
     </div>
   );
@@ -958,6 +959,44 @@ function FAQ() {
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- CTA ---------------- */
+function CTA() {
+  return (
+    <section className="relative overflow-hidden bg-[#071B36] py-20 sm:py-24 lg:py-32">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, #C6A45D 0, transparent 40%), radial-gradient(circle at 80% 80%, #C6A45D 0, transparent 40%)" }} />
+      <div className="relative mx-auto max-w-[1200px] px-5 sm:px-8 md:px-12 lg:px-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+          <div className="min-w-0">
+            <div className="mb-5 inline-block border border-[#C6A45D]/40 bg-[#C6A45D]/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#C6A45D]">
+              Begin Your Engagement
+            </div>
+            <h2 className="mb-6 break-words font-display text-3xl font-bold uppercase leading-[0.95] text-white sm:text-5xl lg:text-6xl">
+              Ready to Establish in <span className="text-[#C6A45D]">Saudi Arabia?</span>
+            </h2>
+            <p className="max-w-xl text-base leading-7 text-white/70 sm:text-lg">
+              Book a confidential consultation with a senior advisor. We&apos;ll map your entry strategy, licensing pathway, and timeline — no obligation.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
+            <a
+              href="#contact"
+              className="flex min-h-14 items-center justify-center bg-[#C6A45D] px-6 py-4 text-center text-xs font-black uppercase tracking-[0.18em] text-[#071B36] transition-all hover:bg-[#D8B76A] sm:text-sm"
+            >
+              Request Consultation
+            </a>
+            <a
+              href="#packages"
+              className="flex min-h-14 items-center justify-center border-2 border-white/30 px-6 py-4 text-center text-xs font-black uppercase tracking-[0.18em] text-white transition-all hover:border-[#C6A45D] hover:text-[#C6A45D] sm:text-sm"
+            >
+              View Packages
+            </a>
+          </div>
         </div>
       </div>
     </section>
