@@ -275,7 +275,7 @@ function Hero() {
                 <div className="mb-2 font-display text-2xl font-black text-[#C6A45D] sm:text-4xl">
                   {n}
                 </div>
-                <div className="break-words text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/60">
+                <div className="break-words text-[10px] font-black uppercase leading-4 tracking-[0.14em] text-white/60 md:whitespace-nowrap md:tracking-[0.1em]">
                   {l}
                 </div>
               </div>
